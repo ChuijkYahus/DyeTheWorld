@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "sofas",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/verdant"
+    },
+    {
+      "item": "another_furniture:white_sofa"
+    }
+  ],
+  "result": {
+    "item": "dye_the_world:verdant_sofa"
+  }
+}
