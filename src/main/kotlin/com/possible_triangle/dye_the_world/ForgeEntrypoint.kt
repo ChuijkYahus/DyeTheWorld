@@ -1,5 +1,6 @@
 package com.possible_triangle.dye_the_world
 
+import com.possible_triangle.dye_the_world.data.generateItemTags
 import com.possible_triangle.dye_the_world.index.DyedFurniture
 import net.minecraftforge.fml.common.Mod
 
@@ -9,6 +10,8 @@ object ForgeEntrypoint {
     val REGISTRATE = KotlinRegistrate(Constants.MOD_ID)
 
     init {
+        REGISTRATE.generateItemTags()
+
         ifLoaded(Constants.Mods.ANOTHER_FURNITURE) {
             DyedFurniture.register()
         }

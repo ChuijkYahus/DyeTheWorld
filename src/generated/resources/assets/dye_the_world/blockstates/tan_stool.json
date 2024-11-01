@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "low=false": {
+      "model": "dye_the_world:block/tan_stool"
+    },
+    "low=true": {
+      "model": "dye_the_world:block/tan_stool_low"
+    }
+  }
+}

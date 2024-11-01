@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "stools",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/beige"
+    },
+    {
+      "item": "another_furniture:white_stool"
+    }
+  ],
+  "result": {
+    "item": "dye_the_world:beige_stool"
+  }
+}

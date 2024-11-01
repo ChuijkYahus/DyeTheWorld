@@ -1,10 +1,10 @@
 package com.possible_triangle.dye_the_world
 
-import com.tterrag.registrate.Registrate
+import com.tterrag.registrate.AbstractRegistrate
 import net.minecraftforge.eventbus.api.IEventBus
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
-class KotlinRegistrate(modid: String) : Registrate(modid) {
+class KotlinRegistrate(modid: String) : AbstractRegistrate<KotlinRegistrate>(modid) {
 
     init {
         registerEventListeners(modEventBus)

@@ -1,0 +1,7 @@
+{
+  "parent": "another_furniture:block/template/stool",
+  "textures": {
+    "side": "patchup:block/stool/amber_side",
+    "top": "patchup:block/stool/amber_top"
+  }
+}
