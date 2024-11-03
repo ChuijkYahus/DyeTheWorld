@@ -1,8 +1,11 @@
 package com.possible_triangle.dye_the_world.index
 
+import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.blockByDye
+import com.possible_triangle.dye_the_world.createId
+import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.yRot
 import com.starfish_studios.another_furniture.block.SofaBlock
@@ -18,7 +21,6 @@ import net.minecraft.core.Direction
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.ShapedRecipeBuilder
-import net.minecraft.data.recipes.ShapelessRecipeBuilder
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.ItemTags
@@ -62,20 +64,6 @@ object DyedFurniture {
             .tab(TAB)
             .build()
             .register()
-    }
-
-    private fun DyeColor.dyeingRecipe(
-        context: DataGenContext<out ItemLike, out ItemLike>,
-        provider: RegistrateRecipeProvider,
-        from: ItemLike,
-        build: ShapelessRecipeBuilder.() -> ShapelessRecipeBuilder
-    ) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, context.get())
-            .build()
-            .requires(tag)
-            .requires(from)
-            .unlockedBy("has_${provider.safeId(from)}", RegistrateRecipeProvider.has(from))
-            .save(provider, provider.safeId(context.get()).withSuffix("_dyeing"))
     }
 
     private fun DyeColor.sofaRecipes(
@@ -123,13 +111,13 @@ object DyedFurniture {
         context: DataGenContext<Block, StoolBlock>,
         provider: RegistrateBlockstateProvider,
     ) {
-        fun texture(suffix: String) = ResourceLocation("patchup", "block/stool/${this}_$suffix")
+        fun texture(suffix: String) = Constants.MOD_ID.createId("block/${ANOTHER_FURNITURE}/stool/${this}_$suffix")
 
         provider.getVariantBuilder(context.get()).forAllStatesExcept({ state ->
             val low = state.getValue(StoolBlock.LOW)
 
             val suffix = if (low) "_low" else ""
-            val parent = ResourceLocation(ANOTHER_FURNITURE, "block/template/stool$suffix")
+            val parent = ANOTHER_FURNITURE.createId("block/template/stool$suffix")
             val model = provider.models().withExistingParent(context.name + suffix, parent)
                 .texture("side", texture("side"))
                 .texture("top", texture("top"))
@@ -144,11 +132,11 @@ object DyedFurniture {
         context: DataGenContext<Block, SofaBlock>,
         provider: RegistrateBlockstateProvider,
     ) {
-        fun texture(suffix: String) = ResourceLocation("patchup", "block/sofa/${this}_$suffix")
+        fun texture(suffix: String) = Constants.MOD_ID.createId("block/${ANOTHER_FURNITURE}/sofa/${this}_$suffix")
 
         fun sofaModel(suffix: String? = null): BlockModelBuilder {
             val realSuffix = suffix?.let { "_$it" } ?: ""
-            val parent = ResourceLocation(ANOTHER_FURNITURE, "block/template/sofa$realSuffix")
+            val parent = ANOTHER_FURNITURE.createId("block/template/sofa$realSuffix")
             return provider.models().withExistingParent(context.name + realSuffix, parent)
                 .texture("back", texture("back"))
         }

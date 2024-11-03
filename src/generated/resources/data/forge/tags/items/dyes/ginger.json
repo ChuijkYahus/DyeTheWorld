@@ -1,5 +1,8 @@
 {
   "values": [
-    "dye_depot:ginger_dye"
+    {
+      "id": "dye_depot:ginger_dye",
+      "required": false
+    }
   ]
 }

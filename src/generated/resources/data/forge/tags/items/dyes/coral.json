@@ -1,5 +1,8 @@
 {
   "values": [
-    "dye_depot:coral_dye"
+    {
+      "id": "dye_depot:coral_dye",
+      "required": false
+    }
   ]
 }

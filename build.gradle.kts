@@ -1,16 +1,19 @@
 import net.minecraftforge.gradle.common.util.MinecraftExtension
 
-val mod_id: String by extra
 val mc_version: String by extra
 val registrate_version: String by extra
 val create_version: String by extra
 val flywheel_version: String by extra
-val mod_version: String by extra
 val jei_version: String by extra
 val supplementaries_version: String by extra
 val moonlight_lib_version: String by extra
 val dye_depot_version: String by extra
 val another_furniture_version: String by extra
+val comforts_version: String by extra
+val supplementaries_squared_version: String by extra
+val quark_version: String by extra
+val zeta_version: String by extra
+val jade_version: String by extra
 
 plugins {
     id("com.possible-triangle.gradle") version("0.2.5")
@@ -19,7 +22,7 @@ plugins {
 withKotlin()
 
 forge {
-    dataGen(listOf("another_furniture", "supplementaries", "create"))
+    dataGen(listOf("dye_depot", "another_furniture", "supplementaries", "create", "comforts", "quark", "suppsquared"))
 
     includesMod("com.tterrag.registrate:Registrate:${registrate_version}")
 }
@@ -58,9 +61,14 @@ dependencies {
     modImplementation("com.jozufozu.flywheel:flywheel-forge-${mc_version}:${flywheel_version}")
     modImplementation("maven.modrinth:supplementaries:${supplementaries_version}")
     modImplementation("maven.modrinth:another-furniture:${another_furniture_version}")
+    modImplementation("maven.modrinth:comforts:${comforts_version}")
+    modImplementation("maven.modrinth:supplementaries-squared:${supplementaries_squared_version}")
+    modImplementation("maven.modrinth:quark:${quark_version}")
+    modImplementation("maven.modrinth:zeta:${zeta_version}")
 
     if (!env.isCI) {
         modRuntimeOnly("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+        modRuntimeOnly("maven.modrinth:jade:${jade_version}")
         modRuntimeOnly("maven.modrinth:dye-depot:${dye_depot_version}")
         modRuntimeOnly("maven.modrinth:moonlight:${moonlight_lib_version}")
     }

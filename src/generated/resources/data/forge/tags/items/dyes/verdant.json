@@ -1,5 +1,8 @@
 {
   "values": [
-    "dye_depot:verdant_dye"
+    {
+      "id": "dye_depot:verdant_dye",
+      "required": false
+    }
   ]
 }

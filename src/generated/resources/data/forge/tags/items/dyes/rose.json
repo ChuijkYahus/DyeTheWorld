@@ -1,5 +1,8 @@
 {
   "values": [
-    "dye_depot:rose_dye"
+    {
+      "id": "dye_depot:rose_dye",
+      "required": false
+    }
   ]
 }

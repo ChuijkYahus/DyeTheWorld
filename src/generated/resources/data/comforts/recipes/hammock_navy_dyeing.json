@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "comforts:hammock_dyed",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/navy"
+    },
+    {
+      "tag": "comforts:hammocks"
+    }
+  ],
+  "result": {
+    "item": "comforts:hammock_navy"
+  }
+}

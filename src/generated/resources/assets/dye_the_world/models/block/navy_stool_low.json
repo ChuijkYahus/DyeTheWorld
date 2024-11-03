@@ -1,7 +1,7 @@
 {
   "parent": "another_furniture:block/template/stool_low",
   "textures": {
-    "side": "patchup:block/stool/navy_side",
-    "top": "patchup:block/stool/navy_top"
+    "side": "dye_the_world:block/another_furniture/stool/navy_side",
+    "top": "dye_the_world:block/another_furniture/stool/navy_top"
   }
 }

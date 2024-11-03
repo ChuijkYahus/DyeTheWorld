@@ -1,5 +1,8 @@
 {
   "values": [
-    "dye_depot:beige_dye"
+    {
+      "id": "dye_depot:beige_dye",
+      "required": false
+    }
   ]
 }

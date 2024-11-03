@@ -1,5 +1,8 @@
 {
   "values": [
-    "dye_depot:olive_dye"
+    {
+      "id": "dye_depot:olive_dye",
+      "required": false
+    }
   ]
 }

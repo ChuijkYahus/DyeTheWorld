@@ -1,13 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "dye_the_world:amber_sofa_dyeing"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_white_sofa": {
+    "has_dye_the_world:white_sofa": {
       "conditions": {
         "items": [
           {
@@ -18,11 +12,17 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dye_the_world:amber_sofa_dyeing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_white_sofa",
+      "has_dye_the_world:white_sofa",
       "has_the_recipe"
     ]
   ],

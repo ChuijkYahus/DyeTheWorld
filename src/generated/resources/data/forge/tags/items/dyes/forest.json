@@ -1,5 +1,8 @@
 {
   "values": [
-    "dye_depot:forest_dye"
+    {
+      "id": "dye_depot:forest_dye",
+      "required": false
+    }
   ]
 }

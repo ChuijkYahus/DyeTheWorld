@@ -24,3 +24,5 @@ fun <T : Any> Registry<T>.getOrThrow(id: ResourceLocation): T {
     val key = ResourceKey.create(key(), id)
     return getOrThrow(key)
 }
+
+fun String.createId(path: String) = ResourceLocation(this, path)
