@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_comforts:sleeping_bags": {
+    "has_sleeping_bags": {
       "conditions": {
         "items": [
           {
@@ -20,7 +20,7 @@
   },
   "requirements": [
     [
-      "has_comforts:sleeping_bags",
+      "has_sleeping_bags",
       "has_the_recipe"
     ]
   ],

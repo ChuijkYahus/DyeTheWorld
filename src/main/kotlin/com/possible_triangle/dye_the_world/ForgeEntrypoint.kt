@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.Mod
 @Mod(Constants.MOD_ID)
 object ForgeEntrypoint {
 
-    val REGISTRATE = KotlinRegistrate(Constants.MOD_ID)
+    val REGISTRATE = DyedRegistrate(Constants.MOD_ID)
 
     init {
         REGISTRATE.register()

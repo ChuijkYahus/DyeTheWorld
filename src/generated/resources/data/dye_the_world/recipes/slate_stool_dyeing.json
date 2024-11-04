@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "building",
-  "group": "stools",
+  "group": "curtains",
   "ingredients": [
     {
       "tag": "forge:dyes/slate"
     },
     {
-      "item": "another_furniture:white_stool"
+      "item": "another_furniture:white_curtain"
     }
   ],
   "result": {
