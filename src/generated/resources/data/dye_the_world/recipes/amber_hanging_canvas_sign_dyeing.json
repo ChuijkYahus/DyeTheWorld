@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "hanging_canvas_sign",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/amber"
+    },
+    {
+      "tag": "farmersdelight:hanging_canvas_signs"
+    }
+  ],
+  "result": {
+    "item": "dye_the_world:amber_hanging_canvas_sign"
+  }
+}

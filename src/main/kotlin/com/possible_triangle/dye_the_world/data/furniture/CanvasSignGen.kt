@@ -17,6 +17,12 @@ fun <T : Item, P> ItemBuilder<T, P>.canvasSignRecipes(dye: DyeColor) = recipe { 
     }
 }
 
+fun <T : Item, P> ItemBuilder<T, P>.hangingCanvasSignRecipes(dye: DyeColor) = recipe { context, provider ->
+    provider.dyeingRecipe(dye, ModTags.HANGING_CANVAS_SIGNS, context) {
+        group("hanging_canvas_sign")
+    }
+}
+
 fun <T : Item, P> ItemBuilder<T, P>.canvasSignItemModel() = model { context, provider ->
     provider.generated(context, Constants.MOD_ID.createId("item/$FARMERS_DELIGHT/${context.name}"))
 }

@@ -17,13 +17,26 @@ val jade_version: String by extra
 val farmers_delight_version: String by extra
 
 plugins {
-    id("com.possible-triangle.gradle") version("0.2.5")
+    id("com.possible-triangle.gradle") version ("0.2.5")
 }
 
 withKotlin()
 
 forge {
-    dataGen(listOf("dye_depot", "another_furniture", "supplementaries", "create", "comforts", "quark", "suppsquared"))
+    enableMixins()
+
+    dataGen(
+        existingMods = listOf(
+            "dye_depot",
+            "another_furniture",
+            "supplementaries",
+            "create",
+            "comforts",
+            "quark",
+            "suppsquared",
+            "farmersdelight"
+        )
+    )
 
     includesMod("com.tterrag.registrate:Registrate:${registrate_version}")
 }

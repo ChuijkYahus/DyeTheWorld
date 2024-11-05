@@ -8,6 +8,7 @@ import com.starfish_studios.another_furniture.registry.AFBlocks
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
+import net.minecraft.advancements.critereon.StatePropertiesPredicate
 import net.minecraft.core.Direction
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.ShapedRecipeBuilder
@@ -17,6 +18,11 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
+import net.minecraft.world.level.storage.loot.LootPool
+import net.minecraft.world.level.storage.loot.LootTable
+import net.minecraft.world.level.storage.loot.entries.LootItem
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue
 import net.minecraftforge.client.model.generators.ConfiguredModel
 
 fun <T : Item, P> ItemBuilder<T, P>.curtainRecipes(dye: DyeColor) = recipe { context, provider ->
@@ -40,11 +46,23 @@ fun <T : Block, P> BlockBuilder<T, P>.curtainBlockstate(dye: DyeColor) = blockst
     fun texture(suffix: String): ResourceLocation =
         Constants.MOD_ID.createId("block/$ANOTHER_FURNITURE/curtain2/${dye}$suffix")
 
-    provider.getVariantBuilder(context.get()).forAllStatesExcept({ state ->
+    provider.getVariantBuilder(context.get()).forAllStatesExcept(model@{ state ->
         val facing = state.getValue(CurtainBlock.FACING)
         val vertical = state.getValue(CurtainBlock.VERTICAL_CONNECTION_TYPE)
         val horizontal = state.getValue(CurtainBlock.HORIZONTAL_CONNECTION_TYPE)
-        val open = state.getValue(CurtainBlock.OPEN)
+
+        if (!state.getValue(CurtainBlock.OPEN)) {
+            val openState = if (vertical == Direction.UP) "top" else "bottom"
+            val suffix = "_closed_$openState"
+            val parent = ANOTHER_FURNITURE.createId("block/template/curtain$suffix")
+            val model = provider.models().withExistingParent("$dye$suffix", parent)
+                .texture("curtain", texture(suffix))
+
+            return@model ConfiguredModel.builder()
+                .modelFile(model)
+                .rotationY(facing.yRot)
+                .build()
+        }
 
         val suffixH = when (horizontal) {
             HorizontalConnectionType.LEFT -> "_left"
@@ -54,32 +72,25 @@ fun <T : Block, P> BlockBuilder<T, P>.curtainBlockstate(dye: DyeColor) = blockst
 
         val isMiddle = suffixH == "_middle"
 
+        if (isMiddle && vertical == Direction.DOWN) {
+            return@model ConfiguredModel.builder()
+                .modelFile(provider.models().getExistingFile(ResourceLocation("block/air")))
+                .build()
+        }
+
         val suffixV = if (isMiddle) "" else when (vertical) {
             Direction.UP -> "_top"
             else -> "_bottom"
         }
 
-        val openSuffix = if (open || isMiddle) "" else "_closed"
-
-        val connectionSuffix =
-            if (open || isMiddle) suffixH + suffixV
-            else suffixV
-        val suffix = openSuffix + connectionSuffix
-
-        if (isMiddle && open && vertical == Direction.DOWN) {
-            return@forAllStatesExcept ConfiguredModel.builder()
-                .modelFile(provider.models().getExistingFile(ResourceLocation("block/air")))
-                .build()
-        }
-
+        val suffix = suffixH + suffixV
         val parent = ANOTHER_FURNITURE.createId("block/template/curtain$suffix")
 
         val texturePrefix =
             if (isMiddle) "_middle"
-            else if (open) "_open"
-            else "_closed"
+            else "_open"
 
-        val model = provider.models().withExistingParent(context.name + suffix, parent)
+        val model = provider.models().withExistingParent("${context.name}$suffix", parent)
             .texture("curtain", texture(texturePrefix + suffixV))
 
         ConfiguredModel.builder()
@@ -92,4 +103,17 @@ fun <T : Block, P> BlockBuilder<T, P>.curtainBlockstate(dye: DyeColor) = blockst
 fun <T : Item, P> ItemBuilder<T, P>.curtainItemModel(dye: DyeColor) = model { context, provider ->
     provider.withExistingParent(context.name, ANOTHER_FURNITURE.createId("item/template/curtain"))
         .texture("all", Constants.MOD_ID.createId("block/$ANOTHER_FURNITURE/curtain/$dye"))
+}
+
+fun <T : Block, P> BlockBuilder<T, P>.curtainLoot() = loot { tables, block ->
+    val isTop = LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(
+        StatePropertiesPredicate.Builder.properties().hasProperty(CurtainBlock.VERTICAL_CONNECTION_TYPE, Direction.UP)
+    )
+
+    val pool = tables.applyExplosionDecay(block, LootPool.lootPool())
+        .add(LootItem.lootTableItem(block))
+        .setRolls(ConstantValue.exactly(1.0F))
+        .`when`(isTop)
+
+    tables.add(block, LootTable.lootTable().withPool(pool))
 }

@@ -1,7 +1,9 @@
 package com.possible_triangle.dye_the_world
 
 import com.tterrag.registrate.builders.BlockBuilder
+import com.tterrag.registrate.builders.BlockEntityBuilder
 import com.tterrag.registrate.builders.ItemBuilder
+import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.core.Direction
 import net.minecraft.core.Registry
 import net.minecraft.resources.ResourceKey
@@ -9,6 +11,7 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraftforge.fml.ModList
 
 fun isLoad(modid: String) = ModList.get().isLoaded(modid)
@@ -39,4 +42,10 @@ fun <T : Block, P> BlockBuilder<T, P>.withItem(
     return item(factory)
         .apply(block)
         .build()
+}
+
+fun <T : BlockEntity, P> BlockEntityBuilder<T, P>.validBlocks(
+    values: Collection<NonNullSupplier<out Block>>,
+): BlockEntityBuilder<T, P> {
+    return validBlocks(*values.toTypedArray())
 }

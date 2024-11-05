@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.possible_triangle.dye_the_world.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "refmap": "${mod_id}.refmap.json",
+  "mixins": ["DyeHelperMixin", "LampBlockMixin"],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

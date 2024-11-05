@@ -30,6 +30,7 @@ object ForgeEntrypoint {
         if (DatagenModLoader.isRunningDataGen()) {
             DyedSupplementaries.register()
             DyedComforts.register()
+            DyedCreate.register()
         }
     }
 

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "dye_the_world:beige_lamp"
         }
       ],
       "rolls": 1.0

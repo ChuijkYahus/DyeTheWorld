@@ -27,6 +27,7 @@ val DEPOT_DYES = listOf(
 //    Constants.Mods.ANOTHER_FURNITURE to DEPOT_DYES,
 //)
 
+@Suppress("UNUSED_PARAMETER")
 fun dyesFor(modid: String): List<DyeColor> {
     return DEPOT_DYES.mapNotNull { DyeColor.byName(it, null) }
     //return DYES[modid]?.mapNotNull { DyeColor.byName(it, null) } ?: emptyList()

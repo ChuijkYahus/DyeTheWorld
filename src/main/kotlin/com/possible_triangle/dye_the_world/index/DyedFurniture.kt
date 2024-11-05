@@ -3,6 +3,7 @@ package com.possible_triangle.dye_the_world.index
 import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.furniture.*
+import com.possible_triangle.dye_the_world.data.translation
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.withItem
 import com.starfish_studios.another_furniture.block.*
@@ -66,6 +67,7 @@ object DyedFurniture {
             .initialProperties { AFBlocks.RED_CURTAIN.get() }
             .tag(AFBlockTags.CURTAINS)
             .curtainBlockstate(dye)
+            .curtainLoot()
             .withItem {
                 curtainRecipes(dye)
                 curtainItemModel(dye)
@@ -93,6 +95,8 @@ object DyedFurniture {
     val LAMPS_CONNECTORS = dyesFor(ANOTHER_FURNITURE).associateWith { dye ->
         REGISTRATE.`object`("${dye}_lamp_connector")
             .block { LampConnectorBlock(dye, it) }
+            .lang("${dye.translation} Lamp")
+            .loot { t, b -> t.dropOther(b, LAMPS[dye]!!.get()) }
             .initialProperties { AFBlocks.RED_LAMP_CONNECTOR.get() }
             .lampConnectorBlockstate(dye)
             .register()
