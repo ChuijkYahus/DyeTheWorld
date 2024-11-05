@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "curtains",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/tan"
+    },
+    {
+      "item": "another_furniture:white_curtain"
+    }
+  ],
+  "result": {
+    "item": "dye_the_world:tan_curtain"
+  }
+}

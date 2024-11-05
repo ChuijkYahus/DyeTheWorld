@@ -22,7 +22,7 @@ import net.minecraftforge.client.model.generators.ConfiguredModel
 import net.minecraftforge.client.model.generators.ModelBuilder
 
 fun <T : Item, P> ItemBuilder<T, P>.sofaRecipes(dye: DyeColor) = recipe { context, provider ->
-    val wool = blockByDye(dye, "wool")
+    val wool = dye.blockOf("wool")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get(), 3)
         .group("sofas")
         .pattern("#W ")
@@ -33,8 +33,10 @@ fun <T : Item, P> ItemBuilder<T, P>.sofaRecipes(dye: DyeColor) = recipe { contex
         .define('/', Items.STICK)
         .unlockedBy("has_wool", RegistrateRecipeProvider.has(wool))
         .save(provider)
-}.dyeingRecipe(dye, AFBlocks.WHITE_SOFA) {
-    group("sofas")
+
+    provider.dyeingRecipe(dye, AFBlocks.WHITE_SOFA.get(), context) {
+        group("sofas")
+    }
 }
 
 fun <T : Block, P> BlockBuilder<T, P>.sofaBlockstate(dye: DyeColor) = blockstate { context, provider ->

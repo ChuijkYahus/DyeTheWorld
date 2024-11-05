@@ -5,10 +5,7 @@ import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.furniture.*
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.withItem
-import com.starfish_studios.another_furniture.block.CurtainBlock
-import com.starfish_studios.another_furniture.block.SofaBlock
-import com.starfish_studios.another_furniture.block.StoolBlock
-import com.starfish_studios.another_furniture.block.TallStoolBlock
+import com.starfish_studios.another_furniture.block.*
 import com.starfish_studios.another_furniture.registry.AFBlockTags
 import com.starfish_studios.another_furniture.registry.AFBlocks
 import com.starfish_studios.another_furniture.registry.AFItemTags
@@ -50,7 +47,7 @@ object DyedFurniture {
     }
 
     val TALL_STOOLS = dyesFor(ANOTHER_FURNITURE).associateWith { dye ->
-        REGISTRATE.`object`("${dye}_stool")
+        REGISTRATE.`object`("${dye}_tall_stool")
             .block(::TallStoolBlock)
             .initialProperties { AFBlocks.RED_TALL_STOOL.get() }
             .tag(AFBlockTags.TALL_STOOLS)
@@ -64,7 +61,7 @@ object DyedFurniture {
     }
 
     val CURTAINS = dyesFor(ANOTHER_FURNITURE).associateWith { dye ->
-        REGISTRATE.`object`("${dye}_stool")
+        REGISTRATE.`object`("${dye}_curtain")
             .block(::CurtainBlock)
             .initialProperties { AFBlocks.RED_CURTAIN.get() }
             .tag(AFBlockTags.CURTAINS)
@@ -75,6 +72,29 @@ object DyedFurniture {
                 tag(AFItemTags.CURTAINS)
                 tab(TAB)
             }
+            .register()
+    }
+
+    val LAMPS = dyesFor(ANOTHER_FURNITURE).associateWith { dye ->
+        REGISTRATE.`object`("${dye}_lamp")
+            .block { LampBlock(dye, it) }
+            .initialProperties { AFBlocks.RED_LAMP.get() }
+            .tag(AFBlockTags.LAMPS)
+            .lampBlockstate(dye)
+            .withItem {
+                lampRecipes(dye)
+                lampItemModel(dye)
+                tag(AFItemTags.LAMPS)
+                tab(TAB)
+            }
+            .register()
+    }
+
+    val LAMPS_CONNECTORS = dyesFor(ANOTHER_FURNITURE).associateWith { dye ->
+        REGISTRATE.`object`("${dye}_lamp_connector")
+            .block { LampConnectorBlock(dye, it) }
+            .initialProperties { AFBlocks.RED_LAMP_CONNECTOR.get() }
+            .lampConnectorBlockstate(dye)
             .register()
     }
 

@@ -1,11 +1,10 @@
 package com.possible_triangle.dye_the_world
 
 import com.tterrag.registrate.AbstractRegistrate
-import com.tterrag.registrate.builders.ItemBuilder
+import com.tterrag.registrate.providers.DataGenContext
 import com.tterrag.registrate.providers.ProviderType
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import com.tterrag.registrate.providers.RegistrateTagsProvider
-import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.ShapelessRecipeBuilder
@@ -17,7 +16,6 @@ import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.level.ItemLike
 import net.minecraftforge.eventbus.api.IEventBus
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
-import java.util.function.Supplier
 
 class DyedRegistrate(modid: String) : AbstractRegistrate<DyedRegistrate>(modid) {
 
@@ -46,36 +44,39 @@ class DyedRegistrate(modid: String) : AbstractRegistrate<DyedRegistrate>(modid) 
 
 }
 
-private fun <T : Item, P> ItemBuilder<T, P>.dyeingRecipe(
+private fun RegistrateRecipeProvider.dyeingRecipe(
     dye: DyeColor,
-    from: () -> Ingredient,
+    from: Ingredient,
+    to: DataGenContext<*, out ItemLike>,
     build: ShapelessRecipeBuilder.() -> Unit = { },
-) = recipe { context, provider ->
-    ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, context.get())
+) {
+    ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, to.get())
         .apply(build)
         .requires(dye.tag)
-        .requires(from())
-        .save(provider, provider.safeId(context.get()).withSuffix("_dyeing"))
+        .requires(from)
+        .save(this, safeId(to.get()).withSuffix("_dyeing"))
 }
 
-fun <T : Item, P> ItemBuilder<T, P>.dyeingRecipe(
+fun RegistrateRecipeProvider.dyeingRecipe(
     dye: DyeColor,
-    from: Supplier<out ItemLike>,
+    from: ItemLike,
+    to: DataGenContext<*, out ItemLike>,
     build: ShapelessRecipeBuilder.() -> Unit = { },
-): ItemBuilder<T, P> {
-    return dyeingRecipe(dye, { Ingredient.of(from.get()) }, {
-        val name = BuiltInRegistries.ITEM.getKey(from.get().asItem()).path
-        unlockedBy("has_${name}", RegistrateRecipeProvider.has(from.get()))
+) {
+    val name = safeId(from).path
+    dyeingRecipe(dye, Ingredient.of(from), to) {
+        unlockedBy("has_${name}", RegistrateRecipeProvider.has(from))
         build()
-    })
+    }
 }
 
-fun <T : Item, P> ItemBuilder<T, P>.dyeingRecipe(
+fun RegistrateRecipeProvider.dyeingRecipe(
     dye: DyeColor,
     from: TagKey<Item>,
+    to: DataGenContext<*, out ItemLike>,
     build: ShapelessRecipeBuilder.() -> Unit = { },
-): ItemBuilder<T, P> {
-    return dyeingRecipe(dye, { Ingredient.of(from) }) {
+) {
+    dyeingRecipe(dye, Ingredient.of(from), to) {
         unlockedBy("has_${from.location.path}", RegistrateRecipeProvider.has(from))
         build()
     }

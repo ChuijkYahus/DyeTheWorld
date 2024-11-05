@@ -1,0 +1,92 @@
+package com.possible_triangle.dye_the_world.data.furniture
+
+import com.possible_triangle.dye_the_world.*
+import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
+import com.starfish_studios.another_furniture.block.LampBlock
+import com.starfish_studios.another_furniture.registry.AFBlocks
+import com.tterrag.registrate.builders.BlockBuilder
+import com.tterrag.registrate.builders.ItemBuilder
+import com.tterrag.registrate.providers.RegistrateRecipeProvider
+import net.minecraft.data.recipes.RecipeCategory
+import net.minecraft.data.recipes.ShapedRecipeBuilder
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.item.DyeColor
+import net.minecraft.world.item.Item
+import net.minecraft.world.item.Items
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.state.properties.BlockStateProperties
+import net.minecraftforge.client.model.generators.ConfiguredModel
+
+fun <T : Item, P> ItemBuilder<T, P>.lampRecipes(dye: DyeColor) = recipe { context, provider ->
+    val wool = dye.blockOf("wool")
+    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get(), 3)
+        .group("lamps")
+        .pattern(" W ")
+        .pattern("WTW")
+        .pattern(" / ")
+        .define('W', wool)
+        .define('T', Items.TORCH)
+        .define('/', Items.STICK)
+        .unlockedBy("has_wool", RegistrateRecipeProvider.has(wool))
+        .save(provider)
+
+    provider.dyeingRecipe(dye, AFBlocks.WHITE_LAMP.get(), context) {
+        group("lamps")
+    }
+}
+
+fun <T : Block, P> BlockBuilder<T, P>.lampBlockstate(dye: DyeColor) = blockstate { context, provider ->
+    fun texture(suffix: String): ResourceLocation =
+        Constants.MOD_ID.createId("block/$ANOTHER_FURNITURE/lamp/${dye}_$suffix")
+
+    provider.getVariantBuilder(context.get()).forAllStatesExcept({ state ->
+        val facing = state.getValue(LampBlock.FACING)
+
+        val lit = state.getValue(LampBlock.LIT)
+        val base = state.getValue(LampBlock.BASE)
+
+        val wall = facing.axis.isHorizontal
+        val litSuffix = if (lit) "" else "_off"
+        val baseSuffix = if (base || wall) "" else "_tall_top"
+        val typeSuffix = if (wall) "_wall" else ""
+        val suffix = typeSuffix + baseSuffix + litSuffix
+
+        val parent = ANOTHER_FURNITURE.createId("block/template/lamp$suffix")
+
+        val model = provider.models()
+            .withExistingParent("block/$ANOTHER_FURNITURE/lamp/${dye}$suffix", parent)
+            .texture("top", texture("top"))
+            .texture("side", texture("side"))
+
+        ConfiguredModel.builder()
+            .rotationY(facing.yRot)
+            .modelFile(model)
+            .build()
+    }, BlockStateProperties.WATERLOGGED)
+}
+
+fun <T : Block, P> BlockBuilder<T, P>.lampConnectorBlockstate(dye: DyeColor) = blockstate { context, provider ->
+    fun texture(suffix: String): ResourceLocation =
+        Constants.MOD_ID.createId("block/$ANOTHER_FURNITURE/lamp/${dye}_$suffix")
+
+    provider.getVariantBuilder(context.get()).forAllStatesExcept({ state ->
+        val base = state.getValue(LampBlock.BASE)
+
+        val suffix = if (base) "base" else "middle"
+
+        val parent = ANOTHER_FURNITURE.createId("block/template/lamp_tall_$suffix")
+
+        val model = provider.models()
+            .withExistingParent("block/$ANOTHER_FURNITURE/lamp_tall/${dye}_$suffix", parent)
+            .texture("top", texture("top"))
+            .texture("side", texture("side"))
+
+        ConfiguredModel.builder()
+            .modelFile(model)
+            .build()
+    }, BlockStateProperties.WATERLOGGED)
+}
+
+fun <T : Item, P> ItemBuilder<T, P>.lampItemModel(dye: DyeColor) = model { context, provider ->
+    provider.withExistingParent(context.name, Constants.MOD_ID.createId("block/$ANOTHER_FURNITURE/lamp/$dye"))
+}

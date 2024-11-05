@@ -7,12 +7,12 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_white_curtain": {
+    "has_white_stool": {
       "conditions": {
         "items": [
           {
             "items": [
-              "another_furniture:white_curtain"
+              "another_furniture:white_stool"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_white_curtain",
+      "has_white_stool",
       "has_the_recipe"
     ]
   ],

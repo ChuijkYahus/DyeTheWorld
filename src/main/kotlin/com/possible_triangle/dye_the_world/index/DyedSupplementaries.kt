@@ -101,7 +101,7 @@ private fun <T : Item, P> ItemBuilder<T, P>.sackItemModel() = model { context, p
 }
 
 private fun <T : Item, P> ItemBuilder<T, P>.flagRecipe(dye: DyeColor) = recipe { context, provider ->
-    val wool = blockByDye(dye, "wool")
+    val wool = dye.blockOf("wool")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get())
         .pattern("###")
         .pattern("###")

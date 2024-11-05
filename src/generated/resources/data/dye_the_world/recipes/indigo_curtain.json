@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "curtains",
+  "key": {
+    "#": {
+      "item": "dye_depot:indigo_wool"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "//",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "item": "dye_the_world:indigo_curtain"
+  },
+  "show_notification": true
+}

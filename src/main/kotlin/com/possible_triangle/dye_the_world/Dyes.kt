@@ -23,15 +23,13 @@ val DEPOT_DYES = listOf(
     "verdant"
 )
 
-private val DYES = mapOf(
-    Constants.Mods.ANOTHER_FURNITURE to DEPOT_DYES,
-    Constants.Mods.SUPPLEMENTARIES to DEPOT_DYES,
-    Constants.Mods.CREATE to DEPOT_DYES,
-    Constants.Mods.COMFORTS to DEPOT_DYES,
-)
+//private val DYES = mapOf(
+//    Constants.Mods.ANOTHER_FURNITURE to DEPOT_DYES,
+//)
 
 fun dyesFor(modid: String): List<DyeColor> {
-    return DYES[modid]?.mapNotNull { DyeColor.byName(it, null) } ?: emptyList()
+    return DEPOT_DYES.mapNotNull { DyeColor.byName(it, null) }
+    //return DYES[modid]?.mapNotNull { DyeColor.byName(it, null) } ?: emptyList()
 }
 
 val DyeColor.namespace: String
@@ -40,7 +38,7 @@ val DyeColor.namespace: String
         else "minecraft"
     }
 
-fun blockByDye(dye: DyeColor, type: String): Block {
-    val id = dye.namespace.createId("${dye}_$type")
+fun DyeColor.blockOf(type: String): Block {
+    val id = namespace.createId("${this}_$type")
     return BuiltInRegistries.BLOCK.getOrThrow(id)
 }

@@ -85,7 +85,7 @@ private fun <T : BaseComfortsBlock, P> BlockBuilder<T, P>.clothBlockState() = bl
 }
 
 private fun <T : Item, P> ItemBuilder<T, P>.hammockRecipe(dye: DyeColor) = recipe { context, provider ->
-    val wool = blockByDye(dye, "wool")
+    val wool = dye.blockOf("wool")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get())
         .pattern("S/S")
         .pattern("S#S")
@@ -96,18 +96,22 @@ private fun <T : Item, P> ItemBuilder<T, P>.hammockRecipe(dye: DyeColor) = recip
         .unlockedBy("has_wool", RegistrateRecipeProvider.has(wool))
         .group("comforts:sleeping_bags")
         .save(provider)
-}.dyeingRecipe(dye, DyedTags.Items.HAMMOCKS) {
-    group("comforts:hammock_dyed")
+
+    provider.dyeingRecipe(dye, DyedTags.Items.HAMMOCKS, context) {
+        group("comforts:hammock_dyed")
+    }
 }
 
 private fun <T : Item, P> ItemBuilder<T, P>.sleepingBagRecipe(dye: DyeColor) = recipe { context, provider ->
-    val wool = blockByDye(dye, "wool")
+    val wool = dye.blockOf("wool")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get())
         .pattern("###")
         .define('#', wool)
         .unlockedBy("has_wool", RegistrateRecipeProvider.has(wool))
         .group("comforts:hammocks")
         .save(provider)
-}.dyeingRecipe(dye, DyedTags.Items.SLEEPING_BAGS) {
-    group("comforts:sleeping_bags_dyed")
+
+    provider.dyeingRecipe(dye, DyedTags.Items.SLEEPING_BAGS, context) {
+        group("comforts:sleeping_bags_dyed")
+    }
 }

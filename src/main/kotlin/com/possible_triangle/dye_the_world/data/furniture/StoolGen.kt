@@ -2,7 +2,7 @@ package com.possible_triangle.dye_the_world.data.furniture
 
 import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
-import com.possible_triangle.dye_the_world.blockByDye
+import com.possible_triangle.dye_the_world.blockOf
 import com.possible_triangle.dye_the_world.createId
 import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.starfish_studios.another_furniture.block.StoolBlock
@@ -21,7 +21,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraftforge.client.model.generators.ConfiguredModel
 
 fun <T : Item, P> ItemBuilder<T, P>.stoolRecipes(dye: DyeColor) = recipe { context, provider ->
-    val wool = blockByDye(dye, "wool")
+    val wool = dye.blockOf("wool")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get(), 3)
         .group("stools")
         .pattern("#W#")
@@ -31,8 +31,10 @@ fun <T : Item, P> ItemBuilder<T, P>.stoolRecipes(dye: DyeColor) = recipe { conte
         .define('/', Items.STICK)
         .unlockedBy("has_wool", RegistrateRecipeProvider.has(wool))
         .save(provider)
-}.dyeingRecipe(dye, AFBlocks.WHITE_STOOL) {
-    group("stools")
+
+    provider.dyeingRecipe(dye, AFBlocks.WHITE_STOOL.get(), context) {
+        group("stools")
+    }
 }
 
 fun <T : Block, P> BlockBuilder<T, P>.stoolBlockstate(dye: DyeColor) = blockstate { context, provider ->
@@ -54,7 +56,7 @@ fun <T : Block, P> BlockBuilder<T, P>.stoolBlockstate(dye: DyeColor) = blockstat
 }
 
 fun <T : Item, P> ItemBuilder<T, P>.tallStoolRecipes(dye: DyeColor) = recipe { context, provider ->
-    val wool = blockByDye(dye, "wool")
+    val wool = dye.blockOf("wool")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get(), 3)
         .group("tall_stools")
         .pattern("#W#")
@@ -65,8 +67,10 @@ fun <T : Item, P> ItemBuilder<T, P>.tallStoolRecipes(dye: DyeColor) = recipe { c
         .define('/', Items.STICK)
         .unlockedBy("has_wool", RegistrateRecipeProvider.has(wool))
         .save(provider)
-}.dyeingRecipe(dye, AFBlocks.WHITE_TALL_STOOL) {
-    group("tall_stools")
+
+    provider.dyeingRecipe(dye, AFBlocks.WHITE_TALL_STOOL.get(), context) {
+        group("tall_stools")
+    }
 }
 
 fun <T : Block, P> BlockBuilder<T, P>.tallStoolBlockstate(dye: DyeColor) = blockstate { context, provider ->

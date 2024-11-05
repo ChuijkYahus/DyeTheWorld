@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "lamps",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/coral"
+    },
+    {
+      "item": "another_furniture:white_lamp"
+    }
+  ],
+  "result": {
+    "item": "dye_the_world:coral_lamp"
+  }
+}

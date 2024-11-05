@@ -1,9 +1,7 @@
 package com.possible_triangle.dye_the_world
 
 import com.possible_triangle.dye_the_world.data.generateDyeTags
-import com.possible_triangle.dye_the_world.index.DyedComforts
-import com.possible_triangle.dye_the_world.index.DyedFurniture
-import com.possible_triangle.dye_the_world.index.DyedSupplementaries
+import com.possible_triangle.dye_the_world.index.*
 import net.minecraftforge.data.loading.DatagenModLoader
 import net.minecraftforge.fml.common.Mod
 
@@ -19,6 +17,14 @@ object ForgeEntrypoint {
 
         ifLoaded(Constants.Mods.ANOTHER_FURNITURE) {
             DyedFurniture.register()
+        }
+
+        ifLoaded(Constants.Mods.QUARK) {
+            DyedQuark.register()
+        }
+
+        ifLoaded(Constants.Mods.FARMERS_DELIGHT) {
+            DyedDelight.register()
         }
 
         if (DatagenModLoader.isRunningDataGen()) {

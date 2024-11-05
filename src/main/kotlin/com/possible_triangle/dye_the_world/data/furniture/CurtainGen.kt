@@ -20,7 +20,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraftforge.client.model.generators.ConfiguredModel
 
 fun <T : Item, P> ItemBuilder<T, P>.curtainRecipes(dye: DyeColor) = recipe { context, provider ->
-    val wool = blockByDye(dye, "wool")
+    val wool = dye.blockOf("wool")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get(), 3)
         .group("curtains")
         .pattern("//")
@@ -30,8 +30,10 @@ fun <T : Item, P> ItemBuilder<T, P>.curtainRecipes(dye: DyeColor) = recipe { con
         .define('/', Items.STICK)
         .unlockedBy("has_wool", RegistrateRecipeProvider.has(wool))
         .save(provider)
-}.dyeingRecipe(dye, AFBlocks.WHITE_CURTAIN) {
-    group("curtains")
+
+    provider.dyeingRecipe(dye, AFBlocks.WHITE_CURTAIN.get(), context) {
+        group("curtains")
+    }
 }
 
 fun <T : Block, P> BlockBuilder<T, P>.curtainBlockstate(dye: DyeColor) = blockstate { context, provider ->
@@ -44,29 +46,41 @@ fun <T : Block, P> BlockBuilder<T, P>.curtainBlockstate(dye: DyeColor) = blockst
         val horizontal = state.getValue(CurtainBlock.HORIZONTAL_CONNECTION_TYPE)
         val open = state.getValue(CurtainBlock.OPEN)
 
-        val suffixV = when (vertical) {
-            Direction.UP -> "_top"
-            else -> "_bottom"
-        }
-
         val suffixH = when (horizontal) {
-            HorizontalConnectionType.LEFT -> "${suffixV}_left"
-            HorizontalConnectionType.RIGHT -> "${suffixV}_right"
+            HorizontalConnectionType.LEFT -> "_left"
+            HorizontalConnectionType.RIGHT -> "_right"
             else -> "_middle"
         }
 
         val isMiddle = suffixH == "_middle"
-        val suffix = suffixH + if (open || isMiddle) "" else "_closed"
 
-        if (isMiddle && open) {
+        val suffixV = if (isMiddle) "" else when (vertical) {
+            Direction.UP -> "_top"
+            else -> "_bottom"
+        }
+
+        val openSuffix = if (open || isMiddle) "" else "_closed"
+
+        val connectionSuffix =
+            if (open || isMiddle) suffixH + suffixV
+            else suffixV
+        val suffix = openSuffix + connectionSuffix
+
+        if (isMiddle && open && vertical == Direction.DOWN) {
             return@forAllStatesExcept ConfiguredModel.builder()
                 .modelFile(provider.models().getExistingFile(ResourceLocation("block/air")))
                 .build()
         }
 
         val parent = ANOTHER_FURNITURE.createId("block/template/curtain$suffix")
+
+        val texturePrefix =
+            if (isMiddle) "_middle"
+            else if (open) "_open"
+            else "_closed"
+
         val model = provider.models().withExistingParent(context.name + suffix, parent)
-            .texture("curtain", texture(suffix))
+            .texture("curtain", texture(texturePrefix + suffixV))
 
         ConfiguredModel.builder()
             .rotationY(facing.yRot)
