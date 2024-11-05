@@ -5,7 +5,7 @@ import com.possible_triangle.dye_the_world.Constants.Mods.QUARK
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.blockOf
 import com.possible_triangle.dye_the_world.createId
-import com.possible_triangle.dye_the_world.data.translation
+import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.dyesFor
 import com.tterrag.registrate.util.DataIngredient
 import net.minecraft.data.recipes.RecipeCategory

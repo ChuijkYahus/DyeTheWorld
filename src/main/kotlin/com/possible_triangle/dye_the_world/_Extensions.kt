@@ -9,10 +9,12 @@ import net.minecraft.core.Registry
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.BlockItem
+import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraftforge.fml.ModList
+import java.util.*
 
 fun isLoad(modid: String) = ModList.get().isLoaded(modid)
 
@@ -49,3 +51,5 @@ fun <T : BlockEntity, P> BlockEntityBuilder<T, P>.validBlocks(
 ): BlockEntityBuilder<T, P> {
     return validBlocks(*values.toTypedArray())
 }
+
+val DyeColor.translation get() = serializedName.replaceFirstChar { it.uppercase(Locale.ROOT) }

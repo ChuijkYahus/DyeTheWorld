@@ -6,7 +6,7 @@ import com.possible_triangle.dye_the_world.data.furniture.canvasSignBlockstate
 import com.possible_triangle.dye_the_world.data.furniture.canvasSignItemModel
 import com.possible_triangle.dye_the_world.data.furniture.canvasSignRecipes
 import com.possible_triangle.dye_the_world.data.furniture.hangingCanvasSignRecipes
-import com.possible_triangle.dye_the_world.data.translation
+import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.`object`.block.DyedCeilingHangingCanvasSignBlock
 import com.possible_triangle.dye_the_world.`object`.block.DyedStandingCanvasSignBlock

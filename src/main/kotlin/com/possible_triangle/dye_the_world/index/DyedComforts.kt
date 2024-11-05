@@ -5,7 +5,7 @@ import com.illusivesoulworks.comforts.common.block.HammockBlock
 import com.illusivesoulworks.comforts.common.block.SleepingBagBlock
 import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.COMFORTS
-import com.possible_triangle.dye_the_world.data.translation
+import com.possible_triangle.dye_the_world.translation
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.providers.RegistrateRecipeProvider

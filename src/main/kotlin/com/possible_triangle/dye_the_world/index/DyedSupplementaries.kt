@@ -3,7 +3,7 @@ package com.possible_triangle.dye_the_world.index
 import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES
 import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES_SQUARED
-import com.possible_triangle.dye_the_world.data.translation
+import com.possible_triangle.dye_the_world.translation
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.providers.RegistrateRecipeProvider

@@ -42,6 +42,12 @@ class DyedRegistrate(modid: String) : AbstractRegistrate<DyedRegistrate>(modid) 
         }
     }
 
+    fun <T : Any> TagKey<T>.addOptional(tag: TagKey<T>) {
+        setDataGenerator(tag.location.path, registry, provider()) {
+            it.addTag(this).addOptionalTag(tag)
+        }
+    }
+
 }
 
 private fun RegistrateRecipeProvider.dyeingRecipe(

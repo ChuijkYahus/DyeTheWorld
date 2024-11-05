@@ -3,7 +3,7 @@ package com.possible_triangle.dye_the_world.index
 import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.furniture.*
-import com.possible_triangle.dye_the_world.data.translation
+import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.withItem
 import com.starfish_studios.another_furniture.block.*
