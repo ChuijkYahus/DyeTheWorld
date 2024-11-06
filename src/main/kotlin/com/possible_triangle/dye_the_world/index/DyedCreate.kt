@@ -2,10 +2,7 @@ package com.possible_triangle.dye_the_world.index
 
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE
 import com.possible_triangle.dye_the_world.DyedRegistrate
-import com.possible_triangle.dye_the_world.data.furniture.nixieTubeBlockstate
-import com.possible_triangle.dye_the_world.data.furniture.seatBlockstate
-import com.possible_triangle.dye_the_world.data.furniture.toolboxBlockstate
-import com.possible_triangle.dye_the_world.data.furniture.toolboxLoot
+import com.possible_triangle.dye_the_world.data.*
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.withItem
@@ -40,6 +37,7 @@ object DyedCreate {
             .toolboxBlockstate(dye)
             .withItem {
                 tag(AllTags.AllItemTags.TOOLBOXES.tag)
+                toolboxItemModel(dye)
             }
             .register()
     }

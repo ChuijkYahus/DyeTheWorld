@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/teal"
+    },
+    {
+      "item": "suppsquared:gold_candle_holder"
+    }
+  ],
+  "result": {
+    "item": "suppsquared:gold_candle_holder_teal"
+  }
+}

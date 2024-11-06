@@ -9,7 +9,7 @@ import com.simibubi.create.AllTags
 import net.minecraft.tags.BlockTags
 import net.minecraft.world.item.DyeColor
 
-fun DyedRegistrate.generateDyeTags() {
+fun DyedRegistrate.generateTags() {
     DEPOT_DYES.forEach { color ->
         val dye = DyeColor.byName(color, null) ?: throw NullPointerException("missing dye $color")
 
@@ -22,5 +22,4 @@ fun DyedRegistrate.generateDyeTags() {
     }
 
     BlockTags.MINEABLE_WITH_AXE.addOptional(AllTags.AllBlockTags.SEATS.tag)
-
 }

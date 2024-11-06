@@ -2,10 +2,10 @@ package com.possible_triangle.dye_the_world.index
 
 import com.possible_triangle.dye_the_world.Constants.Mods.FARMERS_DELIGHT
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
-import com.possible_triangle.dye_the_world.data.furniture.canvasSignBlockstate
-import com.possible_triangle.dye_the_world.data.furniture.canvasSignItemModel
-import com.possible_triangle.dye_the_world.data.furniture.canvasSignRecipes
-import com.possible_triangle.dye_the_world.data.furniture.hangingCanvasSignRecipes
+import com.possible_triangle.dye_the_world.data.canvasSignBlockstate
+import com.possible_triangle.dye_the_world.data.canvasSignItemModel
+import com.possible_triangle.dye_the_world.data.canvasSignRecipes
+import com.possible_triangle.dye_the_world.data.hangingCanvasSignRecipes
 import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.`object`.block.DyedCeilingHangingCanvasSignBlock

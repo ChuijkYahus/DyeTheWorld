@@ -73,9 +73,10 @@ repositories {
 dependencies {
     modImplementation("com.simibubi.create:create-${mc_version}:${create_version}:slim") { isTransitive = false }
     modImplementation("com.jozufozu.flywheel:flywheel-forge-${mc_version}:${flywheel_version}")
-    modImplementation("maven.modrinth:supplementaries:${supplementaries_version}")
     modImplementation("maven.modrinth:another-furniture:${another_furniture_version}")
     modImplementation("maven.modrinth:comforts:${comforts_version}")
+    modImplementation("maven.modrinth:moonlight:${moonlight_lib_version}")
+    modImplementation("maven.modrinth:supplementaries:${supplementaries_version}")
     modImplementation("maven.modrinth:supplementaries-squared:${supplementaries_squared_version}")
     modImplementation("maven.modrinth:quark:${quark_version}")
     modImplementation("maven.modrinth:zeta:${zeta_version}")
@@ -85,7 +86,6 @@ dependencies {
         modRuntimeOnly("mezz.jei:jei-${mc_version}-forge:${jei_version}")
         modRuntimeOnly("maven.modrinth:jade:${jade_version}")
         modRuntimeOnly("maven.modrinth:dye-depot:${dye_depot_version}")
-        modRuntimeOnly("maven.modrinth:moonlight:${moonlight_lib_version}")
     }
 }
 

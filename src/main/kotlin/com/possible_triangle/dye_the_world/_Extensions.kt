@@ -1,7 +1,9 @@
 package com.possible_triangle.dye_the_world
 
+import com.tterrag.registrate.AbstractRegistrate
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.BlockEntityBuilder
+import com.tterrag.registrate.builders.Builder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.core.Direction
@@ -13,6 +15,10 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
+import net.minecraft.world.level.block.state.BlockState
+import net.minecraft.world.level.block.state.properties.BlockStateProperties
+import net.minecraftforge.client.model.generators.BlockStateProvider
+import net.minecraftforge.client.model.generators.ConfiguredModel
 import net.minecraftforge.fml.ModList
 import java.util.*
 
@@ -53,3 +59,19 @@ fun <T : BlockEntity, P> BlockEntityBuilder<T, P>.validBlocks(
 }
 
 val DyeColor.translation get() = serializedName.replaceFirstChar { it.uppercase(Locale.ROOT) }
+
+val <R, T : R, P, S : Builder<R, T, P, S>> Builder<R, T, P, S>.namespace
+    get(): String {
+        return when (val parent = parent) {
+            is AbstractRegistrate<*> -> parent.modid
+            is Builder<*, *, *, *> -> parent.namespace
+            else -> error("Unable to locate registrate ancestor")
+        }
+    }
+
+fun BlockStateProvider.createVariant(
+    block: NonNullSupplier<out Block>,
+    mapper: (BlockState) -> ConfiguredModel.Builder<*>,
+) {
+    getVariantBuilder(block.get()).forAllStatesExcept({ mapper(it).build() }, BlockStateProperties.WATERLOGGED)
+}
