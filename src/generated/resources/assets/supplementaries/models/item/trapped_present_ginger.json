@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/present_opened_ginger",
+  "overrides": [
+    {
+      "model": "supplementaries:block/present_closed_ginger",
+      "predicate": {
+        "supplementaries:packed": 1.0
+      }
+    }
+  ]
+}

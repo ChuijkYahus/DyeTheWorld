@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/trapped_present_closed_template",
+  "textures": {
+    "3": "dye_the_world:block/supplementaries/present/trapped_mint",
+    "bottom": "dye_the_world:block/supplementaries/present/bottom_mint",
+    "inside": "dye_the_world:block/supplementaries/present/inside_mint",
+    "particle": "dye_the_world:block/supplementaries/present/side_mint",
+    "side": "dye_the_world:block/supplementaries/present/side_mint",
+    "top": "dye_the_world:block/supplementaries/present/top_mint"
+  }
+}

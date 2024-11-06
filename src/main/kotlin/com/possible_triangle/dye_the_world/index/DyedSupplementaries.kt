@@ -8,7 +8,9 @@ import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.withItem
 import net.mehvahdjukaar.supplementaries.common.block.blocks.CandleHolderBlock
+import net.mehvahdjukaar.supplementaries.common.block.blocks.PresentBlock
 import net.mehvahdjukaar.supplementaries.common.block.blocks.SackBlock
+import net.mehvahdjukaar.supplementaries.common.block.blocks.TrappedPresentBlock
 import net.minecraft.world.level.block.Block
 
 object DyedSupplementaries {
@@ -66,6 +68,28 @@ object DyedSupplementaries {
             .withItem {
                 candleHolderItemModel(dye)
                 goldCandleHolderRecipe(dye)
+            }
+            .register()
+    }
+
+    val PRESENTS = DYES.associateWith { dye ->
+        REGISTRATE.`object`("present_${dye}")
+            .block { PresentBlock(dye, it) }
+            .lang("${dye.translation} Present")
+            .presentBlockstate(dye, false)
+            .withItem {
+                presentItemModel(dye, false)
+            }
+            .register()
+    }
+
+    val TRAPPED_PRESENTS = DYES.associateWith { dye ->
+        REGISTRATE.`object`("trapped_present_${dye}")
+            .block { TrappedPresentBlock(dye, it) }
+            .lang("Trapped ${dye.translation} Present")
+            .presentBlockstate(dye, true)
+            .withItem {
+                presentItemModel(dye, false)
             }
             .register()
     }

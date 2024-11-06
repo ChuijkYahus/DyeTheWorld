@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/present_opened_template",
+  "textures": {
+    "3": "dye_the_world:block/supplementaries/present/trapped_aqua",
+    "bottom": "dye_the_world:block/supplementaries/present/bottom_aqua",
+    "inside": "dye_the_world:block/supplementaries/present/inside_aqua",
+    "particle": "dye_the_world:block/supplementaries/present/side_aqua",
+    "side": "dye_the_world:block/supplementaries/present/side_aqua",
+    "top": "dye_the_world:block/supplementaries/present/top_aqua"
+  }
+}

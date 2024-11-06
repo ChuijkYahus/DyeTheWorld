@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "packed=false": {
+      "model": "supplementaries:block/present_opened_ginger"
+    },
+    "packed=true": {
+      "model": "supplementaries:block/present_closed_ginger"
+    }
+  }
+}

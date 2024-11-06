@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/present_opened_slate",
+  "overrides": [
+    {
+      "model": "supplementaries:block/present_closed_slate",
+      "predicate": {
+        "supplementaries:packed": 1.0
+      }
+    }
+  ]
+}

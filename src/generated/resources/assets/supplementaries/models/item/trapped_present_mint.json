@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/present_opened_mint",
+  "overrides": [
+    {
+      "model": "supplementaries:block/present_closed_mint",
+      "predicate": {
+        "supplementaries:packed": 1.0
+      }
+    }
+  ]
+}

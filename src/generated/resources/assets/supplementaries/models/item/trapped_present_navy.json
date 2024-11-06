@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/present_opened_navy",
+  "overrides": [
+    {
+      "model": "supplementaries:block/present_closed_navy",
+      "predicate": {
+        "supplementaries:packed": 1.0
+      }
+    }
+  ]
+}

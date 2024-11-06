@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "packed=false": {
+      "model": "supplementaries:block/trapped_present_opened_olive"
+    },
+    "packed=true": {
+      "model": "supplementaries:block/trapped_present_closed_olive"
+    }
+  }
+}

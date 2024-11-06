@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/trapped_present_opened_template",
+  "textures": {
+    "3": "dye_the_world:block/supplementaries/present/trapped_beige",
+    "bottom": "dye_the_world:block/supplementaries/present/bottom_beige",
+    "inside": "dye_the_world:block/supplementaries/present/inside_beige",
+    "particle": "dye_the_world:block/supplementaries/present/side_beige",
+    "side": "dye_the_world:block/supplementaries/present/side_beige",
+    "top": "dye_the_world:block/supplementaries/present/top_beige"
+  }
+}

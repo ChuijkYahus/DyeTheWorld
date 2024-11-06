@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
+import net.minecraft.world.level.block.state.properties.Property
 import net.minecraftforge.client.model.generators.BlockStateProvider
 import net.minecraftforge.client.model.generators.ConfiguredModel
 import net.minecraftforge.fml.ModList
@@ -71,7 +72,8 @@ val <R, T : R, P, S : Builder<R, T, P, S>> Builder<R, T, P, S>.namespace
 
 fun BlockStateProvider.createVariant(
     block: NonNullSupplier<out Block>,
+    vararg ignored: Property<*>,
     mapper: (BlockState) -> ConfiguredModel.Builder<*>,
 ) {
-    getVariantBuilder(block.get()).forAllStatesExcept({ mapper(it).build() }, BlockStateProperties.WATERLOGGED)
+    getVariantBuilder(block.get()).forAllStatesExcept({ mapper(it).build() }, BlockStateProperties.WATERLOGGED, *ignored)
 }

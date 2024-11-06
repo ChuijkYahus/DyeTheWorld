@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/present_closed_template",
+  "textures": {
+    "3": "dye_the_world:block/supplementaries/present/trapped_tan",
+    "bottom": "dye_the_world:block/supplementaries/present/bottom_tan",
+    "inside": "dye_the_world:block/supplementaries/present/inside_tan",
+    "particle": "dye_the_world:block/supplementaries/present/side_tan",
+    "side": "dye_the_world:block/supplementaries/present/side_tan",
+    "top": "dye_the_world:block/supplementaries/present/top_tan"
+  }
+}

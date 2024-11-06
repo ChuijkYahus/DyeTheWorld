@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/present_opened_template",
+  "textures": {
+    "3": "dye_the_world:block/supplementaries/present/trapped_maroon",
+    "bottom": "dye_the_world:block/supplementaries/present/bottom_maroon",
+    "inside": "dye_the_world:block/supplementaries/present/inside_maroon",
+    "particle": "dye_the_world:block/supplementaries/present/side_maroon",
+    "side": "dye_the_world:block/supplementaries/present/side_maroon",
+    "top": "dye_the_world:block/supplementaries/present/top_maroon"
+  }
+}

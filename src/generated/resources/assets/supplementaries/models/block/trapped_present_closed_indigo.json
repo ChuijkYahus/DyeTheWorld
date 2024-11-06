@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/trapped_present_closed_template",
+  "textures": {
+    "3": "dye_the_world:block/supplementaries/present/trapped_indigo",
+    "bottom": "dye_the_world:block/supplementaries/present/bottom_indigo",
+    "inside": "dye_the_world:block/supplementaries/present/inside_indigo",
+    "particle": "dye_the_world:block/supplementaries/present/side_indigo",
+    "side": "dye_the_world:block/supplementaries/present/side_indigo",
+    "top": "dye_the_world:block/supplementaries/present/top_indigo"
+  }
+}

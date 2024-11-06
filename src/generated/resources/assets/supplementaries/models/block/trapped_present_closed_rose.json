@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/trapped_present_closed_template",
+  "textures": {
+    "3": "dye_the_world:block/supplementaries/present/trapped_rose",
+    "bottom": "dye_the_world:block/supplementaries/present/bottom_rose",
+    "inside": "dye_the_world:block/supplementaries/present/inside_rose",
+    "particle": "dye_the_world:block/supplementaries/present/side_rose",
+    "side": "dye_the_world:block/supplementaries/present/side_rose",
+    "top": "dye_the_world:block/supplementaries/present/top_rose"
+  }
+}

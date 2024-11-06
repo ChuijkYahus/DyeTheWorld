@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/present_opened_tan",
+  "overrides": [
+    {
+      "model": "supplementaries:block/present_closed_tan",
+      "predicate": {
+        "supplementaries:packed": 1.0
+      }
+    }
+  ]
+}

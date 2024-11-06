@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/trapped_present_closed_template",
+  "textures": {
+    "3": "dye_the_world:block/supplementaries/present/trapped_coral",
+    "bottom": "dye_the_world:block/supplementaries/present/bottom_coral",
+    "inside": "dye_the_world:block/supplementaries/present/inside_coral",
+    "particle": "dye_the_world:block/supplementaries/present/side_coral",
+    "side": "dye_the_world:block/supplementaries/present/side_coral",
+    "top": "dye_the_world:block/supplementaries/present/top_coral"
+  }
+}

@@ -9,6 +9,7 @@ import com.possible_triangle.dye_the_world.withItem
 import com.simibubi.create.AllBlocks
 import com.simibubi.create.AllTags
 import com.simibubi.create.content.contraptions.actors.seat.SeatBlock
+import com.simibubi.create.content.contraptions.bearing.SailBlock
 import com.simibubi.create.content.equipment.toolbox.ToolboxBlock
 import com.simibubi.create.content.redstone.nixieTube.NixieTubeBlock
 import net.minecraft.tags.BlockTags
@@ -51,6 +52,15 @@ object DyedCreate {
             .withItem {
                 tag(AllTags.AllItemTags.SEATS.tag)
             }
+            .register()
+    }
+
+    val SAILS = dyesFor(CREATE).associateWith { dye ->
+        REGISTRATE.`object`("${dye}_sail")
+            .block { SailBlock.withCanvas(it, dye) }
+            .lang("${dye.translation} Sail")
+            .tag(AllTags.AllBlockTags.WINDMILL_SAILS.tag)
+            .sailBlockstate()
             .register()
     }
 

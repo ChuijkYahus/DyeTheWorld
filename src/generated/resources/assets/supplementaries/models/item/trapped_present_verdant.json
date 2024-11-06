@@ -1,0 +1,11 @@
+{
+  "parent": "supplementaries:block/present_opened_verdant",
+  "overrides": [
+    {
+      "model": "supplementaries:block/present_closed_verdant",
+      "predicate": {
+        "supplementaries:packed": 1.0
+      }
+    }
+  ]
+}
