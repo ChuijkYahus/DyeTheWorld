@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "minecraft:white_terracotta"
+  },
+  "result": "dye_the_world:white_terracotta_slab"
+}

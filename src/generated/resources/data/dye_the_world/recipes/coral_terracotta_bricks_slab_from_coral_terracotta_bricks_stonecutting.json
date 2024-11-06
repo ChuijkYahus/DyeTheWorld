@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "dye_the_world:coral_terracotta_bricks"
-  },
-  "result": "dye_the_world:coral_terracotta_bricks_slab"
-}
