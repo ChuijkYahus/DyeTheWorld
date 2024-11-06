@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "dye_depot:amber_terracotta"
+  },
+  "result": "dye_the_world:amber_terracotta_stairs"
+}

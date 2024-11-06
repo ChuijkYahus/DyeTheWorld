@@ -15,6 +15,8 @@ val quark_version: String by extra
 val zeta_version: String by extra
 val jade_version: String by extra
 val farmers_delight_version: String by extra
+val clayworks_version: String by extra
+val blueprint_version: String by extra
 
 plugins {
     id("com.possible-triangle.gradle") version ("0.2.5")
@@ -81,6 +83,8 @@ dependencies {
     modImplementation("maven.modrinth:quark:${quark_version}")
     modImplementation("maven.modrinth:zeta:${zeta_version}")
     modImplementation("maven.modrinth:farmers-delight:${farmers_delight_version}")
+    modImplementation("maven.modrinth:clayworks:${clayworks_version}")
+    modImplementation("maven.modrinth:blueprint:${blueprint_version}")
 
     if (!env.isCI) {
         modRuntimeOnly("mezz.jei:jei-${mc_version}-forge:${jei_version}")

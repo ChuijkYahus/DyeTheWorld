@@ -1,5 +1,6 @@
 package com.possible_triangle.dye_the_world
 
+import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.block.Block
@@ -42,4 +43,8 @@ val DyeColor.namespace: String
 fun DyeColor.blockOf(type: String): Block {
     val id = namespace.createId("${this}_$type")
     return BuiltInRegistries.BLOCK.getOrThrow(id)
+}
+
+fun dyedBlockMap(type: String): Map<DyeColor, NonNullSupplier<Block>> {
+    return DyeColor.entries.associateWith { NonNullSupplier { it.blockOf(type) } }
 }

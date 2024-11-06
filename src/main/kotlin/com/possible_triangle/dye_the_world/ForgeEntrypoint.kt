@@ -23,6 +23,10 @@ object ForgeEntrypoint {
             DyedQuark.register()
         }
 
+        ifLoaded(Constants.Mods.CLAYWORKS) {
+            DyedClayworks.register()
+        }
+
         ifLoaded(Constants.Mods.FARMERS_DELIGHT) {
             DyedDelight.register()
         }

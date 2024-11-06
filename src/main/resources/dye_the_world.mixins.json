@@ -4,7 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "refmap": "${mod_id}.refmap.json",
-  "mixins": ["DyeHelperMixin", "LampBlockMixin"],
+  "mixins": ["DyeHelperMixin", "LampBlockMixin", "LampConnectorBlockMixin"],
   "injectors": {
     "defaultRequire": 1
   }

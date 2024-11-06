@@ -15,6 +15,9 @@ object DyedTags {
 
     object Blocks {
         val FLAGS = TagKey.create(Registries.BLOCK, Mods.SUPPLEMENTARIES.createId("flags"))
+        val QUARK_STOOLS = TagKey.create(Registries.BLOCK, Mods.QUARK.createId("stools"))
+        val FRAMED_GLASSES = TagKey.create(Registries.BLOCK, Mods.QUARK.createId("framed_glasses"))
+        val FRAMED_GLASS_PANES = TagKey.create(Registries.BLOCK, Mods.QUARK.createId("framed_glass_panes"))
     }
 
 }

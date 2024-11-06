@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "dye_depot:block/indigo_terracotta",
+    "side": "dye_depot:block/indigo_terracotta",
+    "top": "dye_depot:block/indigo_terracotta"
+  }
+}

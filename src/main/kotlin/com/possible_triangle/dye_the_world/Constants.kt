@@ -13,6 +13,7 @@ object Constants {
         const val COMFORTS = "comforts"
         const val QUARK = "quark"
         const val FARMERS_DELIGHT = "farmersdelight"
+        const val CLAYWORKS = "clayworks"
     }
 
 }
