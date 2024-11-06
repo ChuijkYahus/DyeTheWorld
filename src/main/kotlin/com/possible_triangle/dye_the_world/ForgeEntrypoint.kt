@@ -31,6 +31,10 @@ object ForgeEntrypoint {
             DyedDelight.register()
         }
 
+        ifLoaded(Constants.Mods.ALEXS_CAVES) {
+            DyedCaves.register()
+        }
+
         if (DatagenModLoader.isRunningDataGen()) {
             // These are blocks & Items which are automatically added for all dye colors, included modded ones.
             // Therefore, they only lack assets & data files, which have to be generated, but do not need to be registered.

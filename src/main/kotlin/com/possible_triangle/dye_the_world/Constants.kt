@@ -14,6 +14,7 @@ object Constants {
         const val QUARK = "quark"
         const val FARMERS_DELIGHT = "farmersdelight"
         const val CLAYWORKS = "clayworks"
+        const val ALEXS_CAVES = "alexscaves"
     }
 
 }
