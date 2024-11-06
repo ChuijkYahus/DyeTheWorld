@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "dye_depot:navy_terracotta"
+  },
+  "result": "dye_the_world:navy_shingles_slab"
+}

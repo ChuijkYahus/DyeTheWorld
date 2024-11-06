@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "dye_depot:mint_terracotta"
+  },
+  "result": "dye_the_world:chiseled_mint_terracotta_bricks"
+}

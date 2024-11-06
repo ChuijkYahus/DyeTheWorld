@@ -45,6 +45,6 @@ fun DyeColor.blockOf(type: String): Block {
     return BuiltInRegistries.BLOCK.getOrThrow(id)
 }
 
-fun dyedBlockMap(type: String): Map<DyeColor, NonNullSupplier<Block>> {
-    return DyeColor.entries.associateWith { NonNullSupplier { it.blockOf(type) } }
+fun dyedBlockMap(modid: String, type: String): Map<DyeColor, NonNullSupplier<Block>> {
+    return dyesFor(modid).associateWith { NonNullSupplier { it.blockOf(type) } }
 }

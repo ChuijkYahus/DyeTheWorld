@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "dye_depot:slate_terracotta"
+  },
+  "result": "dye_the_world:slate_terracotta_brick_slab"
+}

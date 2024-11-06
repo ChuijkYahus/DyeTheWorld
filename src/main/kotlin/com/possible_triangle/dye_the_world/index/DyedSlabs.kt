@@ -1,15 +1,14 @@
 package com.possible_triangle.dye_the_world.index
 
 import com.possible_triangle.dye_the_world.DyedRegistrate
+import com.possible_triangle.dye_the_world.asIngredient
 import com.possible_triangle.dye_the_world.createId
-import com.possible_triangle.dye_the_world.data.slabRecipes
-import com.possible_triangle.dye_the_world.data.stairRecipes
 import com.possible_triangle.dye_the_world.namespace
 import com.possible_triangle.dye_the_world.withItem
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.util.nullness.NonNullSupplier
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.data.recipes.RecipeCategory.BUILDING_BLOCKS
 import net.minecraft.tags.BlockTags
 import net.minecraft.tags.ItemTags
 import net.minecraft.world.item.BlockItem
@@ -18,6 +17,7 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.SlabBlock
 import net.minecraft.world.level.block.StairBlock
+import net.minecraft.world.level.block.WallBlock
 
 fun DyedRegistrate.createSlabs(
     from: Map<DyeColor, NonNullSupplier<Block>>,
@@ -38,7 +38,7 @@ fun DyedRegistrate.createSlabs(
             tab(CreativeModeTabs.COLORED_BLOCKS)
             tab(CreativeModeTabs.BUILDING_BLOCKS)
             tag(ItemTags.SLABS)
-            slabRecipes { base.get() }
+            recipe { c, p -> p.slab(base.asIngredient(), BUILDING_BLOCKS, c, null, true) }
             modifyItem(dye)
         }
         .apply { modifyBlock(dye) }
@@ -64,7 +64,37 @@ fun DyedRegistrate.createStairs(
             tab(CreativeModeTabs.COLORED_BLOCKS)
             tab(CreativeModeTabs.BUILDING_BLOCKS)
             tag(ItemTags.STAIRS)
-            stairRecipes { base.get() }
+            recipe { c, p -> p.stairs(base.asIngredient(), BUILDING_BLOCKS, c, null, true) }
+            modifyItem(dye)
+        }
+        .apply { modifyBlock(dye) }
+        .register()
+}
+
+fun DyedRegistrate.createWalls(
+    from: Map<DyeColor, NonNullSupplier<Block>>,
+    name: String,
+    modifyBlock: BlockBuilder<WallBlock, DyedRegistrate>.(DyeColor) -> Unit = {},
+    modifyItem: ItemBuilder<BlockItem, BlockBuilder<WallBlock, DyedRegistrate>>.(DyeColor) -> Unit = {},
+) = from.mapValues { (dye, base) ->
+    `object`("${dye}_${name}_wall")
+        .block(::WallBlock)
+        .initialProperties(base)
+        .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+        .tag(BlockTags.WALLS)
+        .blockstate { c, p ->
+            val texture = dye.namespace.createId("block/${dye}_${name}")
+            p.wallBlock(c.get(), texture)
+        }
+        .withItem {
+            tab(CreativeModeTabs.COLORED_BLOCKS)
+            tab(CreativeModeTabs.BUILDING_BLOCKS)
+            tag(ItemTags.WALLS)
+            recipe { c, p -> p.wall(base.asIngredient(), BUILDING_BLOCKS, c) }
+            model { c, p ->
+                val texture = dye.namespace.createId("block/${dye}_${name}")
+                p.wallInventory(c.name, texture)
+            }
             modifyItem(dye)
         }
         .apply { modifyBlock(dye) }

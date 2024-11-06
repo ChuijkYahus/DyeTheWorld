@@ -37,13 +37,13 @@ class DyedRegistrate(modid: String) : AbstractRegistrate<DyedRegistrate>(modid) 
     }
 
     fun <T : Any> TagKey<T>.addOptional(id: ResourceLocation) {
-        setDataGenerator(id.path, registry, provider()) {
+        addDataGenerator(provider()) {
             it.addTag(this).addOptional(id)
         }
     }
 
     fun <T : Any> TagKey<T>.addOptional(tag: TagKey<T>) {
-        setDataGenerator(tag.location.path, registry, provider()) {
+        addDataGenerator(provider()) {
             it.addTag(this).addOptionalTag(tag)
         }
     }

@@ -6,7 +6,6 @@ import com.possible_triangle.dye_the_world.data.canvasSignBlockstate
 import com.possible_triangle.dye_the_world.data.canvasSignItemModel
 import com.possible_triangle.dye_the_world.data.canvasSignRecipes
 import com.possible_triangle.dye_the_world.data.hangingCanvasSignRecipes
-import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.`object`.block.DyedCeilingHangingCanvasSignBlock
 import com.possible_triangle.dye_the_world.`object`.block.DyedStandingCanvasSignBlock
@@ -14,10 +13,14 @@ import com.possible_triangle.dye_the_world.`object`.block.DyedWallCanvasSignBloc
 import com.possible_triangle.dye_the_world.`object`.block.DyedWallHangingCanvasSignBlock
 import com.possible_triangle.dye_the_world.`object`.block.entity.DyedCanvasSignBlockEntity
 import com.possible_triangle.dye_the_world.`object`.block.entity.DyedHangingCanvasSignBlockEntity
+import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.validBlocks
 import com.possible_triangle.dye_the_world.withItem
 import com.tterrag.registrate.util.nullness.NonNullFunction
 import com.tterrag.registrate.util.nullness.NonNullSupplier
+import net.minecraft.core.registries.Registries
+import net.minecraft.resources.ResourceKey
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.SignItem
@@ -28,6 +31,9 @@ import vectorwing.farmersdelight.common.registry.ModBlocks
 import vectorwing.farmersdelight.common.tag.ModTags
 
 object DyedDelight {
+
+    private val TAB =
+        ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation(FARMERS_DELIGHT, FARMERS_DELIGHT))
 
     val CANVAS_WALL_SIGNS = dyesFor(FARMERS_DELIGHT).associateWith { dye ->
         REGISTRATE.`object`("${dye}_canvas_wall_sign")
@@ -48,6 +54,7 @@ object DyedDelight {
                 tag(ModTags.CANVAS_SIGNS)
                 canvasSignRecipes(dye)
                 canvasSignItemModel()
+                tab(TAB)
             }
             .register()
     }
@@ -78,6 +85,7 @@ object DyedDelight {
                 tag(ModTags.HANGING_CANVAS_SIGNS)
                 hangingCanvasSignRecipes(dye)
                 canvasSignItemModel()
+                tab(TAB)
             }
             .register()
     }
@@ -103,3 +111,7 @@ private fun <T : Block> DyeColor.signItem(wallSigns: Map<DyeColor, NonNullSuppli
             wallSigns[this]!!.get()
         )
     }
+
+private val DARK_BACKGROUNDS = listOf("indigo", "ginger", "maroon", "navy", "rose", "teal", "verdant")
+
+val DyeColor.isDarkBackground get() = DARK_BACKGROUNDS.contains(serializedName)

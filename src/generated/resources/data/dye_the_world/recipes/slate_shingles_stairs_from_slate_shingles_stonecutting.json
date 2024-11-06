@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "dye_the_world:slate_shingles"
+  },
+  "result": "dye_the_world:slate_shingles_stairs"
+}

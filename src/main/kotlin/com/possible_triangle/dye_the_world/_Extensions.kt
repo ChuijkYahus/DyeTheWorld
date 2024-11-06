@@ -5,6 +5,7 @@ import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.BlockEntityBuilder
 import com.tterrag.registrate.builders.Builder
 import com.tterrag.registrate.builders.ItemBuilder
+import com.tterrag.registrate.util.DataIngredient
 import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.core.Direction
 import net.minecraft.core.Registry
@@ -13,6 +14,7 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
+import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
@@ -75,5 +77,13 @@ fun BlockStateProvider.createVariant(
     vararg ignored: Property<*>,
     mapper: (BlockState) -> ConfiguredModel.Builder<*>,
 ) {
-    getVariantBuilder(block.get()).forAllStatesExcept({ mapper(it).build() }, BlockStateProperties.WATERLOGGED, *ignored)
+    getVariantBuilder(block.get()).forAllStatesExcept(
+        { mapper(it).build() },
+        BlockStateProperties.WATERLOGGED,
+        *ignored
+    )
 }
+
+fun NonNullSupplier<out ItemLike>.asIngredient() = DataIngredient.items(this)
+
+fun <K, V> Map<V,K>.inverse() = map { it.value to it.key }.toMap()

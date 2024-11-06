@@ -4,8 +4,8 @@ import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.QUARK
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.*
-import com.tterrag.registrate.util.DataIngredient
 import net.minecraft.data.recipes.RecipeCategory
+import net.minecraft.data.recipes.RecipeCategory.BUILDING_BLOCKS
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.BlockTags
 import net.minecraft.world.item.CreativeModeTabs
@@ -27,6 +27,8 @@ object DyedQuark {
 
     private val DYES = dyesFor(QUARK)
 
+    private val TERRACOTTA = dyedBlockMap(QUARK, "terracotta")
+
     val GLASS_SHARDS = DYES.associateWith { dye ->
         REGISTRATE.`object`("${dye}_shard")
             .item(::Item)
@@ -34,7 +36,7 @@ object DyedQuark {
             .tag(DyedTags.Items.GLASS_SHARDS)
             .recipe { context, provider ->
                 val glass = dye.blockOf("stained_glass")
-                provider.square(DataIngredient.items(context), RecipeCategory.BUILDING_BLOCKS, { glass }, true)
+                provider.square(context.asIngredient(), RecipeCategory.BUILDING_BLOCKS, { glass }, true)
             }
             .model { context, provider ->
                 provider.generated(context, Constants.MOD_ID.createId("item/$QUARK/${context.name}"))
@@ -77,6 +79,41 @@ object DyedQuark {
             .register()
     }
 
+    val SHINGLES_SLABS = REGISTRATE.createSlabs(
+        SHINGLES,
+        "shingles",
+        modifyBlock = { dye ->
+            blockstate { c, p ->
+                val texture = Constants.MOD_ID.createId("block/$QUARK/${dye}_shingles")
+                val double = Constants.MOD_ID.createId("block/${dye}_shingles")
+                p.slabBlock(c.get(), double, texture)
+            }
+        },
+        modifyItem = { dye ->
+            recipe { context, provider ->
+                provider.slab(SHINGLES[dye]!!.asIngredient(), BUILDING_BLOCKS, context, null, true)
+                provider.stonecutting(TERRACOTTA[dye]!!.asIngredient(), BUILDING_BLOCKS, context, 2)
+            }
+        },
+    )
+
+    val SHINGLES_STAIRS = REGISTRATE.createStairs(
+        SHINGLES,
+        "shingles",
+        modifyBlock = { dye ->
+            blockstate { c, p ->
+                val texture = Constants.MOD_ID.createId("block/$QUARK/${dye}_shingles")
+                p.stairsBlock(c.get(), texture)
+            }
+        },
+        modifyItem = { dye ->
+            recipe { context, provider ->
+                provider.stairs(SHINGLES[dye]!!.asIngredient(), BUILDING_BLOCKS, context, null, true)
+                provider.stonecutting(TERRACOTTA[dye]!!.asIngredient(), BUILDING_BLOCKS, context)
+            }
+        },
+    )
+
     val FRAMED_GLASS = DYES.associateWith { dye ->
         REGISTRATE.`object`("${dye}_framed_glass")
             .block { ZetaGlassBlock(null, null, true, it) }
@@ -90,7 +127,7 @@ object DyedQuark {
             .blockstate { c, p ->
                 p.simpleBlock(
                     c.get(),
-                    p.models().cubeAll(c.name, Constants.MOD_ID.createId("block/quark/${dye}_framed_glass"))
+                    p.models().cubeAll(c.name, Constants.MOD_ID.createId("block/$QUARK/${dye}_framed_glass"))
                         .translucent()
                 )
             }
@@ -118,7 +155,7 @@ object DyedQuark {
             .blockstate { c, p ->
                 p.paneBlockWithRenderType(
                     c.get(),
-                    Constants.MOD_ID.createId("block/quark/${dye}_framed_glass"),
+                    Constants.MOD_ID.createId("block/$QUARK/${dye}_framed_glass"),
                     QUARK.createId("block/framed_glass_pane_top"),
                     TRANSLUCENT,
                 )
@@ -126,7 +163,7 @@ object DyedQuark {
             .lang("${dye.translation} Framed Glass Pane")
             .withItem {
                 model { c, p ->
-                    p.generated(c, Constants.MOD_ID.createId("block/quark/${dye}_framed_glass")).translucent()
+                    p.generated(c, Constants.MOD_ID.createId("block/$QUARK/${dye}_framed_glass")).translucent()
                 }
                 tag(Tags.Items.GLASS_PANES)
                 tab(CreativeModeTabs.COLORED_BLOCKS)
