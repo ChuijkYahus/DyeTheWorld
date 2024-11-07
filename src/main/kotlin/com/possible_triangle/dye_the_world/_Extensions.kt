@@ -29,7 +29,7 @@ import java.util.*
 fun isLoad(modid: String) = ModList.get().isLoaded(modid)
 
 fun ifLoaded(modid: String, block: () -> Unit) {
-    if (isLoad(modid) || DatagenModLoader.isRunningDataGen()) block()
+    if (isLoad(modid)) block()
 }
 
 val Direction.yRot: Int

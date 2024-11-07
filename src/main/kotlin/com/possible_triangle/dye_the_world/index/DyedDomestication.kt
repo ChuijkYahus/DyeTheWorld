@@ -1,11 +1,11 @@
 package com.possible_triangle.dye_the_world.index
 
+import com.github.alexthe668.domesticationinnovation.server.block.PetBedBlock
 import com.possible_triangle.dye_the_world.Constants.Mods.DOMESTICATION_INNOVATION
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.petBedBlockstate
 import com.possible_triangle.dye_the_world.data.petBedRecipe
 import com.possible_triangle.dye_the_world.dyesFor
-import com.possible_triangle.dye_the_world.`object`.block.DummyPetBed
 import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.withItem
 import net.minecraft.tags.BlockTags
@@ -17,7 +17,7 @@ object DyedDomestication {
 
     val PET_BEDS = dyesFor(DOMESTICATION_INNOVATION).associateWith { dye ->
         REGISTRATE.`object`("pet_bed_${dye}")
-            .block(::DummyPetBed)
+            .block { PetBedBlock(dye.serializedName, dye) }
             .properties { it.strength(0.8F) }
             .properties { it.pushReaction(PushReaction.BLOCK) }
             .properties { it.noOcclusion() }
