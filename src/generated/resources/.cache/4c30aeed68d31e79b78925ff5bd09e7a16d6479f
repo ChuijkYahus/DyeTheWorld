@@ -1,0 +1,17 @@
+// 1.20.1	2024-11-07T11:50:49.8449049	Registrate Provider for dye_depot [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+df597f03decee9bc0bc66337309f37b06cc7b81d data/dye_depot/loot_tables/blocks/amber_stained_glass.json
+f54db00dccde1bf6b5524968832fb444228be696 data/dye_depot/loot_tables/blocks/aqua_stained_glass.json
+e5f14aa0055d03c67d2c9d1e5b3a566cfec3e9cc data/dye_depot/loot_tables/blocks/beige_stained_glass.json
+8546302ce86c8478e92527a1c8d6c42077ac03fe data/dye_depot/loot_tables/blocks/coral_stained_glass.json
+a828d2fc9f0628eae5e9b06b941897d5e72e0820 data/dye_depot/loot_tables/blocks/forest_stained_glass.json
+2a738ee7e198840e64fe2d9416cf5fa5a2b73d83 data/dye_depot/loot_tables/blocks/ginger_stained_glass.json
+56ee4aeba6e6317347255187a73bb5c9d0d96f34 data/dye_depot/loot_tables/blocks/indigo_stained_glass.json
+a34bf75ef8c94fad9cfdee1d3c58451e91ab9b5a data/dye_depot/loot_tables/blocks/maroon_stained_glass.json
+cf12923b70b4811585518709c62006fa4af171ab data/dye_depot/loot_tables/blocks/mint_stained_glass.json
+378667815ec65f58ce73bfb4ca2358aaf059d44f data/dye_depot/loot_tables/blocks/navy_stained_glass.json
+d530b0ba237fbd61cf37179af34243a18e81c758 data/dye_depot/loot_tables/blocks/olive_stained_glass.json
+52e0b2c92945f2230204246613598f0cf4643834 data/dye_depot/loot_tables/blocks/rose_stained_glass.json
+41a00d3e8719d69a47c39d8123ea8bbb6a885419 data/dye_depot/loot_tables/blocks/slate_stained_glass.json
+7b0596d66e592b0a89a6aeacfb106337b822e010 data/dye_depot/loot_tables/blocks/tan_stained_glass.json
+e10b1778220907eed94453397e6c97f3e7c8f68d data/dye_depot/loot_tables/blocks/teal_stained_glass.json
+0bf19e28cfbbcb75cfb202e83f79b223adfad9fe data/dye_depot/loot_tables/blocks/verdant_stained_glass.json

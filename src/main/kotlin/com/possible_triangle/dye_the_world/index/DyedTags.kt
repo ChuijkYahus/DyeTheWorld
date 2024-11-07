@@ -11,6 +11,7 @@ object DyedTags {
         val HAMMOCKS = TagKey.create(Registries.ITEM, Mods.COMFORTS.createId("hammocks"))
         val SLEEPING_BAGS = TagKey.create(Registries.ITEM, Mods.COMFORTS.createId("sleeping_bags"))
         val GLASS_SHARDS = TagKey.create(Registries.ITEM, Mods.QUARK.createId("shards"))
+        val PET_BEDS = TagKey.create(Registries.ITEM, Mods.DOMESTICATION_INNOVATION.createId("pet_beds"))
     }
 
     object Blocks {

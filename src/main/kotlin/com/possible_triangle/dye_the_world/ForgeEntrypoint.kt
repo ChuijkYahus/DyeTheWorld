@@ -1,5 +1,6 @@
 package com.possible_triangle.dye_the_world
 
+import com.possible_triangle.dye_the_world.data.generateGlassShardLoot
 import com.possible_triangle.dye_the_world.data.generateTags
 import com.possible_triangle.dye_the_world.index.*
 import net.minecraftforge.data.loading.DatagenModLoader
@@ -12,8 +13,6 @@ object ForgeEntrypoint {
 
     init {
         REGISTRATE.register()
-
-        REGISTRATE.generateTags()
 
         ifLoaded(Constants.Mods.ANOTHER_FURNITURE) {
             DyedFurniture.register()
@@ -35,10 +34,16 @@ object ForgeEntrypoint {
             DyedCaves.register()
         }
 
+        ifLoaded(Constants.Mods.DOMESTICATION_INNOVATION) {
+            DyedDomestication.register()
+        }
+
         if (DatagenModLoader.isRunningDataGen()) {
+            REGISTRATE.generateTags()
+            generateGlassShardLoot()
+
             // These are blocks & Items which are automatically added for all dye colors, included modded ones.
             // Therefore, they only lack assets & data files, which have to be generated, but do not need to be registered.
-
             DyedSupplementaries.register()
             DyedComforts.register()
             DyedCreate.register()

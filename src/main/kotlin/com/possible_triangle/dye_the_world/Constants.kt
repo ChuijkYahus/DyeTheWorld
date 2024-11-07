@@ -15,6 +15,7 @@ object Constants {
         const val FARMERS_DELIGHT = "farmersdelight"
         const val CLAYWORKS = "clayworks"
         const val ALEXS_CAVES = "alexscaves"
+        const val DOMESTICATION_INNOVATION = "domesticationinnovation"
     }
 
 }

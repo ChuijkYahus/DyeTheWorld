@@ -1,5 +1,21 @@
 {
   "values": [
+    "dye_the_world:pet_bed_amber",
+    "dye_the_world:pet_bed_aqua",
+    "dye_the_world:pet_bed_beige",
+    "dye_the_world:pet_bed_coral",
+    "dye_the_world:pet_bed_forest",
+    "dye_the_world:pet_bed_ginger",
+    "dye_the_world:pet_bed_indigo",
+    "dye_the_world:pet_bed_maroon",
+    "dye_the_world:pet_bed_mint",
+    "dye_the_world:pet_bed_navy",
+    "dye_the_world:pet_bed_olive",
+    "dye_the_world:pet_bed_rose",
+    "dye_the_world:pet_bed_slate",
+    "dye_the_world:pet_bed_tan",
+    "dye_the_world:pet_bed_teal",
+    "dye_the_world:pet_bed_verdant",
     {
       "id": "#create:seats",
       "required": false

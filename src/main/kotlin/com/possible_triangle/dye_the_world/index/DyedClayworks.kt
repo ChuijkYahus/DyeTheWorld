@@ -4,23 +4,19 @@ import com.google.common.base.Suppliers.memoize
 import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.CLAYWORKS
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
-import com.teamabnormals.blueprint.common.item.BEWLRBlockItem
-import com.teamabnormals.clayworks.client.DecoratedPotBlockEntityWithoutLevelRenderer
-import com.teamabnormals.clayworks.core.data.server.ClayworksLootTableProvider
+import com.possible_triangle.dye_the_world.data.createPotItem
+import com.possible_triangle.dye_the_world.data.potBlockstate
+import com.possible_triangle.dye_the_world.data.potItemModel
+import com.possible_triangle.dye_the_world.data.potLoot
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
-import net.minecraft.core.BlockPos
 import net.minecraft.data.recipes.RecipeCategory.BUILDING_BLOCKS
 import net.minecraft.data.recipes.ShapedRecipeBuilder
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.BlockTags
 import net.minecraft.world.item.CreativeModeTabs
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.DecoratedPotBlock
-import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity
-import net.minecraft.world.level.storage.loot.LootTable
-import java.util.concurrent.Callable
 
 object DyedClayworks {
 
@@ -147,32 +143,11 @@ object DyedClayworks {
             .initialProperties { Blocks.DECORATED_POT }
             .properties { it.mapColor(dye) }
             .lang("${dye.translation} Decorated Pot")
-            .blockstate { c, p ->
-                val model = p.models().getBuilder(c.name)
-                    .texture("particle", ResourceLocation(dye.namespace, "block/${dye}_terracotta"))
-                p.simpleBlock(c.get(), model)
-            }
-            .loot { tables, block ->
-                val table = LootTable.lootTable()
-                    .withPool(ClayworksLootTableProvider.ClayworksBlockLoot.createDynamicTrimDropPool())
-                    .withPool(ClayworksLootTableProvider.ClayworksBlockLoot.createDecoratedPotPool(block))
-                tables.add(block, table)
-            }
-            .withItem({ block, properties ->
-                BEWLRBlockItem(block, properties) {
-                    Callable {
-                        BEWLRBlockItem.LazyBEWLR { dispatcher, models ->
-                            DecoratedPotBlockEntityWithoutLevelRenderer(
-                                dispatcher, models, DecoratedPotBlockEntity(
-                                    BlockPos.ZERO, block.defaultBlockState()
-                                )
-                            )
-                        }
-                    }
-                }
-            }) {
+            .potBlockstate(dye)
+            .potLoot()
+            .withItem(::createPotItem) {
                 properties { it.stacksTo(1) }
-                model { c, p -> p.withExistingParent(c.name, ResourceLocation("item/decorated_pot")) }
+                potItemModel()
                 tab(CreativeModeTabs.COLORED_BLOCKS)
                 tab(CreativeModeTabs.FUNCTIONAL_BLOCKS)
             }

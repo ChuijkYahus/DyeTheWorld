@@ -22,13 +22,14 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.Property
 import net.minecraftforge.client.model.generators.BlockStateProvider
 import net.minecraftforge.client.model.generators.ConfiguredModel
+import net.minecraftforge.data.loading.DatagenModLoader
 import net.minecraftforge.fml.ModList
 import java.util.*
 
 fun isLoad(modid: String) = ModList.get().isLoaded(modid)
 
 fun ifLoaded(modid: String, block: () -> Unit) {
-    if (isLoad(modid)) block()
+    if (isLoad(modid) || DatagenModLoader.isRunningDataGen()) block()
 }
 
 val Direction.yRot: Int
