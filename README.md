@@ -11,6 +11,7 @@
 [![Version](https://cf.way2muchnoise.eu/versions/1135725.svg)][DOWNLOAD]
 [![Issues](https://img.shields.io/github/issues/PssbleTrngle/DyeTheWorld?label=Issues)][ISSUES]
 [![Modrinth](https://img.shields.io/modrinth/dt/NaUMeOvG?color=green&logo=modrinth&logoColor=green)][MODRINTH]
+[![Curseforge](https://img.shields.io/curseforge/dt/1135725?logo=curseforge)][CURSEFORGE]
 <!-- modrinth_exclude.end -->
 
 [![](https://img.shields.io/badge/🎨-ADDON%20FOR%20DYE%20DEPOT-tan?labelColor=gray&style=for-the-badge)][DYE_DEPOT]
