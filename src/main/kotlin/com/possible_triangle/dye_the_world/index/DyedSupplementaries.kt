@@ -1,5 +1,6 @@
 package com.possible_triangle.dye_the_world.index
 
+import com.possible_triangle.dye_the_world.Constants.Mods.AMENDMENTS
 import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES
 import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES_SQUARED
 import com.possible_triangle.dye_the_world.DyedRegistrate
@@ -11,6 +12,7 @@ import net.mehvahdjukaar.supplementaries.common.block.blocks.CandleHolderBlock
 import net.mehvahdjukaar.supplementaries.common.block.blocks.PresentBlock
 import net.mehvahdjukaar.supplementaries.common.block.blocks.SackBlock
 import net.mehvahdjukaar.supplementaries.common.block.blocks.TrappedPresentBlock
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.Block
 
 object DyedSupplementaries {
@@ -18,6 +20,7 @@ object DyedSupplementaries {
     private val DYES = dyesFor(SUPPLEMENTARIES)
 
     private val REGISTRATE = DyedRegistrate(SUPPLEMENTARIES)
+    private val REGISTRATE_AMENDMENTS = DyedRegistrate(AMENDMENTS)
     private val SQUARED_REGISTRATE = DyedRegistrate(SUPPLEMENTARIES_SQUARED)
 
     val SACKS = DYES.associateWith { dye ->
@@ -90,6 +93,18 @@ object DyedSupplementaries {
             .presentBlockstate(dye, true)
             .withItem {
                 presentItemModel(dye, false)
+            }
+            .register()
+    }
+
+    val CEILING_BANNERS = DYES.associateWith { dye ->
+        REGISTRATE_AMENDMENTS.`object`("ceiling_banner_${dye}")
+            .block(::Block)
+            .lang("${dye.translation} Banner")
+            .tag(DyedTags.Blocks.CEILING_BANNERS)
+            .blockstate { context, provider ->
+                val model = provider.models().getExistingFile(ResourceLocation("block/banner"))
+                provider.simpleBlock(context.get(), model)
             }
             .register()
     }

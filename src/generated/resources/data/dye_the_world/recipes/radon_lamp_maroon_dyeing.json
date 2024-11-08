@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "tag": "alexscaves:radon_lamps"
+    },
+    "D": {
+      "tag": "forge:dyes/maroon"
+    }
+  },
+  "pattern": [
+    "###",
+    "#D#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "dye_the_world:radon_lamp_maroon"
+  },
+  "show_notification": true
+}

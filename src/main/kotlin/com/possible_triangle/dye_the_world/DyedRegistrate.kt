@@ -7,6 +7,7 @@ import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import com.tterrag.registrate.providers.RegistrateTagsProvider
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.recipes.RecipeCategory
+import net.minecraft.data.recipes.ShapedRecipeBuilder
 import net.minecraft.data.recipes.ShapelessRecipeBuilder
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
@@ -83,6 +84,48 @@ fun RegistrateRecipeProvider.dyeingRecipe(
     build: ShapelessRecipeBuilder.() -> Unit = { },
 ) {
     dyeingRecipe(dye, Ingredient.of(from), to) {
+        unlockedBy("has_${from.location.path}", RegistrateRecipeProvider.has(from))
+        build()
+    }
+}
+
+fun RegistrateRecipeProvider.shapedDyeingRecipe(
+    dye: DyeColor,
+    from: Ingredient,
+    to: DataGenContext<*, out ItemLike>,
+    build: ShapedRecipeBuilder.() -> Unit = { },
+) {
+    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, to.get(), 8)
+        .pattern("###")
+        .pattern("#D#")
+        .pattern("###")
+        .define('#', from)
+        .define('D', dye.tag)
+        .unlockedBy("has_dye", RegistrateRecipeProvider.has(dye.tag))
+        .apply(build)
+        .save(this, safeId(to.get()).withSuffix("_dyeing"))
+}
+
+fun RegistrateRecipeProvider.shapedDyeingRecipe(
+    dye: DyeColor,
+    from: ItemLike,
+    to: DataGenContext<*, out ItemLike>,
+    build: ShapedRecipeBuilder.() -> Unit = { },
+) {
+    val name = safeId(from).path
+    shapedDyeingRecipe(dye, Ingredient.of(from), to) {
+        unlockedBy("has_${name}", RegistrateRecipeProvider.has(from))
+        build()
+    }
+}
+
+fun RegistrateRecipeProvider.shapedDyeingRecipe(
+    dye: DyeColor,
+    from: TagKey<Item>,
+    to: DataGenContext<*, out ItemLike>,
+    build: ShapedRecipeBuilder.() -> Unit = { },
+) {
+    shapedDyeingRecipe(dye, Ingredient.of(from), to) {
         unlockedBy("has_${from.location.path}", RegistrateRecipeProvider.has(from))
         build()
     }

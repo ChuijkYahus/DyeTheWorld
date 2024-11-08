@@ -11,7 +11,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_terracotta": {
+    "has_shingles": {
       "conditions": {
         "items": [
           {
@@ -32,8 +32,8 @@
   },
   "requirements": [
     [
-      "has_terracotta",
       "has_dye",
+      "has_shingles",
       "has_the_recipe"
     ]
   ],
