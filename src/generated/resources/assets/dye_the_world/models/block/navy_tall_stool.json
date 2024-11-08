@@ -1,6 +1,6 @@
 {
   "parent": "another_furniture:block/template/tall_stool",
   "textures": {
-    "top": "dye_the_world:block/another_furniture/stool/navy_top"
+    "top": "dye_the_world:block/another_furniture/tall_stool/navy_top"
   }
 }

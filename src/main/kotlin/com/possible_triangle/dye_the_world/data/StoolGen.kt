@@ -69,7 +69,7 @@ fun <T : Item, P> ItemBuilder<T, P>.tallStoolRecipes(dye: DyeColor) = recipe { c
 }
 
 fun <T : Block, P> BlockBuilder<T, P>.tallStoolBlockstate(dye: DyeColor) = blockstate { context, provider ->
-    fun texture(suffix: String) = Constants.MOD_ID.createId("block/$ANOTHER_FURNITURE/stool/${dye}_$suffix")
+    fun texture(suffix: String) = Constants.MOD_ID.createId("block/$ANOTHER_FURNITURE/tall_stool/${dye}_$suffix")
 
     val parent = ANOTHER_FURNITURE.createId("block/template/tall_stool")
     val model = provider.models().withExistingParent(context.name, parent)
