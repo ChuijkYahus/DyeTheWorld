@@ -5,7 +5,7 @@
 [CURSEFORGE]: https://www.curseforge.com/minecraft/mc-mods/dye-the-world
 [MODRINTH]: https://modrinth.com/mod/dye-the-world
 
-# Dye The World! <!-- modrinth_exclude.start --> <img src="https://raw.githubusercontent.com/PssbleTrngle/DyeTheWorld/1.20.x/src/main/resources/assets/dye-the-world/icon.png" align="right" height="128" />
+# Dye The World! <!-- modrinth_exclude.start --> <img src="https://raw.githubusercontent.com/PssbleTrngle/DyeTheWorld/1.20.x/src/main/resources/assets/dye_the_world/icon_transparent.png" align="right" height="128" />
 
 [![Release](https://img.shields.io/github/v/release/PssbleTrngle/DyeTheWorld?label=Version&sort=semver)][DOWNLOAD]
 [![Version](https://cf.way2muchnoise.eu/versions/1135725.svg)][DOWNLOAD]
