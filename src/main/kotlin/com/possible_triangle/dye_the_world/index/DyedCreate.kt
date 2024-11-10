@@ -11,6 +11,7 @@ import com.simibubi.create.AllTags
 import com.simibubi.create.content.contraptions.actors.seat.SeatBlock
 import com.simibubi.create.content.contraptions.bearing.SailBlock
 import com.simibubi.create.content.equipment.toolbox.ToolboxBlock
+import com.simibubi.create.content.kinetics.crank.ValveHandleBlock
 import com.simibubi.create.content.redstone.nixieTube.NixieTubeBlock
 import net.minecraft.tags.BlockTags
 
@@ -18,7 +19,9 @@ object DyedCreate {
 
     private val REGISTRATE = DyedRegistrate(CREATE)
 
-    val NIXIE_TUBES = dyesFor(CREATE).associateWith { dye ->
+    private val DYES = dyesFor(CREATE)
+
+    val NIXIE_TUBES = DYES.associateWith { dye ->
         REGISTRATE.`object`("${dye}_nixie_tube")
             .block { NixieTubeBlock(it, dye) }
             .initialProperties { AllBlocks.ORANGE_NIXIE_TUBE.get() }
@@ -29,7 +32,7 @@ object DyedCreate {
             .register()
     }
 
-    val TOOLBOXES = dyesFor(CREATE).associateWith { dye ->
+    val TOOLBOXES = DYES.associateWith { dye ->
         REGISTRATE.`object`("${dye}_toolbox")
             .block { ToolboxBlock(it, dye) }
             .lang("${dye.translation} Toolbox")
@@ -43,7 +46,7 @@ object DyedCreate {
             .register()
     }
 
-    val SEATS = dyesFor(CREATE).associateWith { dye ->
+    val SEATS = DYES.associateWith { dye ->
         REGISTRATE.`object`("${dye}_seat")
             .block { SeatBlock(it, dye) }
             .lang("${dye.translation} Seat")
@@ -55,12 +58,24 @@ object DyedCreate {
             .register()
     }
 
-    val SAILS = dyesFor(CREATE).associateWith { dye ->
+    val SAILS = DYES.associateWith { dye ->
         REGISTRATE.`object`("${dye}_sail")
             .block { SailBlock.withCanvas(it, dye) }
             .lang("${dye.translation} Sail")
             .tag(AllTags.AllBlockTags.WINDMILL_SAILS.tag)
             .sailBlockstate()
+            .register()
+    }
+
+    val VALVE_HANDLES = DYES.associateWith { dye ->
+        REGISTRATE.`object`("${dye}_valve_handle")
+            .block { ValveHandleBlock.dyed(it, dye) }
+            .lang("${dye.translation} Valve Handle")
+            .tag(AllTags.AllBlockTags.VALVE_HANDLES.tag)
+            .valveBlockstate(dye)
+            .withItem {
+                tag(AllTags.AllItemTags.VALVE_HANDLES.tag)
+            }
             .register()
     }
 
