@@ -28,7 +28,7 @@ plugins {
 withKotlin()
 
 forge {
-    enableMixins()
+    //enableMixins()
 
     dataGen(
         existingMods = listOf(
@@ -89,8 +89,8 @@ dependencies {
     modImplementation("maven.modrinth:farmers-delight:${farmers_delight_version}")
     modImplementation("maven.modrinth:clayworks:${clayworks_version}")
     modImplementation("maven.modrinth:blueprint:${blueprint_version}")
-    modCompileOnly("maven.modrinth:domestication-innovation:${domestication_innovation_version}")
-    modCompileOnly("maven.modrinth:alexs-caves:${alexs_caves_version}")
+    modImplementation("maven.modrinth:domestication-innovation:${domestication_innovation_version}")
+    modImplementation("maven.modrinth:alexs-caves:${alexs_caves_version}")
 
     if (!env.isCI) {
         modRuntimeOnly("mezz.jei:jei-${mc_version}-forge:${jei_version}")
@@ -98,6 +98,10 @@ dependencies {
         modRuntimeOnly("maven.modrinth:dye-depot:${dye_depot_version}")
         modRuntimeOnly("maven.modrinth:citadel:${citadel_version}")
     }
+}
+
+tasks.withType<Jar> {
+    exclude("**/*.xcf")
 }
 
 enablePublishing {
