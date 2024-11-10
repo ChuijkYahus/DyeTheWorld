@@ -5,7 +5,8 @@
 [CURSEFORGE]: https://www.curseforge.com/minecraft/mc-mods/dye-the-world
 [MODRINTH]: https://modrinth.com/mod/dye-the-world
 
-# Dye The World! <!-- modrinth_exclude.start --> <img src="https://raw.githubusercontent.com/PssbleTrngle/DyeTheWorld/1.20.x/src/main/resources/assets/dye_the_world/icon_transparent.png" align="right" height="128" />
+<!-- modrinth_exclude.start -->
+# Dye The World! <img src="https://raw.githubusercontent.com/PssbleTrngle/DyeTheWorld/1.20.x/src/main/resources/assets/dye_the_world/icon_transparent.png" align="right" height="128" />
 
 ---
 
@@ -16,10 +17,10 @@
 [![Curseforge](https://img.shields.io/curseforge/dt/1135725?logo=curseforge)][CURSEFORGE]
 <!-- modrinth_exclude.end -->
 
+![](https://raw.githubusercontent.com/PssbleTrngle/DyeTheWorld/1.20.x/src/main/resources/assets/dye_the_world/logo.png)
+
 [![](https://img.shields.io/badge/🎨-ADDON%20FOR%20DYE%20DEPOT-tan?labelColor=gray&style=for-the-badge)][DYE_DEPOT]
 [![](https://img.shields.io/badge/REQUIRES%20KOTLIN%20FOR%20FORGE-7f52ff?logo=kotlin&labelColor=gray&style=for-the-badge)][KOTLIN_FORGE_FORGE]
-
-![](https://raw.githubusercontent.com/PssbleTrngle/DyeTheWorld/1.20.x/src/main/resources/assets/dye_the_world/logo.png)
 
 ---
 
