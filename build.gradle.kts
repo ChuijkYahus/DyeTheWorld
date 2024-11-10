@@ -1,3 +1,5 @@
+
+import com.possible_triangle.gradle.features.publishing.DependencyBuilder
 import net.minecraftforge.gradle.common.util.MinecraftExtension
 
 val mc_version: String by extra
@@ -28,7 +30,7 @@ plugins {
 withKotlin()
 
 forge {
-    //enableMixins()
+    enableMixins()
 
     dataGen(
         existingMods = listOf(
@@ -108,15 +110,29 @@ enablePublishing {
     githubPackages()
 }
 
+fun DependencyBuilder.addDependencies() {
+    required("dye-depot")
+    optional("create")
+    optional("another-furniture")
+    optional("comforts")
+    optional("clayworks")
+    optional("farmers-delight")
+    optional("quark")
+    optional("domestication-innovation")
+    optional("supplementaries")
+    optional("supplementaries-squared")
+    optional("alexs-caves")
+}
+
 uploadToCurseforge {
     dependencies {
-        required("dye-depot")
+        addDependencies()
     }
 }
 
 uploadToModrinth {
     dependencies {
-        required("dye-depot")
+        addDependencies()
     }
 
     syncBodyFromReadme()

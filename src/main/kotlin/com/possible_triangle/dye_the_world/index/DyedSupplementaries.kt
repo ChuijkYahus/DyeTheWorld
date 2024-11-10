@@ -8,11 +8,13 @@ import com.possible_triangle.dye_the_world.data.*
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.withItem
+import net.mehvahdjukaar.supplementaries.common.block.blocks.AwningBlock
 import net.mehvahdjukaar.supplementaries.common.block.blocks.CandleHolderBlock
 import net.mehvahdjukaar.supplementaries.common.block.blocks.PresentBlock
 import net.mehvahdjukaar.supplementaries.common.block.blocks.SackBlock
 import net.mehvahdjukaar.supplementaries.common.block.blocks.TrappedPresentBlock
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 
 object DyedSupplementaries {
@@ -105,6 +107,32 @@ object DyedSupplementaries {
             .blockstate { context, provider ->
                 val model = provider.models().getExistingFile(ResourceLocation("block/banner"))
                 provider.simpleBlock(context.get(), model)
+            }
+            .register()
+    }
+
+    val BUNTINGS = DYES.associateWith { dye ->
+        REGISTRATE.`object`("bunting_$dye")
+            .item(::Item)
+            .lang("${dye.translation} Bunting")
+            .dyedBuntingItemModel(dye)
+            // .dyedBuntingRecipe(dye)
+            .register()
+    }
+
+    val BUNTING = REGISTRATE.`object`("bunting")
+        .item(::Item)
+        .buntingItemModel()
+        .register()
+
+    val AWNINGS = DYES.associateWith { dye ->
+        REGISTRATE.`object`("awning_$dye")
+            .block { AwningBlock(dye, it) }
+            .lang("${dye.translation} Awning")
+            .awningBlockstate(dye)
+            .withItem {
+                awningItemModel(dye)
+                awningRecipe(dye)
             }
             .register()
     }

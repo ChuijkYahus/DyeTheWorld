@@ -75,6 +75,7 @@ object DyedCreate {
             .valveBlockstate(dye)
             .withItem {
                 tag(AllTags.AllItemTags.VALVE_HANDLES.tag)
+                valveRecipe(dye)
             }
             .register()
     }

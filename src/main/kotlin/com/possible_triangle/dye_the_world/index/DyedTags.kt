@@ -21,6 +21,7 @@ object DyedTags {
         val FRAMED_GLASSES = TagKey.create(Registries.BLOCK, Mods.QUARK.createId("framed_glasses"))
         val FRAMED_GLASS_PANES = TagKey.create(Registries.BLOCK, Mods.QUARK.createId("framed_glass_panes"))
         val CEILING_BANNERS = TagKey.create(Registries.BLOCK, Mods.AMENDMENTS.createId("ceiling_banners"))
+        val BUNTINGS = TagKey.create(Registries.BLOCK, Mods.SUPPLEMENTARIES.createId("buntings"))
     }
 
 }

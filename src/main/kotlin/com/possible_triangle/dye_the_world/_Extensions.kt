@@ -5,12 +5,17 @@ import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.BlockEntityBuilder
 import com.tterrag.registrate.builders.Builder
 import com.tterrag.registrate.builders.ItemBuilder
+import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import com.tterrag.registrate.util.DataIngredient
 import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.core.Direction
 import net.minecraft.core.Registry
+import net.minecraft.data.recipes.RecipeBuilder
+import net.minecraft.data.recipes.ShapedRecipeBuilder
+import net.minecraft.data.recipes.ShapelessRecipeBuilder
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.tags.TagKey
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
@@ -22,8 +27,8 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.Property
 import net.minecraftforge.client.model.generators.BlockStateProvider
 import net.minecraftforge.client.model.generators.ConfiguredModel
-import net.minecraftforge.data.loading.DatagenModLoader
 import net.minecraftforge.fml.ModList
+import net.minecraftforge.registries.ForgeRegistries
 import java.util.*
 
 fun isLoad(modid: String) = ModList.get().isLoaded(modid)
@@ -87,4 +92,21 @@ fun BlockStateProvider.createVariant(
 
 fun NonNullSupplier<out ItemLike>.asIngredient() = DataIngredient.items(this)
 
-fun <K, V> Map<V,K>.inverse() = map { it.value to it.key }.toMap()
+fun <K, V> Map<V, K>.inverse() = map { it.value to it.key }.toMap()
+
+@Suppress("UNCHECKED_CAST")
+fun <T : RecipeBuilder> T.unlockedBy(item: ItemLike): T {
+    val id = ForgeRegistries.ITEMS.getKey(item.asItem()) ?: error("unknown item")
+    return unlockedBy("has_${id.path}", RegistrateRecipeProvider.has(item)) as T
+}
+
+@Suppress("UNCHECKED_CAST")
+fun <T : RecipeBuilder> T.unlockedBy(tag: TagKey<Item>): T {
+    return unlockedBy("has_${tag.location.path}", RegistrateRecipeProvider.has(tag)) as T
+}
+
+fun ShapedRecipeBuilder.defineUnlocking(key: Char, item: ItemLike) = define(key, item).unlockedBy(item)
+fun ShapedRecipeBuilder.defineUnlocking(key: Char, tag: TagKey<Item>) = define(key, tag).unlockedBy(tag)
+
+fun ShapelessRecipeBuilder.requiresUnlocking(item: ItemLike) = requires(item).unlockedBy(item)
+fun ShapelessRecipeBuilder.requiresUnlocking(tag: TagKey<Item>) = requires(tag).unlockedBy(tag)

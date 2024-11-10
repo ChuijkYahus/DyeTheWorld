@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "bunting",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/mint"
+    },
+    {
+      "item": "supplementaries:bunting"
+    }
+  ],
+  "result": {
+    "item": "supplementaries:bunting",
+    "nbt": {
+      "Color": "mint"
+    }
+  }
+}

@@ -5,6 +5,7 @@ import com.tterrag.registrate.providers.DataGenContext
 import com.tterrag.registrate.providers.ProviderType
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import com.tterrag.registrate.providers.RegistrateTagsProvider
+import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.ShapedRecipeBuilder
@@ -51,27 +52,29 @@ class DyedRegistrate(modid: String) : AbstractRegistrate<DyedRegistrate>(modid) 
 
 }
 
-private fun RegistrateRecipeProvider.dyeingRecipe(
+fun RegistrateRecipeProvider.dyeingRecipe(
     dye: DyeColor,
     from: Ingredient,
-    to: DataGenContext<*, out ItemLike>,
+    to: NonNullSupplier<out ItemLike>,
+    id: ResourceLocation? = null,
     build: ShapelessRecipeBuilder.() -> Unit = { },
 ) {
     ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, to.get())
         .apply(build)
         .requires(dye.tag)
         .requires(from)
-        .save(this, safeId(to.get()).withSuffix("_dyeing"))
+        .save(this, id ?: safeId(to.get()).withSuffix("_dyeing"))
 }
 
 fun RegistrateRecipeProvider.dyeingRecipe(
     dye: DyeColor,
     from: ItemLike,
-    to: DataGenContext<*, out ItemLike>,
+    to: NonNullSupplier<out ItemLike>,
+    id: ResourceLocation? = null,
     build: ShapelessRecipeBuilder.() -> Unit = { },
 ) {
     val name = safeId(from).path
-    dyeingRecipe(dye, Ingredient.of(from), to) {
+    dyeingRecipe(dye, Ingredient.of(from), to, id) {
         unlockedBy("has_${name}", RegistrateRecipeProvider.has(from))
         build()
     }
@@ -80,10 +83,11 @@ fun RegistrateRecipeProvider.dyeingRecipe(
 fun RegistrateRecipeProvider.dyeingRecipe(
     dye: DyeColor,
     from: TagKey<Item>,
-    to: DataGenContext<*, out ItemLike>,
+    to: NonNullSupplier<out ItemLike>,
+    id: ResourceLocation? = null,
     build: ShapelessRecipeBuilder.() -> Unit = { },
 ) {
-    dyeingRecipe(dye, Ingredient.of(from), to) {
+    dyeingRecipe(dye, Ingredient.of(from), to, id) {
         unlockedBy("has_${from.location.path}", RegistrateRecipeProvider.has(from))
         build()
     }

@@ -27,15 +27,16 @@ This mod integrates several colored blocks added by different mods with the 16 n
 This includes textures, models, recipes, loot tables and block/item tags.
 
 Huge thanks to [Yapetto](https://modrinth.com/user/Yapetto) for providing most of the textures 
-as well as [Lev](https://modrinth.com/user/lev) for allowing me to merge their *Create Compat for Dye Depot* resourcepack into this.
+as well as [Lev](https://modrinth.com/user/lev) for allowing me to merge their *Create Compat for Dye Depot* resourcepack into this
+and [OutrightWings](https://modrinth.com/user/outrightwings)(outrightwings) for letting me use their textures for valve handles, buntings and awnings.
 
 ---
 
 ### Currently supported mods:
 - [Another Furniture Mod](https://modrinth.com/mod/another-furniture) (Sofas, Stools, Curtains, ...)
-- [Supplementaries](https://modrinth.com/mod/supplementaries) (Sacks, Flags, Candle Holders, ...)
+- [Supplementaries](https://modrinth.com/mod/supplementaries) (Sacks, Flags, Candle Holders, Awnings, Buntings)
 - [Farmer's Delight](https://modrinth.com/mod/farmers-delight) (Canvas Signs)
-- [Create](https://modrinth.com/mod/create) (Seats, Toolboxes, Sails)
+- [Create](https://modrinth.com/mod/create) (Seats, Toolboxes, Sails, Valve Handles)
 - [Quark](https://modrinth.com/mod/quark) (Stools, Glass Shards)
 - [Clayworks](https://modrinth.com/mod/clayworks) (Terracotta Bricks, Colored Decorated Pots)
 - [Domestication Innovation](https://modrinth.com/mod/domestication-innovation) (Pet Beds)
