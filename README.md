@@ -5,7 +5,7 @@
 [CURSEFORGE]: https://www.curseforge.com/minecraft/mc-mods/dye-the-world
 [MODRINTH]: https://modrinth.com/mod/dye-the-world
 
-# Dye The World! <!-- modrinth_exclude.start --> <img src="https://raw.githubusercontent.com/PssbleTrngle/DyeTheWorld/1.20.x/src/main/resources/assets/dye_the_world/icon_transparent.png" align="right" height="256" />
+# Dye The World! <!-- modrinth_exclude.start --> <img src="https://raw.githubusercontent.com/PssbleTrngle/DyeTheWorld/1.20.x/src/main/resources/assets/dye_the_world/icon_transparent.png" align="right" height="128" />
 
 ---
 
@@ -19,6 +19,8 @@
 [![](https://img.shields.io/badge/🎨-ADDON%20FOR%20DYE%20DEPOT-tan?labelColor=gray&style=for-the-badge)][DYE_DEPOT]
 [![](https://img.shields.io/badge/REQUIRES%20KOTLIN%20FOR%20FORGE-7f52ff?logo=kotlin&labelColor=gray&style=for-the-badge)][KOTLIN_FORGE_FORGE]
 
+![](https://raw.githubusercontent.com/PssbleTrngle/DyeTheWorld/1.20.x/src/main/resources/assets/dye_the_world/logo.png)
+
 ---
 
 This mod integrates several colored blocks added by different mods with the 16 new dyes added by [Dye Depot][DYE_DEPOT].
@@ -27,11 +29,9 @@ This includes textures, models, recipes, loot tables and block/item tags.
 Huge thanks to [Yapetto](https://modrinth.com/user/Yapetto) for providing most of the textures 
 as well as [Lev](https://modrinth.com/user/lev) for allowing me to merge their *Create Compat for Dye Depot* resourcepack into this.
 
-<details>
-<summary>
-    Currently supported mods:    
-</summary>
+---
 
+### Currently supported mods:
 - [Another Furniture Mod](https://modrinth.com/mod/another-furniture) (Sofas, Stools, Curtains, ...)
 - [Supplementaries](https://modrinth.com/mod/supplementaries) (Sacks, Flags, Candle Holders, ...)
 - [Farmer's Delight](https://modrinth.com/mod/farmers-delight) (Canvas Signs)
@@ -40,5 +40,3 @@ as well as [Lev](https://modrinth.com/user/lev) for allowing me to merge their *
 - [Clayworks](https://modrinth.com/mod/clayworks) (Terracotta Bricks, Colored Decorated Pots)
 - [Domestication Innovation](https://modrinth.com/mod/domestication-innovation) (Pet Beds)
 - [Alex's Caves](https://modrinth.com/mod/alexs-caves) (Radon Lamps)
-
-</details>
