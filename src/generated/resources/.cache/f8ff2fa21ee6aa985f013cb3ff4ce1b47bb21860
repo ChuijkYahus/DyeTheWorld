@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-11T09:29:59.0212342	Registrate Provider for dye_the_world [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-11-11T13:45:31.9328527	Registrate Provider for dye_the_world [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 8ee2f7c922e1e098812e0bd0cc5c7633f5632216 assets/dye_the_world/blockstates/amber_canvas_sign.json
 8ee2f7c922e1e098812e0bd0cc5c7633f5632216 assets/dye_the_world/blockstates/amber_canvas_wall_sign.json
 ecd1ff546ae881444c4a369717b4c4a65b08a1d5 assets/dye_the_world/blockstates/amber_curtain.json
@@ -3795,6 +3795,7 @@ cd539d632dc96209f7311ecc89fe71112e58d5d5 data/farmersdelight/tags/items/canvas_s
 32ef158cada702d83cf2e0a6f7b504d3ff49ebf1 data/farmersdelight/tags/items/hanging_canvas_signs.json
 b46476449534fb2e70296231bdfe6556db47fc18 data/forge/tags/blocks/glass.json
 57d4ec10d43e799520d6805f25535a783f058662 data/forge/tags/blocks/glass_panes.json
+1c468206c1388657f413280c76e027b58d6ef9c8 data/forge/tags/items/dyes.json
 ffe57e9cdea11fe60c80e433f1900332f79e4c6b data/forge/tags/items/dyes/amber.json
 59d19bfde363f8ed639e6bddf524eedb97f05bc9 data/forge/tags/items/dyes/aqua.json
 b88c5603f992b7ea7b583abad932d4a83c93fa16 data/forge/tags/items/dyes/beige.json

@@ -8,6 +8,7 @@ import com.possible_triangle.dye_the_world.index.DyedTags
 import com.simibubi.create.AllTags
 import net.minecraft.tags.BlockTags
 import net.minecraft.world.item.DyeColor
+import net.minecraftforge.common.Tags
 
 fun DyedRegistrate.generateTags() {
     DEPOT_DYES.forEach { color ->
@@ -19,6 +20,7 @@ fun DyedRegistrate.generateTags() {
     DyeColor.entries.forEach { dye ->
         DyedTags.Items.HAMMOCKS.addOptional(Mods.COMFORTS.createId("hammock_$dye"))
         DyedTags.Items.SLEEPING_BAGS.addOptional(Mods.COMFORTS.createId("sleeping_bag_$dye"))
+        Tags.Items.DYES.addOptional(dye.tag)
     }
 
     BlockTags.MINEABLE_WITH_AXE.addOptional(AllTags.AllBlockTags.SEATS.tag)

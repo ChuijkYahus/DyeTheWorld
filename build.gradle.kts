@@ -30,7 +30,10 @@ plugins {
 withKotlin()
 
 forge {
-    enableMixins()
+   if(env.isCI) {
+       // alex's caves & domestic innovation break when running in dev with mixins enabled
+       enableMixins()
+   }
 
     dataGen(
         existingMods = listOf(

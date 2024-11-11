@@ -29,7 +29,7 @@ fun <T : Item, P> ItemBuilder<T, P>.buntingItemModel() = model { context, provid
     }
 }
 
-// Needs to be modified manually afterwards to add nbt to result
+// Needs to be modified manually afterward to add nbt to result
 fun <T : Item, P> ItemBuilder<T, P>.dyedBuntingRecipe(dye: DyeColor) = recipe { _, provider ->
     val bunting = ModRegistry.BUNTING.get()
 
