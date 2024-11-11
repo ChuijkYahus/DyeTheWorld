@@ -6,6 +6,7 @@ import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES_SQUARE
 import com.possible_triangle.dye_the_world.DyedRegistrate
 import com.possible_triangle.dye_the_world.data.*
 import com.possible_triangle.dye_the_world.dyesFor
+import com.possible_triangle.dye_the_world.optionalTag
 import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.withItem
 import net.mehvahdjukaar.supplementaries.common.block.blocks.AwningBlock
@@ -43,7 +44,7 @@ object DyedSupplementaries {
             .lang("${dye.translation} Flag")
             .flagBlockstate()
             .loot { t, b -> t.add(b, t.createBannerDrop(b)) }
-            .tag(DyedTags.Blocks.FLAGS)
+            .optionalTag(DyedTags.Blocks.FLAGS)
             .withItem {
                 flagRecipe(dye)
                 flagItemModel()
@@ -103,7 +104,7 @@ object DyedSupplementaries {
         REGISTRATE_AMENDMENTS.`object`("ceiling_banner_${dye}")
             .block(::Block)
             .lang("${dye.translation} Banner")
-            .tag(DyedTags.Blocks.CEILING_BANNERS)
+            .optionalTag(DyedTags.Blocks.CEILING_BANNERS)
             .blockstate { context, provider ->
                 val model = provider.models().getExistingFile(ResourceLocation("block/banner"))
                 provider.simpleBlock(context.get(), model)

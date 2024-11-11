@@ -4,6 +4,7 @@ import com.possible_triangle.dye_the_world.DyedRegistrate
 import com.possible_triangle.dye_the_world.asIngredient
 import com.possible_triangle.dye_the_world.createId
 import com.possible_triangle.dye_the_world.namespace
+import com.possible_triangle.dye_the_world.optionalTag
 import com.possible_triangle.dye_the_world.withItem
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
@@ -28,8 +29,8 @@ fun DyedRegistrate.createSlabs(
     `object`("${dye}_${name}_slab")
         .block(::SlabBlock)
         .initialProperties(base)
-        .tag(BlockTags.MINEABLE_WITH_PICKAXE)
-        .tag(BlockTags.SLABS)
+        .optionalTag(BlockTags.MINEABLE_WITH_PICKAXE)
+        .optionalTag(BlockTags.SLABS)
         .blockstate { c, p ->
             val texture = dye.namespace.createId("block/${dye}_${name}")
             p.slabBlock(c.get(), dye.namespace.createId("block/${dye}_${name}"), texture)
@@ -54,8 +55,8 @@ fun DyedRegistrate.createStairs(
     `object`("${dye}_${name}_stairs")
         .block { StairBlock({ base.get().defaultBlockState() }, it) }
         .initialProperties(base)
-        .tag(BlockTags.MINEABLE_WITH_PICKAXE)
-        .tag(BlockTags.STAIRS)
+        .optionalTag(BlockTags.MINEABLE_WITH_PICKAXE)
+        .optionalTag(BlockTags.STAIRS)
         .blockstate { c, p ->
             val texture = dye.namespace.createId("block/${dye}_${name}")
             p.stairsBlock(c.get(), texture)
@@ -80,8 +81,8 @@ fun DyedRegistrate.createWalls(
     `object`("${dye}_${name}_wall")
         .block(::WallBlock)
         .initialProperties(base)
-        .tag(BlockTags.MINEABLE_WITH_PICKAXE)
-        .tag(BlockTags.WALLS)
+        .optionalTag(BlockTags.MINEABLE_WITH_PICKAXE)
+        .optionalTag(BlockTags.WALLS)
         .blockstate { c, p ->
             val texture = dye.namespace.createId("block/${dye}_${name}")
             p.wallBlock(c.get(), texture)

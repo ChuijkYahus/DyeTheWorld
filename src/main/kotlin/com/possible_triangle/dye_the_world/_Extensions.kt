@@ -5,6 +5,7 @@ import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.BlockEntityBuilder
 import com.tterrag.registrate.builders.Builder
 import com.tterrag.registrate.builders.ItemBuilder
+import com.tterrag.registrate.providers.ProviderType
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import com.tterrag.registrate.util.DataIngredient
 import com.tterrag.registrate.util.nullness.NonNullSupplier
@@ -110,3 +111,11 @@ fun ShapedRecipeBuilder.defineUnlocking(key: Char, tag: TagKey<Item>) = define(k
 
 fun ShapelessRecipeBuilder.requiresUnlocking(item: ItemLike) = requires(item).unlockedBy(item)
 fun ShapelessRecipeBuilder.requiresUnlocking(tag: TagKey<Item>) = requires(tag).unlockedBy(tag)
+
+fun <T : Item, P> ItemBuilder<T, P>.optionalTag(tag: TagKey<Item>) = addMiscData(ProviderType.ITEM_TAGS) {
+    it.addTag(tag).addOptional(owner.modid.createId(name))
+}
+
+fun <T : Block, P> BlockBuilder<T, P>.optionalTag(tag: TagKey<Block>) = addMiscData(ProviderType.BLOCK_TAGS) {
+    it.addTag(tag).addOptional(owner.modid.createId(name))
+}

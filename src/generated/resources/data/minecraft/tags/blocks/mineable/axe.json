@@ -1,21 +1,69 @@
 {
   "values": [
-    "dye_the_world:pet_bed_amber",
-    "dye_the_world:pet_bed_aqua",
-    "dye_the_world:pet_bed_beige",
-    "dye_the_world:pet_bed_coral",
-    "dye_the_world:pet_bed_forest",
-    "dye_the_world:pet_bed_ginger",
-    "dye_the_world:pet_bed_indigo",
-    "dye_the_world:pet_bed_maroon",
-    "dye_the_world:pet_bed_mint",
-    "dye_the_world:pet_bed_navy",
-    "dye_the_world:pet_bed_olive",
-    "dye_the_world:pet_bed_rose",
-    "dye_the_world:pet_bed_slate",
-    "dye_the_world:pet_bed_tan",
-    "dye_the_world:pet_bed_teal",
-    "dye_the_world:pet_bed_verdant",
+    {
+      "id": "dye_the_world:pet_bed_amber",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_aqua",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_beige",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_coral",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_forest",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_ginger",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_indigo",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_maroon",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_mint",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_navy",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_olive",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_rose",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_slate",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_tan",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_teal",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:pet_bed_verdant",
+      "required": false
+    },
     {
       "id": "#create:seats",
       "required": false

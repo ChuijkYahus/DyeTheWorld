@@ -6,6 +6,7 @@ import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.petBedBlockstate
 import com.possible_triangle.dye_the_world.data.petBedRecipe
 import com.possible_triangle.dye_the_world.dyesFor
+import com.possible_triangle.dye_the_world.optionalTag
 import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.withItem
 import net.minecraft.core.registries.Registries
@@ -29,7 +30,7 @@ object DyedDomestication {
             .properties { it.sound(SoundType.WOOD) }
             .properties { it.mapColor(dye) }
             .lang("${dye.translation} Pet Bed")
-            .tag(BlockTags.MINEABLE_WITH_AXE)
+            .optionalTag(BlockTags.MINEABLE_WITH_AXE)
             .petBedBlockstate()
             .withItem {
                 tab(TAB)

@@ -28,7 +28,7 @@ object DyedClayworks {
         REGISTRATE.`object`("${dye}_terracotta_bricks")
             .block(::Block)
             .initialProperties { dye.blockOf("terracotta") }
-            .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .optionalTag(BlockTags.MINEABLE_WITH_PICKAXE)
             .blockstate { c, p ->
                 p.simpleBlock(
                     c.get(), p.models().cubeAll(c.name, Constants.MOD_ID.createId("block/$CLAYWORKS/${c.name}"))
@@ -105,7 +105,7 @@ object DyedClayworks {
         REGISTRATE.`object`("chiseled_${dye}_terracotta_bricks")
             .block(::Block)
             .initialProperties { dye.blockOf("terracotta") }
-            .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .optionalTag(BlockTags.MINEABLE_WITH_PICKAXE)
             .blockstate { c, p ->
                 p.simpleBlock(
                     c.get(), p.models().cubeAll(c.name, Constants.MOD_ID.createId("block/$CLAYWORKS/${c.name}"))

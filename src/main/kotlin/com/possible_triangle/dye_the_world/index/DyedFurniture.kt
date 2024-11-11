@@ -3,8 +3,9 @@ package com.possible_triangle.dye_the_world.index
 import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.*
-import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.dyesFor
+import com.possible_triangle.dye_the_world.optionalTag
+import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.withItem
 import com.starfish_studios.another_furniture.block.*
 import com.starfish_studios.another_furniture.registry.AFBlockTags
@@ -23,7 +24,7 @@ object DyedFurniture {
         REGISTRATE.`object`("${dye}_sofa")
             .block(::SofaBlock)
             .initialProperties { AFBlocks.RED_SOFA.get() }
-            .tag(AFBlockTags.SOFAS)
+            .optionalTag(AFBlockTags.SOFAS)
             .sofaBlockstate(dye)
             .withItem {
                 sofaRecipes(dye)
@@ -37,7 +38,7 @@ object DyedFurniture {
         REGISTRATE.`object`("${dye}_stool")
             .block(::StoolBlock)
             .initialProperties { AFBlocks.RED_STOOL.get() }
-            .tag(AFBlockTags.STOOLS)
+            .optionalTag(AFBlockTags.STOOLS)
             .stoolBlockstate(dye)
             .withItem {
                 stoolRecipes(dye)
@@ -51,7 +52,7 @@ object DyedFurniture {
         REGISTRATE.`object`("${dye}_tall_stool")
             .block(::TallStoolBlock)
             .initialProperties { AFBlocks.RED_TALL_STOOL.get() }
-            .tag(AFBlockTags.TALL_STOOLS)
+            .optionalTag(AFBlockTags.TALL_STOOLS)
             .tallStoolBlockstate(dye)
             .withItem {
                 tallStoolRecipes(dye)
@@ -65,7 +66,7 @@ object DyedFurniture {
         REGISTRATE.`object`("${dye}_curtain")
             .block(::CurtainBlock)
             .initialProperties { AFBlocks.RED_CURTAIN.get() }
-            .tag(AFBlockTags.CURTAINS)
+            .optionalTag(AFBlockTags.CURTAINS)
             .curtainBlockstate(dye)
             .curtainLoot()
             .withItem {
@@ -81,7 +82,7 @@ object DyedFurniture {
         REGISTRATE.`object`("${dye}_lamp")
             .block { LampBlock(dye, it) }
             .initialProperties { AFBlocks.RED_LAMP.get() }
-            .tag(AFBlockTags.LAMPS)
+            .optionalTag(AFBlockTags.LAMPS)
             .lampBlockstate(dye)
             .withItem {
                 lampRecipes(dye)

@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-10T18:43:30.2837484	Registrate Provider for create [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-11-11T09:29:59.0472697	Registrate Provider for create [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 7ae2c0c62fc18382f71b9799ab2b1fa88fe49e60 assets/create/blockstates/amber_nixie_tube.json
 d18e6ed4aa433e1b7772356e646231a2594516df assets/create/blockstates/amber_sail.json
 b1c523e0d74645a81d78b9eed5571d7a473e675f assets/create/blockstates/amber_seat.json
@@ -321,11 +321,11 @@ c67145fb39e7751fc77ef4325c5971cf3c281693 data/create/recipes/slate_valve_handle_
 5c22f2c38a361ff66a232bec171e44c029496e0d data/create/recipes/tan_valve_handle_dyeing.json
 1d6d9ee8095677a8741ad71f26043db557307b06 data/create/recipes/teal_valve_handle_dyeing.json
 59c05f1f6c8cf193be42e5d76e99231bbca3274d data/create/recipes/verdant_valve_handle_dyeing.json
-cf669e834f41e20f31b14018b928522538a73081 data/create/tags/blocks/seats.json
-fd9758d11f669ce2488e9c3122e14a0010547cf3 data/create/tags/blocks/toolboxes.json
-fc9947a35e5f5147e74bcb1315816ef6b3780809 data/create/tags/blocks/valve_handles.json
-97c9c536b53897eac7776118f769e36a16f456fa data/create/tags/blocks/windmill_sails.json
+12badd7fffe4b594436b5821d8c0b0a64b5724cc data/create/tags/blocks/seats.json
+14b9e69228b4738540858fdccf54bcd067999d33 data/create/tags/blocks/toolboxes.json
+b04ce53e59cdeadfb38e812d8c144fd288ac4a22 data/create/tags/blocks/valve_handles.json
+62f375e52f8344938040dfa7489caaf0d3703ed0 data/create/tags/blocks/windmill_sails.json
 cf669e834f41e20f31b14018b928522538a73081 data/create/tags/items/seats.json
 fd9758d11f669ce2488e9c3122e14a0010547cf3 data/create/tags/items/toolboxes.json
 fc9947a35e5f5147e74bcb1315816ef6b3780809 data/create/tags/items/valve_handles.json
-97f2cb428e4a17aa33b00644a24672d5c08d502f data/minecraft/tags/blocks/mineable/pickaxe.json
+5fbcd50ae09e8ba5c09c08dbd01939f1b856a0c4 data/minecraft/tags/blocks/mineable/pickaxe.json
