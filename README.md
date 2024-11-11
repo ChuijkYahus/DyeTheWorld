@@ -13,7 +13,7 @@
 [![Release](https://img.shields.io/github/v/release/PssbleTrngle/DyeTheWorld?label=Version&sort=semver)][DOWNLOAD]
 [![Version](https://cf.way2muchnoise.eu/versions/1135725.svg)][DOWNLOAD]
 [![Issues](https://img.shields.io/github/issues/PssbleTrngle/DyeTheWorld?label=Issues)][ISSUES]
-[![Modrinth](https://img.shields.io/modrinth/dt/NaUMeOvG?color=green&logo=modrinth&logoColor=green)][MODRINTH]
+[![Modrinth](https://img.shields.io/modrinth/dt/naUMeOvG?color=green&logo=modrinth&logoColor=green)][MODRINTH]
 [![Curseforge](https://img.shields.io/curseforge/dt/1135725?logo=curseforge)][CURSEFORGE]
 <!-- modrinth_exclude.end -->
 
