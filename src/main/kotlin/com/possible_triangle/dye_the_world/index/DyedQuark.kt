@@ -42,6 +42,7 @@ object DyedQuark {
                 provider.generated(context, Constants.MOD_ID.createId("item/$QUARK/${context.name}"))
             }
             .lang("${dye.translation} Glass Shard")
+            .germanLang("${dye.germanTranslation(Genus.F)} Glasscherbe")
             .register()
     }
 
@@ -71,6 +72,7 @@ object DyedQuark {
                 )
             }
             .lang("${dye.translation} Terracotta Shingles")
+            .germanLang("${dye.germanTranslation(Genus.F)} Schindeln")
             .withItem {
                 tab(CreativeModeTabs.COLORED_BLOCKS)
                 tab(CreativeModeTabs.BUILDING_BLOCKS)
@@ -83,6 +85,7 @@ object DyedQuark {
         SHINGLES,
         "shingles",
         modifyBlock = { dye ->
+            germanLang("${dye.germanTranslation(Genus.F)} Schindelstufe")
             blockstate { c, p ->
                 val texture = Constants.MOD_ID.createId("block/$QUARK/${dye}_shingles")
                 val double = Constants.MOD_ID.createId("block/${dye}_shingles")
@@ -101,6 +104,7 @@ object DyedQuark {
         SHINGLES,
         "shingles",
         modifyBlock = { dye ->
+            germanLang("${dye.germanTranslation(Genus.F)} Schindeltreppe")
             blockstate { c, p ->
                 val texture = Constants.MOD_ID.createId("block/$QUARK/${dye}_shingles")
                 p.stairsBlock(c.get(), texture)
@@ -132,6 +136,7 @@ object DyedQuark {
                 )
             }
             .lang("${dye.translation} Framed Glass")
+            .germanLang("${dye.germanTranslation(Genus.I)} gerahmtes Glas")
             .withItem {
                 tab(CreativeModeTabs.COLORED_BLOCKS)
                 tab(CreativeModeTabs.BUILDING_BLOCKS)
@@ -161,6 +166,7 @@ object DyedQuark {
                 )
             }
             .lang("${dye.translation} Framed Glass Pane")
+            .germanLang("${dye.germanTranslation(Genus.F)} gerahmte Glasscheibe")
             .withItem {
                 model { c, p ->
                     p.generated(c, Constants.MOD_ID.createId("block/$QUARK/${dye}_framed_glass")).translucent()

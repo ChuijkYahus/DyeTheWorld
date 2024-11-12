@@ -2,11 +2,14 @@ package com.possible_triangle.dye_the_world.index
 
 import com.possible_triangle.dye_the_world.Constants.Mods.FARMERS_DELIGHT
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
+import com.possible_triangle.dye_the_world.Genus
 import com.possible_triangle.dye_the_world.data.canvasSignBlockstate
 import com.possible_triangle.dye_the_world.data.canvasSignItemModel
 import com.possible_triangle.dye_the_world.data.canvasSignRecipes
 import com.possible_triangle.dye_the_world.data.hangingCanvasSignRecipes
 import com.possible_triangle.dye_the_world.dyesFor
+import com.possible_triangle.dye_the_world.germanLang
+import com.possible_triangle.dye_the_world.germanTranslation
 import com.possible_triangle.dye_the_world.`object`.block.DyedCeilingHangingCanvasSignBlock
 import com.possible_triangle.dye_the_world.`object`.block.DyedStandingCanvasSignBlock
 import com.possible_triangle.dye_the_world.`object`.block.DyedWallCanvasSignBlock
@@ -49,6 +52,7 @@ object DyedDelight {
             .block { DyedStandingCanvasSignBlock(dye) }
             .initialProperties { ModBlocks.RED_CANVAS_SIGN.get() }
             .lang("${dye.translation} Canvas Sign")
+            .germanLang("${dye.germanTranslation(Genus.I)} Canvas Schild")
             .canvasSignBlockstate()
             .withItem(dye.signItem(CANVAS_WALL_SIGNS)) {
                 tag(ModTags.CANVAS_SIGNS)

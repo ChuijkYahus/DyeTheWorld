@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-07T11:50:49.8449049	Registrate Provider for dye_depot [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-11-12T23:05:35.6788017	Registrate Provider for dye_depot [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
 df597f03decee9bc0bc66337309f37b06cc7b81d data/dye_depot/loot_tables/blocks/amber_stained_glass.json
 f54db00dccde1bf6b5524968832fb444228be696 data/dye_depot/loot_tables/blocks/aqua_stained_glass.json
 e5f14aa0055d03c67d2c9d1e5b3a566cfec3e9cc data/dye_depot/loot_tables/blocks/beige_stained_glass.json

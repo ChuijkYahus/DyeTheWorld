@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-05T11:31:19.9178763	Registrate Provider for comforts [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-11-12T23:17:25.140228	Registrate Provider for comforts [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
 eedbdcf760763397205b72aa46c55671a60875d0 assets/comforts/blockstates/hammock_amber.json
 58b890381605306a98ceec731f7b7891909a1fc4 assets/comforts/blockstates/hammock_aqua.json
 6b7508907fc999319f7bbd9d16c64edd42a53191 assets/comforts/blockstates/hammock_beige.json
@@ -31,6 +31,7 @@ cd0d6cda9a2d6cab98c84a71dbe898e0572ad52e assets/comforts/blockstates/sleeping_ba
 4b9ac764e01a22ea46955d5fbc931d0bd7836150 assets/comforts/blockstates/sleeping_bag_tan.json
 00d1671a7e35cf7b330af397c5a0340957637590 assets/comforts/blockstates/sleeping_bag_teal.json
 cbd6371deffd114f74333e5bd80c5f1f3f3acfb2 assets/comforts/blockstates/sleeping_bag_verdant.json
+33bd178fc04774eb8913c05a3e91c86a1bdff38b assets/comforts/lang/de_de.json
 7db56ae478d47c7d2a65dc6635d33c0b9c3cfeb6 assets/comforts/lang/en_ud.json
 0c2338003a8a6fed852ef316334ef957c50b8081 assets/comforts/lang/en_us.json
 6e636a1481d01ca4d695bf3adf69b141ea7c2050 assets/comforts/models/block/amber_cloth.json

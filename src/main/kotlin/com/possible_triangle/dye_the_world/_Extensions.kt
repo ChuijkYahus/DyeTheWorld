@@ -1,5 +1,6 @@
 package com.possible_triangle.dye_the_world
 
+import com.possible_triangle.dye_the_world.data.CustomRegistrateLangProvider
 import com.tterrag.registrate.AbstractRegistrate
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.BlockEntityBuilder
@@ -118,4 +119,14 @@ fun <T : Item, P> ItemBuilder<T, P>.optionalTag(tag: TagKey<Item>) = addMiscData
 
 fun <T : Block, P> BlockBuilder<T, P>.optionalTag(tag: TagKey<Block>) = addMiscData(ProviderType.BLOCK_TAGS) {
     it.addTag(tag).addOptional(owner.modid.createId(name))
+}
+
+private val DE_LANG = CustomRegistrateLangProvider.providerType("de_de")
+
+fun <T : Item, P> ItemBuilder<T, P>.germanLang(translation: String) = setData(DE_LANG) { context, provider ->
+    provider.add(context.get(), translation)
+}
+
+fun <T : Block, P> BlockBuilder<T, P>.germanLang(translation: String) = setData(DE_LANG) { context, provider ->
+    provider.add(context.get(), translation)
 }

@@ -35,6 +35,7 @@ object DyedClayworks {
                 )
             }
             .lang("${dye.translation} Terracotta Bricks")
+            .germanLang("${dye.germanTranslation(Genus.F)} Keramikziegel")
             .withItem {
                 tab(CreativeModeTabs.COLORED_BLOCKS)
                 tab(CreativeModeTabs.BUILDING_BLOCKS)
@@ -49,6 +50,7 @@ object DyedClayworks {
         TERRACOTTA_BRICKS,
         "terracotta_brick",
         modifyBlock = { dye ->
+            germanLang("${dye.germanTranslation(Genus.F)} Keramikziegelstufe")
             blockstate { c, p ->
                 val texture = Constants.MOD_ID.createId("block/$CLAYWORKS/${dye}_terracotta_bricks")
                 val double = Constants.MOD_ID.createId("block/${dye}_terracotta_bricks")
@@ -67,6 +69,7 @@ object DyedClayworks {
         TERRACOTTA_BRICKS,
         "terracotta_brick",
         modifyBlock = { dye ->
+            germanLang("${dye.germanTranslation(Genus.F)} Keramikziegeltreppe")
             blockstate { c, p ->
                 val texture = Constants.MOD_ID.createId("block/$CLAYWORKS/${dye}_terracotta_bricks")
                 p.stairsBlock(c.get(), texture)
@@ -84,6 +87,7 @@ object DyedClayworks {
         TERRACOTTA_BRICKS,
         "terracotta_brick",
         modifyBlock = { dye ->
+            germanLang("${dye.germanTranslation(Genus.F)} Keramikziegelmauer")
             blockstate { c, p ->
                 val texture = Constants.MOD_ID.createId("block/$CLAYWORKS/${dye}_terracotta_bricks")
                 p.wallBlock(c.get(), texture)
@@ -112,6 +116,7 @@ object DyedClayworks {
                 )
             }
             .lang("Chiseled ${dye.translation} Terracotta Bricks")
+            .germanLang("Gemeißelte ${dye.germanTranslation(Genus.F)} Keramikziegel")
             .withItem {
                 tab(CreativeModeTabs.COLORED_BLOCKS)
                 tab(CreativeModeTabs.BUILDING_BLOCKS)
@@ -131,11 +136,17 @@ object DyedClayworks {
             .register()
     }
 
-    val TERRACOTTA_SLABS = REGISTRATE.createSlabs(TERRACOTTA, "terracotta")
+    val TERRACOTTA_SLABS = REGISTRATE.createSlabs(TERRACOTTA, "terracotta", modifyBlock = { dye ->
+        germanLang("${dye.germanTranslation(Genus.F)} Keramikstufe")
+    })
 
-    val TERRACOTTA_STAIRS = REGISTRATE.createStairs(TERRACOTTA, "terracotta")
+    val TERRACOTTA_STAIRS = REGISTRATE.createStairs(TERRACOTTA, "terracotta", modifyBlock = { dye ->
+        germanLang("${dye.germanTranslation(Genus.F)} Keramiktreppe")
+    })
 
-    val TERRACOTTA_WALLS = REGISTRATE.createWalls(TERRACOTTA, "terracotta")
+    val TERRACOTTA_WALLS = REGISTRATE.createWalls(TERRACOTTA, "terracotta", modifyBlock = { dye ->
+        germanLang("${dye.germanTranslation(Genus.F)} Keramikmauer")
+    })
 
     val DECORATED_POTS = DYES.associateWith { dye ->
         REGISTRATE.`object`("${dye}_decorated_pot")

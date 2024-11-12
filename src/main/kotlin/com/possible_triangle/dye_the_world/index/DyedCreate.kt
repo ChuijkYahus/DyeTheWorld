@@ -2,8 +2,11 @@ package com.possible_triangle.dye_the_world.index
 
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE
 import com.possible_triangle.dye_the_world.DyedRegistrate
+import com.possible_triangle.dye_the_world.Genus
 import com.possible_triangle.dye_the_world.data.*
 import com.possible_triangle.dye_the_world.dyesFor
+import com.possible_triangle.dye_the_world.germanLang
+import com.possible_triangle.dye_the_world.germanTranslation
 import com.possible_triangle.dye_the_world.optionalTag
 import com.possible_triangle.dye_the_world.translation
 import com.possible_triangle.dye_the_world.withItem
@@ -27,6 +30,7 @@ object DyedCreate {
             .block { NixieTubeBlock(it, dye) }
             .initialProperties { AllBlocks.ORANGE_NIXIE_TUBE.get() }
             .lang("${dye.translation} Nixie Tube")
+            .germanLang("${dye.germanTranslation(Genus.F)} Nixie-Röhre")
             .optionalTag(BlockTags.MINEABLE_WITH_PICKAXE)
             .nixieTubeBlockstate()
             .loot { t, b -> t.dropOther(b, AllBlocks.ORANGE_NIXIE_TUBE) }
@@ -37,6 +41,7 @@ object DyedCreate {
         REGISTRATE.`object`("${dye}_toolbox")
             .block { ToolboxBlock(it, dye) }
             .lang("${dye.translation} Toolbox")
+            .germanLang("${dye.germanTranslation(Genus.M)} Werkzeugkasten")
             .optionalTag(AllTags.AllBlockTags.TOOLBOXES.tag)
             .toolboxLoot()
             .toolboxBlockstate(dye)
@@ -51,6 +56,7 @@ object DyedCreate {
         REGISTRATE.`object`("${dye}_seat")
             .block { SeatBlock(it, dye) }
             .lang("${dye.translation} Seat")
+            .germanLang("${dye.germanTranslation(Genus.M)} Sitz")
             .optionalTag(AllTags.AllBlockTags.SEATS.tag)
             .seatBlockstate(dye)
             .withItem {
@@ -63,6 +69,7 @@ object DyedCreate {
         REGISTRATE.`object`("${dye}_sail")
             .block { SailBlock.withCanvas(it, dye) }
             .lang("${dye.translation} Sail")
+            .germanLang("${dye.germanTranslation(Genus.I)} Segel")
             .optionalTag(AllTags.AllBlockTags.WINDMILL_SAILS.tag)
             .sailBlockstate()
             .register()
@@ -72,6 +79,7 @@ object DyedCreate {
         REGISTRATE.`object`("${dye}_valve_handle")
             .block { ValveHandleBlock.dyed(it, dye) }
             .lang("${dye.translation} Valve Handle")
+            .germanLang("${dye.germanTranslation(Genus.M)} Ventilgriff")
             .optionalTag(AllTags.AllBlockTags.VALVE_HANDLES.tag)
             .valveBlockstate(dye)
             .withItem {

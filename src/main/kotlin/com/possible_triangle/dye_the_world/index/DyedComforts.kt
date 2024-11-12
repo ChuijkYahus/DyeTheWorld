@@ -31,6 +31,7 @@ object DyedComforts {
         REGISTRATE.`object`("sleeping_bag_${dye}")
             .block { SleepingBagBlock(dye) }
             .lang("${dye.translation} Sleeping Bag")
+            .germanLang("${dye.germanTranslation(Genus.M)} Schlafsack")
             .withItem {
                 sleepingBagRecipe(dye)
             }
@@ -42,6 +43,7 @@ object DyedComforts {
         REGISTRATE.`object`("hammock_${dye}")
             .block { HammockBlock(dye) }
             .lang("${dye.translation} Hammock")
+            .germanLang("${dye.germanTranslation(Genus.M)} Hängemattenstoff")
             .withItem {
                 hammockRecipe(dye)
             }

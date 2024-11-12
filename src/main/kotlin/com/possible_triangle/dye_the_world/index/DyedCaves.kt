@@ -28,6 +28,7 @@ object DyedCaves {
             .properties { it.sound(SoundType.GLASS) }
             .properties { it.mapColor(dye) }
             .lang("${dye.translation} Radon Lamp")
+            .germanLang("${dye.germanTranslation(Genus.F)} Radonlampe")
             .blockstate { c, p ->
                 val model = p.models().cubeAll(c.name, Constants.MOD_ID.createId("block/$ALEXS_CAVES/${c.name}"))
                 p.simpleBlock(c.get(), model)

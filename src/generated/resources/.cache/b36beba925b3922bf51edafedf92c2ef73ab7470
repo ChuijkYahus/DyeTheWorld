@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-11T09:29:59.0472697	Registrate Provider for create [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-11-12T23:17:25.1427352	Registrate Provider for create [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
 7ae2c0c62fc18382f71b9799ab2b1fa88fe49e60 assets/create/blockstates/amber_nixie_tube.json
 d18e6ed4aa433e1b7772356e646231a2594516df assets/create/blockstates/amber_sail.json
 b1c523e0d74645a81d78b9eed5571d7a473e675f assets/create/blockstates/amber_seat.json
@@ -79,6 +79,7 @@ e78eb02207b74db651473aa0213624923d87de9e assets/create/blockstates/verdant_sail.
 e7f77cf572cf5dceb94f4f5aea0963bc56bba375 assets/create/blockstates/verdant_seat.json
 b8ee0dbc39c154d5fb29d19e81a908d1432c6727 assets/create/blockstates/verdant_toolbox.json
 a3fd8d2c2c44898ddac7fe7264d10f8d513fe543 assets/create/blockstates/verdant_valve_handle.json
+50bc1ddb9eb153083e4e87c74a20cf3fb0ce1f91 assets/create/lang/de_de.json
 9e69187547e6a6663198c8c7be48946725d82f6b assets/create/lang/en_ud.json
 1dfd6239412ae9ce38c74258bec168628185c183 assets/create/lang/en_us.json
 01c31618eee75d8038e0abfa7611294db446f2f8 assets/create/models/block/amber_sail.json

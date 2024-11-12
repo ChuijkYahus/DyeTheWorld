@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-12T12:04:51.6299648	Registrate Provider for dye_the_world [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-11-12T23:17:25.1116457	Registrate Provider for dye_the_world [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
 8ee2f7c922e1e098812e0bd0cc5c7633f5632216 assets/dye_the_world/blockstates/amber_canvas_sign.json
 8ee2f7c922e1e098812e0bd0cc5c7633f5632216 assets/dye_the_world/blockstates/amber_canvas_wall_sign.json
 ecd1ff546ae881444c4a369717b4c4a65b08a1d5 assets/dye_the_world/blockstates/amber_curtain.json
@@ -431,6 +431,7 @@ be35f32453a0828f0a1aad9e38117af4b7ad770b assets/dye_the_world/blockstates/verdan
 e841d242c0947109a93e2ecdaecebde5c08d86a3 assets/dye_the_world/blockstates/verdant_terracotta_stairs.json
 9cd16f7264153aaa8865304f959a7bfac8a219db assets/dye_the_world/blockstates/verdant_terracotta_wall.json
 8ee2f7c922e1e098812e0bd0cc5c7633f5632216 assets/dye_the_world/blockstates/verdant_wall_hanging_canvas_sign.json
+649fa22fed509286fc8e9a7c7792eb42eb6ace5e assets/dye_the_world/lang/de_de.json
 cab0424da70827ddd7bfaab972c5fad86eb02ea0 assets/dye_the_world/lang/en_ud.json
 5f93348cc1d494c97218e7c7808708a00201451b assets/dye_the_world/lang/en_us.json
 e988f743eedc069b0a5e0c3f8005fd4c94b28633 assets/dye_the_world/models/block/amber_closed_bottom.json
