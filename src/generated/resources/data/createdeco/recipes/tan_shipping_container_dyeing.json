@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/tan"
+    },
+    {
+      "item": "create:item_vault"
+    }
+  ],
+  "result": {
+    "item": "createdeco:tan_shipping_container"
+  }
+}

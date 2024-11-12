@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "chalk:chalk",
+  "ingredients": [
+    {
+      "item": "minecraft:calcite"
+    },
+    {
+      "tag": "forge:dyes/mint"
+    }
+  ],
+  "result": {
+    "item": "chalk:mint_chalk"
+  }
+}

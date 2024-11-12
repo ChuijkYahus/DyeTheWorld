@@ -6,7 +6,8 @@
   "target": "@env(DEFAULT)",
   "refmap": "${mod_id}.refmap.json",
   "mixins": [
-    "ClayworksBlocksMixin", "ClayworksCompatMixin", "DyeHelperMixin", "LampBlockMixin", "LampConnectorBlockMixin"
+    "ChalkMixin", "ClayworksBlocksMixin", "ClayworksCompatMixin", "DyeHelperMixin",
+    "LampBlockMixin", "LampConnectorBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

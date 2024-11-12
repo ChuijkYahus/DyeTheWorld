@@ -38,6 +38,10 @@ object ForgeEntrypoint {
             DyedDomestication.register()
         }
 
+        ifLoaded(Constants.Mods.CHALK) {
+            DyedChalk.registerColors()
+        }
+
         if (DatagenModLoader.isRunningDataGen()) {
             REGISTRATE.generateTags()
             generateGlassShardLoot()
@@ -47,6 +51,8 @@ object ForgeEntrypoint {
             DyedSupplementaries.register()
             DyedComforts.register()
             DyedCreate.register()
+            DyedCreateDeco.register()
+            DyedChalk.registerDatagen()
         }
     }
 

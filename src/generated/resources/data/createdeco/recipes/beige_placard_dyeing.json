@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/beige"
+    },
+    {
+      "tag": "createdeco:placards"
+    }
+  ],
+  "result": {
+    "item": "createdeco:beige_placard"
+  }
+}

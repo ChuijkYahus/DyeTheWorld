@@ -32,10 +32,10 @@ import net.minecraftforge.fml.ModList
 import net.minecraftforge.registries.ForgeRegistries
 import java.util.*
 
-fun isLoad(modid: String) = ModList.get().isLoaded(modid)
+fun isLoaded(modid: String) = ModList.get().isLoaded(modid)
 
-fun ifLoaded(modid: String, block: () -> Unit) {
-    if (isLoad(modid)) block()
+inline fun ifLoaded(modid: String, block: () -> Unit) {
+    if (isLoaded(modid)) block()
 }
 
 val Direction.yRot: Int

@@ -13,6 +13,7 @@ object DyedTags {
         val GLASS_SHARDS = TagKey.create(Registries.ITEM, Mods.QUARK.createId("shards"))
         val PET_BEDS = TagKey.create(Registries.ITEM, Mods.DOMESTICATION_INNOVATION.createId("pet_beds"))
         val RADON_LAMPS = TagKey.create(Registries.ITEM, Mods.ALEXS_CAVES.createId("radon_lamps"))
+        val IRON_PLATES = TagKey.create(Registries.ITEM, "forge".createId("plates/iron"))
     }
 
     object Blocks {

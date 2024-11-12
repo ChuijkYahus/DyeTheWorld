@@ -1,67 +1,131 @@
 {
   "values": [
     {
-      "id": "create:amber_nixie_tube",
+      "id": "createdeco:amber_shipping_container",
       "required": false
     },
     {
-      "id": "create:aqua_nixie_tube",
+      "id": "createdeco:aqua_shipping_container",
       "required": false
     },
     {
-      "id": "create:beige_nixie_tube",
+      "id": "createdeco:beige_shipping_container",
       "required": false
     },
     {
-      "id": "create:coral_nixie_tube",
+      "id": "createdeco:coral_shipping_container",
       "required": false
     },
     {
-      "id": "create:forest_nixie_tube",
+      "id": "createdeco:forest_shipping_container",
       "required": false
     },
     {
-      "id": "create:ginger_nixie_tube",
+      "id": "createdeco:ginger_shipping_container",
       "required": false
     },
     {
-      "id": "create:indigo_nixie_tube",
+      "id": "createdeco:indigo_shipping_container",
       "required": false
     },
     {
-      "id": "create:maroon_nixie_tube",
+      "id": "createdeco:maroon_shipping_container",
       "required": false
     },
     {
-      "id": "create:mint_nixie_tube",
+      "id": "createdeco:mint_shipping_container",
       "required": false
     },
     {
-      "id": "create:navy_nixie_tube",
+      "id": "createdeco:navy_shipping_container",
       "required": false
     },
     {
-      "id": "create:olive_nixie_tube",
+      "id": "createdeco:olive_shipping_container",
       "required": false
     },
     {
-      "id": "create:rose_nixie_tube",
+      "id": "createdeco:rose_shipping_container",
       "required": false
     },
     {
-      "id": "create:slate_nixie_tube",
+      "id": "createdeco:slate_shipping_container",
       "required": false
     },
     {
-      "id": "create:tan_nixie_tube",
+      "id": "createdeco:tan_shipping_container",
       "required": false
     },
     {
-      "id": "create:teal_nixie_tube",
+      "id": "createdeco:teal_shipping_container",
       "required": false
     },
     {
-      "id": "create:verdant_nixie_tube",
+      "id": "createdeco:verdant_shipping_container",
+      "required": false
+    },
+    {
+      "id": "createdeco:amber_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:aqua_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:beige_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:coral_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:forest_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:ginger_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:indigo_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:maroon_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:mint_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:navy_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:olive_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:rose_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:slate_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:tan_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:teal_placard",
+      "required": false
+    },
+    {
+      "id": "createdeco:verdant_placard",
       "required": false
     }
   ]

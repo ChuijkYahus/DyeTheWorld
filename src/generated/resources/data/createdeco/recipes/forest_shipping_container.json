@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:barrel"
+    },
+    "C": {
+      "tag": "forge:dyes/forest"
+    },
+    "S": {
+      "tag": "forge:plates/iron"
+    }
+  },
+  "pattern": [
+    "CS",
+    "SB"
+  ],
+  "result": {
+    "item": "createdeco:forest_shipping_container"
+  },
+  "show_notification": true
+}
