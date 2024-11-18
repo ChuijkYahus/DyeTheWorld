@@ -3,6 +3,10 @@
     {
       "id": "dye_depot:olive_dye",
       "required": false
+    },
+    {
+      "id": "chalk:olive_chalk",
+      "required": false
     }
   ]
 }

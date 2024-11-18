@@ -3,6 +3,10 @@
     {
       "id": "dye_depot:mint_dye",
       "required": false
+    },
+    {
+      "id": "chalk:mint_chalk",
+      "required": false
     }
   ]
 }

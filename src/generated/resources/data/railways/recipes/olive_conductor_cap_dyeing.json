@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/olive"
+    },
+    {
+      "tag": "railways:conductor_caps"
+    }
+  ],
+  "result": {
+    "item": "railways:olive_conductor_cap"
+  }
+}

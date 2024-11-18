@@ -137,6 +137,10 @@ dependencies {
     // modRuntimeOnly("maven.modrinth:patchouli:${patchouli_version}")
 }
 
+tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 tasks.withType<Jar> {
     exclude("**/*.xcf")
 }

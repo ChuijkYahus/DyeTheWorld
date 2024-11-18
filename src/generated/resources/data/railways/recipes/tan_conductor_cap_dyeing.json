@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/tan"
+    },
+    {
+      "tag": "railways:conductor_caps"
+    }
+  ],
+  "result": {
+    "item": "railways:tan_conductor_cap"
+  }
+}

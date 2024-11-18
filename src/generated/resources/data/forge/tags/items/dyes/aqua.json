@@ -3,6 +3,10 @@
     {
       "id": "dye_depot:aqua_dye",
       "required": false
+    },
+    {
+      "id": "chalk:aqua_chalk",
+      "required": false
     }
   ]
 }

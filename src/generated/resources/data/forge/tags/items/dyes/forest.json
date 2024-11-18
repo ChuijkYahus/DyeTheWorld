@@ -3,6 +3,10 @@
     {
       "id": "dye_depot:forest_dye",
       "required": false
+    },
+    {
+      "id": "chalk:forest_chalk",
+      "required": false
     }
   ]
 }

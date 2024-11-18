@@ -34,6 +34,7 @@ object DyedChalk {
         REGISTRATE.`object`("${dye}_chalk")
             .item { ChalkItem(dye, it) }
             .optionalTag(Chalk.Tags.Items.CHALKS)
+            .optionalTag(dye.tag)
             .lang("${dye.translation} Chalk")
             .tab(CreativeModeTabs.TOOLS_AND_UTILITIES)
             .chalkItemModel(dye)
