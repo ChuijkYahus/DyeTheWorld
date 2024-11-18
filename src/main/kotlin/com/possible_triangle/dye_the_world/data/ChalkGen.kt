@@ -3,8 +3,8 @@ package com.possible_triangle.dye_the_world.data
 import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.CHALK
 import com.possible_triangle.dye_the_world.DEPOT_DYES
-import com.possible_triangle.dye_the_world.createId
-import com.possible_triangle.dye_the_world.requiresUnlocking
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.requiresUnlocking
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import net.minecraft.data.recipes.RecipeCategory

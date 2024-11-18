@@ -1,20 +1,68 @@
 {
   "values": [
-    "chalk:amber_chalk",
-    "chalk:aqua_chalk",
-    "chalk:beige_chalk",
-    "chalk:coral_chalk",
-    "chalk:forest_chalk",
-    "chalk:ginger_chalk",
-    "chalk:indigo_chalk",
-    "chalk:maroon_chalk",
-    "chalk:mint_chalk",
-    "chalk:navy_chalk",
-    "chalk:olive_chalk",
-    "chalk:rose_chalk",
-    "chalk:slate_chalk",
-    "chalk:tan_chalk",
-    "chalk:teal_chalk",
-    "chalk:verdant_chalk"
+    {
+      "id": "chalk:amber_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:aqua_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:beige_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:coral_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:forest_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:ginger_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:indigo_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:maroon_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:mint_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:navy_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:olive_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:rose_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:slate_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:tan_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:teal_chalk",
+      "required": false
+    },
+    {
+      "id": "chalk:verdant_chalk",
+      "required": false
+    }
   ]
 }

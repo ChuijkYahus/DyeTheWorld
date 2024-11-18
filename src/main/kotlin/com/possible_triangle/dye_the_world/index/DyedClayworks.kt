@@ -8,6 +8,13 @@ import com.possible_triangle.dye_the_world.data.createPotItem
 import com.possible_triangle.dye_the_world.data.potBlockstate
 import com.possible_triangle.dye_the_world.data.potItemModel
 import com.possible_triangle.dye_the_world.data.potLoot
+import com.possible_triangle.dye_the_world.extensions.asIngredient
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.germanLang
+import com.possible_triangle.dye_the_world.extensions.inverse
+import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.translation
+import com.possible_triangle.dye_the_world.extensions.withItem
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import net.minecraft.data.recipes.RecipeCategory.BUILDING_BLOCKS
 import net.minecraft.data.recipes.ShapedRecipeBuilder

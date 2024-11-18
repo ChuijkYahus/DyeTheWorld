@@ -1,14 +1,13 @@
 package com.possible_triangle.dye_the_world.data
 
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE
-import com.possible_triangle.dye_the_world.createId
-import com.possible_triangle.dye_the_world.createVariant
-import com.possible_triangle.dye_the_world.yRot
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.createVariant
+import com.possible_triangle.dye_the_world.extensions.yRot
 import com.simibubi.create.content.redstone.nixieTube.DoubleFaceAttachedBlock
 import com.simibubi.create.content.redstone.nixieTube.NixieTubeBlock
 import com.tterrag.registrate.builders.BlockBuilder
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraftforge.client.model.generators.ConfiguredModel
 
 private val DoubleFaceAttachedBlock.DoubleAttachFace.xRot

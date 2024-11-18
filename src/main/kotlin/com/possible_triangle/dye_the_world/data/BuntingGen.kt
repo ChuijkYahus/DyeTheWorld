@@ -3,8 +3,8 @@ package com.possible_triangle.dye_the_world.data
 import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES
 import com.possible_triangle.dye_the_world.blockOf
-import com.possible_triangle.dye_the_world.createId
-import com.possible_triangle.dye_the_world.defineUnlocking
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.defineUnlocking
 import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.tterrag.registrate.builders.ItemBuilder
 import net.mehvahdjukaar.supplementaries.reg.ModRegistry

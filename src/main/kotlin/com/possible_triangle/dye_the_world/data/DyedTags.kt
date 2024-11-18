@@ -3,7 +3,7 @@ package com.possible_triangle.dye_the_world.data
 import com.possible_triangle.dye_the_world.Constants.Mods
 import com.possible_triangle.dye_the_world.DEPOT_DYES
 import com.possible_triangle.dye_the_world.DyedRegistrate
-import com.possible_triangle.dye_the_world.createId
+import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.index.DyedTags
 import com.simibubi.create.AllTags
 import net.minecraft.tags.BlockTags

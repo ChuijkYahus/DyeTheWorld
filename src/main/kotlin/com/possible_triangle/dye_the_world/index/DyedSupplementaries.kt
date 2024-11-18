@@ -6,9 +6,9 @@ import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES_SQUARE
 import com.possible_triangle.dye_the_world.DyedRegistrate
 import com.possible_triangle.dye_the_world.data.*
 import com.possible_triangle.dye_the_world.dyesFor
-import com.possible_triangle.dye_the_world.optionalTag
-import com.possible_triangle.dye_the_world.translation
-import com.possible_triangle.dye_the_world.withItem
+import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.translation
+import com.possible_triangle.dye_the_world.extensions.withItem
 import net.mehvahdjukaar.supplementaries.common.block.blocks.AwningBlock
 import net.mehvahdjukaar.supplementaries.common.block.blocks.CandleHolderBlock
 import net.mehvahdjukaar.supplementaries.common.block.blocks.PresentBlock

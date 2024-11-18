@@ -1,24 +1,23 @@
 package com.possible_triangle.dye_the_world.index
 
+import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.FARMERS_DELIGHT
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
-import com.possible_triangle.dye_the_world.Genus
 import com.possible_triangle.dye_the_world.data.canvasSignBlockstate
 import com.possible_triangle.dye_the_world.data.canvasSignItemModel
 import com.possible_triangle.dye_the_world.data.canvasSignRecipes
 import com.possible_triangle.dye_the_world.data.hangingCanvasSignRecipes
-import com.possible_triangle.dye_the_world.dyesFor
-import com.possible_triangle.dye_the_world.germanLang
-import com.possible_triangle.dye_the_world.germanTranslation
+import com.possible_triangle.dye_the_world.extensions.germanLang
+import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.translation
+import com.possible_triangle.dye_the_world.extensions.validBlocks
+import com.possible_triangle.dye_the_world.extensions.withItem
 import com.possible_triangle.dye_the_world.`object`.block.DyedCeilingHangingCanvasSignBlock
 import com.possible_triangle.dye_the_world.`object`.block.DyedStandingCanvasSignBlock
 import com.possible_triangle.dye_the_world.`object`.block.DyedWallCanvasSignBlock
 import com.possible_triangle.dye_the_world.`object`.block.DyedWallHangingCanvasSignBlock
 import com.possible_triangle.dye_the_world.`object`.block.entity.DyedCanvasSignBlockEntity
 import com.possible_triangle.dye_the_world.`object`.block.entity.DyedHangingCanvasSignBlockEntity
-import com.possible_triangle.dye_the_world.translation
-import com.possible_triangle.dye_the_world.validBlocks
-import com.possible_triangle.dye_the_world.withItem
 import com.tterrag.registrate.util.nullness.NonNullFunction
 import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.core.registries.Registries
@@ -55,7 +54,7 @@ object DyedDelight {
             .germanLang("${dye.germanTranslation(Genus.I)} Canvas Schild")
             .canvasSignBlockstate()
             .withItem(dye.signItem(CANVAS_WALL_SIGNS)) {
-                tag(ModTags.CANVAS_SIGNS)
+                optionalTag(ModTags.CANVAS_SIGNS)
                 canvasSignRecipes(dye)
                 canvasSignItemModel()
                 tab(TAB)
@@ -86,7 +85,7 @@ object DyedDelight {
             .lang("${dye.translation} Hanging Canvas Sign")
             .canvasSignBlockstate()
             .withItem(dye.signItem(HANGING_CANVAS_WALL_SIGNS)) {
-                tag(ModTags.HANGING_CANVAS_SIGNS)
+                optionalTag(ModTags.HANGING_CANVAS_SIGNS)
                 hangingCanvasSignRecipes(dye)
                 canvasSignItemModel()
                 tab(TAB)

@@ -1,12 +1,7 @@
-package com.possible_triangle.dye_the_world
+package com.possible_triangle.dye_the_world.extensions
 
-import com.possible_triangle.dye_the_world.data.CustomRegistrateLangProvider
 import com.tterrag.registrate.AbstractRegistrate
-import com.tterrag.registrate.builders.BlockBuilder
-import com.tterrag.registrate.builders.BlockEntityBuilder
 import com.tterrag.registrate.builders.Builder
-import com.tterrag.registrate.builders.ItemBuilder
-import com.tterrag.registrate.providers.ProviderType
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import com.tterrag.registrate.util.DataIngredient
 import com.tterrag.registrate.util.nullness.NonNullSupplier
@@ -18,12 +13,10 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
-import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.Property
@@ -53,21 +46,6 @@ fun <T : Any> Registry<T>.getOrThrow(id: ResourceLocation): T {
 }
 
 fun String.createId(path: String) = ResourceLocation(this, path)
-
-fun <T : Block, P> BlockBuilder<T, P>.withItem(
-    factory: (T, Item.Properties) -> BlockItem = ::BlockItem,
-    block: ItemBuilder<BlockItem, BlockBuilder<T, P>>.() -> Unit,
-): BlockBuilder<T, P> {
-    return item(factory)
-        .apply(block)
-        .build()
-}
-
-fun <T : BlockEntity, P> BlockEntityBuilder<T, P>.validBlocks(
-    values: Collection<NonNullSupplier<out Block>>,
-): BlockEntityBuilder<T, P> {
-    return validBlocks(*values.toTypedArray())
-}
 
 val DyeColor.translation get() = serializedName.replaceFirstChar { it.uppercase(Locale.ROOT) }
 
@@ -113,20 +91,3 @@ fun ShapedRecipeBuilder.defineUnlocking(key: Char, tag: TagKey<Item>) = define(k
 fun ShapelessRecipeBuilder.requiresUnlocking(item: ItemLike) = requires(item).unlockedBy(item)
 fun ShapelessRecipeBuilder.requiresUnlocking(tag: TagKey<Item>) = requires(tag).unlockedBy(tag)
 
-fun <T : Item, P> ItemBuilder<T, P>.optionalTag(tag: TagKey<Item>) = addMiscData(ProviderType.ITEM_TAGS) {
-    it.addTag(tag).addOptional(owner.modid.createId(name))
-}
-
-fun <T : Block, P> BlockBuilder<T, P>.optionalTag(tag: TagKey<Block>) = addMiscData(ProviderType.BLOCK_TAGS) {
-    it.addTag(tag).addOptional(owner.modid.createId(name))
-}
-
-private val DE_LANG = CustomRegistrateLangProvider.providerType("de_de")
-
-fun <T : Item, P> ItemBuilder<T, P>.germanLang(translation: String) = setData(DE_LANG) { context, provider ->
-    provider.add(context.get(), translation)
-}
-
-fun <T : Block, P> BlockBuilder<T, P>.germanLang(translation: String) = setData(DE_LANG) { context, provider ->
-    provider.add(context.get(), translation)
-}

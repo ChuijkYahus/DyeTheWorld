@@ -1,11 +1,10 @@
 package com.possible_triangle.dye_the_world.index
 
-import com.possible_triangle.dye_the_world.DyedRegistrate
-import com.possible_triangle.dye_the_world.asIngredient
-import com.possible_triangle.dye_the_world.createId
-import com.possible_triangle.dye_the_world.namespace
-import com.possible_triangle.dye_the_world.optionalTag
-import com.possible_triangle.dye_the_world.withItem
+import com.possible_triangle.dye_the_world.*
+import com.possible_triangle.dye_the_world.extensions.asIngredient
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.withItem
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.util.nullness.NonNullSupplier
@@ -38,7 +37,7 @@ fun DyedRegistrate.createSlabs(
         .withItem {
             tab(CreativeModeTabs.COLORED_BLOCKS)
             tab(CreativeModeTabs.BUILDING_BLOCKS)
-            tag(ItemTags.SLABS)
+            optionalTag(ItemTags.SLABS)
             recipe { c, p -> p.slab(base.asIngredient(), BUILDING_BLOCKS, c, null, true) }
             modifyItem(dye)
         }
@@ -64,7 +63,7 @@ fun DyedRegistrate.createStairs(
         .withItem {
             tab(CreativeModeTabs.COLORED_BLOCKS)
             tab(CreativeModeTabs.BUILDING_BLOCKS)
-            tag(ItemTags.STAIRS)
+            optionalTag(ItemTags.STAIRS)
             recipe { c, p -> p.stairs(base.asIngredient(), BUILDING_BLOCKS, c, null, true) }
             modifyItem(dye)
         }
@@ -90,7 +89,7 @@ fun DyedRegistrate.createWalls(
         .withItem {
             tab(CreativeModeTabs.COLORED_BLOCKS)
             tab(CreativeModeTabs.BUILDING_BLOCKS)
-            tag(ItemTags.WALLS)
+            optionalTag(ItemTags.WALLS)
             recipe { c, p -> p.wall(base.asIngredient(), BUILDING_BLOCKS, c) }
             model { c, p ->
                 val texture = dye.namespace.createId("block/${dye}_${name}")

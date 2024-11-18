@@ -4,7 +4,12 @@ import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.QUARK
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.*
-import net.minecraft.data.recipes.RecipeCategory
+import com.possible_triangle.dye_the_world.extensions.asIngredient
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.germanLang
+import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.translation
+import com.possible_triangle.dye_the_world.extensions.withItem
 import net.minecraft.data.recipes.RecipeCategory.BUILDING_BLOCKS
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.BlockTags
@@ -36,7 +41,7 @@ object DyedQuark {
             .optionalTag(DyedTags.Items.GLASS_SHARDS)
             .recipe { context, provider ->
                 val glass = dye.blockOf("stained_glass")
-                provider.square(context.asIngredient(), RecipeCategory.BUILDING_BLOCKS, { glass }, true)
+                provider.square(context.asIngredient(), BUILDING_BLOCKS, { glass }, true)
             }
             .model { context, provider ->
                 provider.generated(context, Constants.MOD_ID.createId("item/$QUARK/${context.name}"))
@@ -140,7 +145,7 @@ object DyedQuark {
             .withItem {
                 tab(CreativeModeTabs.COLORED_BLOCKS)
                 tab(CreativeModeTabs.BUILDING_BLOCKS)
-                tag(Tags.Items.GLASS)
+                optionalTag(Tags.Items.GLASS)
                 model { c, p -> p.blockItem(c).translucent() }
                 framedGlassRecipes(dye)
             }
@@ -171,7 +176,7 @@ object DyedQuark {
                 model { c, p ->
                     p.generated(c, Constants.MOD_ID.createId("block/$QUARK/${dye}_framed_glass")).translucent()
                 }
-                tag(Tags.Items.GLASS_PANES)
+                optionalTag(Tags.Items.GLASS_PANES)
                 tab(CreativeModeTabs.COLORED_BLOCKS)
                 tab(CreativeModeTabs.BUILDING_BLOCKS)
                 framedGlassPaneRecipes(dye)

@@ -2,6 +2,9 @@ package com.possible_triangle.dye_the_world.data
 
 import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.createVariant
+import com.possible_triangle.dye_the_world.extensions.yRot
 import com.starfish_studios.another_furniture.block.LampBlock
 import com.starfish_studios.another_furniture.registry.AFBlocks
 import com.tterrag.registrate.builders.BlockBuilder
@@ -14,7 +17,6 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraftforge.client.model.generators.ConfiguredModel
 
 fun <T : Item, P> ItemBuilder<T, P>.lampRecipes(dye: DyeColor) = recipe { context, provider ->

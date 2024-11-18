@@ -2,8 +2,8 @@ package com.possible_triangle.dye_the_world.data
 
 import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES
-import com.possible_triangle.dye_the_world.createId
-import com.possible_triangle.dye_the_world.createVariant
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.createVariant
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import net.mehvahdjukaar.supplementaries.common.block.ModBlockProperties

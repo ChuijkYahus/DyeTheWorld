@@ -3,6 +3,12 @@ package com.possible_triangle.dye_the_world.index
 import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.ALEXS_CAVES
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.germanLang
+import com.possible_triangle.dye_the_world.extensions.getOrThrow
+import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.translation
+import com.possible_triangle.dye_the_world.extensions.withItem
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
@@ -35,7 +41,7 @@ object DyedCaves {
             }
             .withItem {
                 tab(TOXIC_TAB)
-                tag(DyedTags.Items.RADON_LAMPS)
+                optionalTag(DyedTags.Items.RADON_LAMPS)
                 recipe { context,provider ->
                     val radonBottle = BuiltInRegistries.ITEM.getOrThrow(ALEXS_CAVES.createId("radon_bottle"))
 

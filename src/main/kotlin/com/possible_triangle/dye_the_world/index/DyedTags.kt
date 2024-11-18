@@ -1,7 +1,7 @@
 package com.possible_triangle.dye_the_world.index
 
 import com.possible_triangle.dye_the_world.Constants.Mods
-import com.possible_triangle.dye_the_world.createId
+import com.possible_triangle.dye_the_world.extensions.createId
 import net.minecraft.core.registries.Registries
 import net.minecraft.tags.TagKey
 

@@ -6,9 +6,9 @@ import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.petBedBlockstate
 import com.possible_triangle.dye_the_world.data.petBedRecipe
 import com.possible_triangle.dye_the_world.dyesFor
-import com.possible_triangle.dye_the_world.optionalTag
-import com.possible_triangle.dye_the_world.translation
-import com.possible_triangle.dye_the_world.withItem
+import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.translation
+import com.possible_triangle.dye_the_world.extensions.withItem
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
@@ -34,7 +34,7 @@ object DyedDomestication {
             .petBedBlockstate()
             .withItem {
                 tab(TAB)
-                tag(DyedTags.Items.PET_BEDS)
+                optionalTag(DyedTags.Items.PET_BEDS)
                 petBedRecipe(dye)
             }
             .register()

@@ -2,13 +2,15 @@ package com.possible_triangle.dye_the_world.index
 
 import com.github.talrey.createdeco.api.CDTags
 import com.github.talrey.createdeco.blocks.ShippingContainerBlock
+import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE_DECO
-import com.possible_triangle.dye_the_world.DyedRegistrate
-import com.possible_triangle.dye_the_world.data.*
-import com.possible_triangle.dye_the_world.dyesFor
-import com.possible_triangle.dye_the_world.optionalTag
-import com.possible_triangle.dye_the_world.translation
-import com.possible_triangle.dye_the_world.withItem
+import com.possible_triangle.dye_the_world.data.placardBlockstate
+import com.possible_triangle.dye_the_world.data.placardRecipe
+import com.possible_triangle.dye_the_world.data.shippingContainerBlockstate
+import com.possible_triangle.dye_the_world.data.shippingContainerRecipe
+import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.translation
+import com.possible_triangle.dye_the_world.extensions.withItem
 import com.simibubi.create.AllTags.AllBlockTags
 import com.simibubi.create.content.decoration.placard.PlacardBlock
 import net.minecraft.tags.BlockTags
@@ -36,10 +38,10 @@ object DyedCreateDeco {
             .block(::PlacardBlock)
             .lang("${dye.translation} Placard")
             .optionalTag(BlockTags.MINEABLE_WITH_PICKAXE)
-            .tag(AllBlockTags.SAFE_NBT.tag)
+            .optionalTag(AllBlockTags.SAFE_NBT.tag)
             .placardBlockstate(dye)
             .withItem {
-                tag(CDTags.PLACARD)
+                optionalTag(CDTags.PLACARD)
                 placardRecipe(dye)
             }
             .register()

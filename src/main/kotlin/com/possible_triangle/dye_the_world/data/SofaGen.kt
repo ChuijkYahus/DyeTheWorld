@@ -2,6 +2,9 @@ package com.possible_triangle.dye_the_world.data
 
 import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.createVariant
+import com.possible_triangle.dye_the_world.extensions.yRot
 import com.starfish_studios.another_furniture.block.SofaBlock
 import com.starfish_studios.another_furniture.block.properties.SofaType
 import com.starfish_studios.another_furniture.registry.AFBlocks
