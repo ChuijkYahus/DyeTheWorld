@@ -161,17 +161,22 @@ fun DependencyBuilder.addDependencies() {
     optional("supplementaries")
     optional("supplementaries-squared")
     optional("alexs-caves")
+    optional("ars-nouveau")
+    optional("create-deco")
+    optional("create-steam-n-rails")
 }
 
 uploadToCurseforge {
     dependencies {
         addDependencies()
+        optional("chalk")
     }
 }
 
 uploadToModrinth {
     dependencies {
         addDependencies()
+        optional("chalk-mod")
     }
 
     syncBodyFromReadme()

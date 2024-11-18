@@ -14,7 +14,7 @@
 [![Version](https://cf.way2muchnoise.eu/versions/1135725.svg)][DOWNLOAD]
 [![Issues](https://img.shields.io/github/issues/PssbleTrngle/DyeTheWorld?label=Issues)][ISSUES]
 [![Modrinth](https://img.shields.io/modrinth/dt/naUMeOvG?color=green&logo=modrinth&logoColor=green)][MODRINTH]
-[![Curseforge](https://img.shields.io/curseforge/dt/1135725?logo=curseforge)][CURSEFORGE]
+[![Curseforge](https://img.shields.io/curseforge/dt/1135725?logo=curseforge&color=red&logoColor=orange)][CURSEFORGE]
 <!-- modrinth_exclude.end -->
 
 ![](https://raw.githubusercontent.com/PssbleTrngle/DyeTheWorld/1.20.x/src/main/resources/assets/dye_the_world/logo.png)
@@ -42,3 +42,7 @@ and [OutrightWings](https://modrinth.com/user/outrightwings)(outrightwings) for 
 - [Clayworks](https://modrinth.com/mod/clayworks) (Terracotta Bricks, Colored Decorated Pots)
 - [Domestication Innovation](https://modrinth.com/mod/domestication-innovation) (Pet Beds)
 - [Alex's Caves](https://modrinth.com/mod/alexs-caves) (Radon Lamps)
+- [Ars Nouveau](https://modrinth.com/mod/ars-nouveau) (Starbuncles)
+- [Chalk](https://modrinth.com/mod/chalk-mod)
+- [Create Deco](https://modrinth.com/mod/create-deco): (Shipping Containers, Placards)
+- [Create Steam & Rails](https://modrinth.com/mod/create-steam-n-rails): (Shipping Containers, Placards)
