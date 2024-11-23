@@ -1,20 +1,68 @@
 {
   "values": [
-    "dye_the_world:amber_curtain",
-    "dye_the_world:aqua_curtain",
-    "dye_the_world:beige_curtain",
-    "dye_the_world:coral_curtain",
-    "dye_the_world:forest_curtain",
-    "dye_the_world:ginger_curtain",
-    "dye_the_world:indigo_curtain",
-    "dye_the_world:maroon_curtain",
-    "dye_the_world:mint_curtain",
-    "dye_the_world:navy_curtain",
-    "dye_the_world:olive_curtain",
-    "dye_the_world:rose_curtain",
-    "dye_the_world:slate_curtain",
-    "dye_the_world:tan_curtain",
-    "dye_the_world:teal_curtain",
-    "dye_the_world:verdant_curtain"
+    {
+      "id": "dye_the_world:amber_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:aqua_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:beige_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:coral_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:forest_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:ginger_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:indigo_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:maroon_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:mint_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:navy_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:olive_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:rose_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:slate_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:tan_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:teal_curtain",
+      "required": false
+    },
+    {
+      "id": "dye_the_world:verdant_curtain",
+      "required": false
+    }
   ]
 }

@@ -3,6 +3,10 @@
     {
       "id": "dye_depot:teal_dye",
       "required": false
+    },
+    {
+      "id": "chalk:teal_chalk",
+      "required": false
     }
   ]
 }

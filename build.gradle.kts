@@ -137,6 +137,10 @@ dependencies {
     // modRuntimeOnly("maven.modrinth:patchouli:${patchouli_version}")
 }
 
+tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 tasks.withType<Jar> {
     exclude("**/*.xcf")
 }
@@ -157,17 +161,22 @@ fun DependencyBuilder.addDependencies() {
     optional("supplementaries")
     optional("supplementaries-squared")
     optional("alexs-caves")
+    optional("ars-nouveau")
+    optional("create-deco")
+    optional("create-steam-n-rails")
 }
 
 uploadToCurseforge {
     dependencies {
         addDependencies()
+        optional("chalk")
     }
 }
 
 uploadToModrinth {
     dependencies {
         addDependencies()
+        optional("chalk-mod")
     }
 
     syncBodyFromReadme()

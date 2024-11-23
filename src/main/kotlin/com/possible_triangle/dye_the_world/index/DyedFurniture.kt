@@ -4,9 +4,9 @@ import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.*
 import com.possible_triangle.dye_the_world.dyesFor
-import com.possible_triangle.dye_the_world.optionalTag
-import com.possible_triangle.dye_the_world.translation
-import com.possible_triangle.dye_the_world.withItem
+import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.translation
+import com.possible_triangle.dye_the_world.extensions.withItem
 import com.starfish_studios.another_furniture.block.*
 import com.starfish_studios.another_furniture.registry.AFBlockTags
 import com.starfish_studios.another_furniture.registry.AFBlocks
@@ -28,7 +28,7 @@ object DyedFurniture {
             .sofaBlockstate(dye)
             .withItem {
                 sofaRecipes(dye)
-                tag(AFItemTags.SOFAS)
+                optionalTag(AFItemTags.SOFAS)
                 tab(TAB)
             }
             .register()
@@ -42,7 +42,7 @@ object DyedFurniture {
             .stoolBlockstate(dye)
             .withItem {
                 stoolRecipes(dye)
-                tag(AFItemTags.STOOLS)
+                optionalTag(AFItemTags.STOOLS)
                 tab(TAB)
             }
             .register()
@@ -56,7 +56,7 @@ object DyedFurniture {
             .tallStoolBlockstate(dye)
             .withItem {
                 tallStoolRecipes(dye)
-                tag(AFItemTags.TALL_STOOLS)
+                optionalTag(AFItemTags.TALL_STOOLS)
                 tab(TAB)
             }
             .register()
@@ -72,7 +72,7 @@ object DyedFurniture {
             .withItem {
                 curtainRecipes(dye)
                 curtainItemModel(dye)
-                tag(AFItemTags.CURTAINS)
+                optionalTag(AFItemTags.CURTAINS)
                 tab(TAB)
             }
             .register()
@@ -87,7 +87,7 @@ object DyedFurniture {
             .withItem {
                 lampRecipes(dye)
                 lampItemModel(dye)
-                tag(AFItemTags.LAMPS)
+                optionalTag(AFItemTags.LAMPS)
                 tab(TAB)
             }
             .register()

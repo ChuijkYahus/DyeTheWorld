@@ -7,11 +7,11 @@ import com.possible_triangle.dye_the_world.data.chalkBoxModel
 import com.possible_triangle.dye_the_world.data.chalkItemModel
 import com.possible_triangle.dye_the_world.data.chalkRecipe
 import com.possible_triangle.dye_the_world.dyesFor
-import com.possible_triangle.dye_the_world.translation
+import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.translation
 import io.github.mortuusars.chalk.Chalk
 import io.github.mortuusars.chalk.block.ChalkMarkBlock
 import io.github.mortuusars.chalk.items.ChalkItem
-import io.github.mortuusars.chalk.render.ChalkColors
 import net.minecraft.world.item.CreativeModeTabs
 import net.minecraft.world.item.Item
 
@@ -24,7 +24,7 @@ object DyedChalk {
     val CHALK_MARKS = DYES.associateWith { dye ->
         REGISTRATE.`object`("${dye}_chalk_mark")
             .block { ChalkMarkBlock(dye, it) }
-            .tag(Chalk.Tags.Blocks.CHALK_MARKS)
+            .optionalTag(Chalk.Tags.Blocks.CHALK_MARKS)
             .lang("${dye.translation} Chalk Mark")
             .chalkBlockstate()
             .register()
@@ -33,7 +33,8 @@ object DyedChalk {
     val CHALKS = DYES.associateWith { dye ->
         REGISTRATE.`object`("${dye}_chalk")
             .item { ChalkItem(dye, it) }
-            .tag(Chalk.Tags.Items.CHALKS)
+            .optionalTag(Chalk.Tags.Items.CHALKS)
+            .optionalTag(dye.tag)
             .lang("${dye.translation} Chalk")
             .tab(CreativeModeTabs.TOOLS_AND_UTILITIES)
             .chalkItemModel(dye)
@@ -45,12 +46,6 @@ object DyedChalk {
         .item(::Item)
         .chalkBoxModel()
         .register()
-
-    fun registerColors() {
-        DYES.forEach {
-            ChalkColors.COLORS[it] = it.fireworkColor
-        }
-    }
 
     fun registerDatagen() {
         REGISTRATE.register()

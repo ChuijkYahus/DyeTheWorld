@@ -3,6 +3,10 @@
     {
       "id": "dye_depot:indigo_dye",
       "required": false
+    },
+    {
+      "id": "chalk:indigo_chalk",
+      "required": false
     }
   ]
 }

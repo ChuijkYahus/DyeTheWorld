@@ -2,7 +2,7 @@ package com.possible_triangle.dye_the_world.data
 
 import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.FARMERS_DELIGHT
-import com.possible_triangle.dye_the_world.createId
+import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder

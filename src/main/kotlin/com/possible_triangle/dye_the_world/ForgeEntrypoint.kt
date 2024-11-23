@@ -2,6 +2,7 @@ package com.possible_triangle.dye_the_world
 
 import com.possible_triangle.dye_the_world.data.generateGlassShardLoot
 import com.possible_triangle.dye_the_world.data.generateTags
+import com.possible_triangle.dye_the_world.extensions.ifLoaded
 import com.possible_triangle.dye_the_world.index.*
 import net.minecraftforge.data.loading.DatagenModLoader
 import net.minecraftforge.fml.common.Mod
@@ -38,10 +39,6 @@ object ForgeEntrypoint {
             DyedDomestication.register()
         }
 
-        ifLoaded(Constants.Mods.CHALK) {
-            DyedChalk.registerColors()
-        }
-
         if (DatagenModLoader.isRunningDataGen()) {
             REGISTRATE.generateTags()
             generateGlassShardLoot()
@@ -52,6 +49,7 @@ object ForgeEntrypoint {
             DyedComforts.register()
             DyedCreate.register()
             DyedCreateDeco.register()
+            DyedRailways.register()
             DyedChalk.registerDatagen()
         }
     }

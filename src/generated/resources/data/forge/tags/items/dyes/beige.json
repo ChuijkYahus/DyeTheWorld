@@ -3,6 +3,10 @@
     {
       "id": "dye_depot:beige_dye",
       "required": false
+    },
+    {
+      "id": "chalk:beige_chalk",
+      "required": false
     }
   ]
 }

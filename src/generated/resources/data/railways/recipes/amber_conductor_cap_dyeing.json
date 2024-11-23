@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/amber"
+    },
+    {
+      "tag": "railways:conductor_caps"
+    }
+  ],
+  "result": {
+    "item": "railways:amber_conductor_cap"
+  }
+}

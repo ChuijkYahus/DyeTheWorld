@@ -3,6 +3,10 @@
     {
       "id": "dye_depot:rose_dye",
       "required": false
+    },
+    {
+      "id": "chalk:rose_chalk",
+      "required": false
     }
   ]
 }

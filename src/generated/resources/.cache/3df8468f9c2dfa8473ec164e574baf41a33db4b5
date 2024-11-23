@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-12T23:05:35.7013686	Registrate Provider for createdeco [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
+// 1.20.1	2024-11-18T11:12:33.9422191	Registrate Provider for createdeco [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
 e90339579bc3d713f9ae00f6be69cf3fc50a0b54 assets/createdeco/blockstates/amber_placard.json
 1b00cf075cfa06fccfb096fa8dbd42957f0ee0d3 assets/createdeco/blockstates/amber_shipping_container.json
 931e02bdae54886250713ce2ad7997206ac0351f assets/createdeco/blockstates/aqua_placard.json
@@ -257,6 +257,3 @@ b8150c2fe60834b10c65714d18a71c0ca490289d data/createdeco/recipes/teal_placard_dy
 07b5290a65cf40f268812b4c2d1c2d5c2b42dff3 data/createdeco/recipes/verdant_placard_dyeing.json
 869167715581fcb291d9dbc4581658e6b98b5585 data/createdeco/recipes/verdant_shipping_container.json
 6915a598bbd0b3d708b66b656c90829e322ae5a5 data/createdeco/recipes/verdant_shipping_container_dyeing.json
-ab32bb3809b9ef9f6250a65b4145e94ed4925fe0 data/createdeco/tags/items/placards.json
-ab32bb3809b9ef9f6250a65b4145e94ed4925fe0 data/create/tags/blocks/safe_nbt.json
-a408f770f5924a369edff6abd08456de33770606 data/minecraft/tags/blocks/mineable/pickaxe.json

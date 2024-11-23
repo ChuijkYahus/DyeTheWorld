@@ -1,5 +1,7 @@
 package com.possible_triangle.dye_the_world
 
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.getOrThrow
 import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.world.item.DyeColor

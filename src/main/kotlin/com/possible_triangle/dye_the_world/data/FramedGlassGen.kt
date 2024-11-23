@@ -1,8 +1,8 @@
 package com.possible_triangle.dye_the_world.data
 
 import com.possible_triangle.dye_the_world.Constants.Mods.QUARK
-import com.possible_triangle.dye_the_world.createId
-import com.possible_triangle.dye_the_world.getOrThrow
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.getOrThrow
 import com.possible_triangle.dye_the_world.index.DyedQuark
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.providers.RegistrateRecipeProvider

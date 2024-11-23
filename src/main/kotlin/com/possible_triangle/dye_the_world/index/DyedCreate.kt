@@ -1,15 +1,12 @@
 package com.possible_triangle.dye_the_world.index
 
+import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE
-import com.possible_triangle.dye_the_world.DyedRegistrate
-import com.possible_triangle.dye_the_world.Genus
 import com.possible_triangle.dye_the_world.data.*
-import com.possible_triangle.dye_the_world.dyesFor
-import com.possible_triangle.dye_the_world.germanLang
-import com.possible_triangle.dye_the_world.germanTranslation
-import com.possible_triangle.dye_the_world.optionalTag
-import com.possible_triangle.dye_the_world.translation
-import com.possible_triangle.dye_the_world.withItem
+import com.possible_triangle.dye_the_world.extensions.germanLang
+import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.translation
+import com.possible_triangle.dye_the_world.extensions.withItem
 import com.simibubi.create.AllBlocks
 import com.simibubi.create.AllTags
 import com.simibubi.create.content.contraptions.actors.seat.SeatBlock
@@ -46,7 +43,7 @@ object DyedCreate {
             .toolboxLoot()
             .toolboxBlockstate(dye)
             .withItem {
-                tag(AllTags.AllItemTags.TOOLBOXES.tag)
+                optionalTag(AllTags.AllItemTags.TOOLBOXES.tag)
                 toolboxItemModel(dye)
             }
             .register()
@@ -60,7 +57,7 @@ object DyedCreate {
             .optionalTag(AllTags.AllBlockTags.SEATS.tag)
             .seatBlockstate(dye)
             .withItem {
-                tag(AllTags.AllItemTags.SEATS.tag)
+                optionalTag(AllTags.AllItemTags.SEATS.tag)
             }
             .register()
     }
@@ -83,7 +80,7 @@ object DyedCreate {
             .optionalTag(AllTags.AllBlockTags.VALVE_HANDLES.tag)
             .valveBlockstate(dye)
             .withItem {
-                tag(AllTags.AllItemTags.VALVE_HANDLES.tag)
+                optionalTag(AllTags.AllItemTags.VALVE_HANDLES.tag)
                 valveRecipe(dye)
             }
             .register()

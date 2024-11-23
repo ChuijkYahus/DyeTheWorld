@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-12T23:21:14.8209072	Registrate Provider for supplementaries [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
+// 1.20.1	2024-11-18T17:17:05.4403366	Registrate Provider for supplementaries [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
 021a324d631e716b14f477c381df9875fbc388b8 assets/supplementaries/blockstates/awning_amber.json
 2dc41d2d2b65df37f35350a36364f0f959a810ee assets/supplementaries/blockstates/awning_aqua.json
 aa29a51acb32db5f3f7a39d67e63c278e0df0973 assets/supplementaries/blockstates/awning_beige.json
@@ -962,4 +962,3 @@ bbe94afc972d895574155c7b5ef4c112e8c25725 data/supplementaries/recipes/flag_rose.
 73159adb63f957d2d3276253c32f127d24f7a039 data/supplementaries/recipes/flag_tan.json
 799ffec145088eadbef9fc23be0ff352d9933348 data/supplementaries/recipes/flag_teal.json
 6023245b5ca44b7754aa656ee4631ea7d5077513 data/supplementaries/recipes/flag_verdant.json
-267f0623e314dac34938363647f23f15d576ca52 data/supplementaries/tags/blocks/flags.json

@@ -2,10 +2,10 @@ package com.possible_triangle.dye_the_world.data
 
 import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE
-import com.possible_triangle.dye_the_world.createId
-import com.possible_triangle.dye_the_world.createVariant
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.createVariant
 import com.possible_triangle.dye_the_world.dyeingRecipe
-import com.possible_triangle.dye_the_world.yRot
+import com.possible_triangle.dye_the_world.extensions.yRot
 import com.simibubi.create.AllTags
 import com.simibubi.create.content.kinetics.crank.ValveHandleBlock
 import com.tterrag.registrate.builders.BlockBuilder

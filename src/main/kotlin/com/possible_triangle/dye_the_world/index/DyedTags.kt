@@ -1,7 +1,8 @@
 package com.possible_triangle.dye_the_world.index
 
 import com.possible_triangle.dye_the_world.Constants.Mods
-import com.possible_triangle.dye_the_world.createId
+import com.possible_triangle.dye_the_world.Constants.Mods.CREATE_RAILWAYS
+import com.possible_triangle.dye_the_world.extensions.createId
 import net.minecraft.core.registries.Registries
 import net.minecraft.tags.TagKey
 
@@ -14,6 +15,7 @@ object DyedTags {
         val PET_BEDS = TagKey.create(Registries.ITEM, Mods.DOMESTICATION_INNOVATION.createId("pet_beds"))
         val RADON_LAMPS = TagKey.create(Registries.ITEM, Mods.ALEXS_CAVES.createId("radon_lamps"))
         val IRON_PLATES = TagKey.create(Registries.ITEM, "forge".createId("plates/iron"))
+        val CONDUCTOR_CAPS = TagKey.create(Registries.ITEM, CREATE_RAILWAYS.createId("conductor_caps"))
     }
 
     object Blocks {
