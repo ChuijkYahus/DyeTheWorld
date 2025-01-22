@@ -10,7 +10,7 @@
       ],
       "entries": [
         {
-          "type": "minecraft:item",
+          "type": "dye_the_world:optional_item",
           "name": "dye_the_world:indigo_quark_stool"
         }
       ],

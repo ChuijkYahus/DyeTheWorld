@@ -4,6 +4,9 @@ import com.possible_triangle.dye_the_world.data.generateGlassShardLoot
 import com.possible_triangle.dye_the_world.data.generateTags
 import com.possible_triangle.dye_the_world.extensions.ifLoaded
 import com.possible_triangle.dye_the_world.index.*
+import com.possible_triangle.dye_the_world.`object`.OptionalLootEntry
+import net.minecraft.core.registries.Registries
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryType
 import net.minecraftforge.data.loading.DatagenModLoader
 import net.minecraftforge.fml.common.Mod
 
@@ -11,6 +14,10 @@ import net.minecraftforge.fml.common.Mod
 object ForgeEntrypoint {
 
     val REGISTRATE = DyedRegistrate(Constants.MOD_ID)
+
+    val OPTIONAL_LOOT_ENTRY = REGISTRATE.`object`("optional_item")
+        .generic(Registries.LOOT_POOL_ENTRY_TYPE) { LootPoolEntryType(OptionalLootEntry.Serializer) }
+        .register()
 
     init {
         REGISTRATE.register()

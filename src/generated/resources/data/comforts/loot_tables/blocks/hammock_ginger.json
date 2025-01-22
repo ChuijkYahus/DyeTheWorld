@@ -14,7 +14,7 @@
       ],
       "entries": [
         {
-          "type": "minecraft:item",
+          "type": "dye_the_world:optional_item",
           "name": "comforts:hammock_ginger"
         }
       ],

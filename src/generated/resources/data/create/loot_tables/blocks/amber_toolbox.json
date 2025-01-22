@@ -5,7 +5,7 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "minecraft:item",
+          "type": "dye_the_world:optional_item",
           "name": "create:amber_toolbox"
         }
       ],

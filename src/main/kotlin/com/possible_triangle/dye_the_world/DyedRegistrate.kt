@@ -1,10 +1,12 @@
 package com.possible_triangle.dye_the_world
 
 import com.tterrag.registrate.AbstractRegistrate
+import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.providers.DataGenContext
 import com.tterrag.registrate.providers.ProviderType
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import com.tterrag.registrate.providers.RegistrateTagsProvider
+import com.tterrag.registrate.util.nullness.NonNullFunction
 import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.recipes.RecipeCategory
@@ -16,6 +18,8 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.level.ItemLike
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraftforge.eventbus.api.IEventBus
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 

@@ -8,7 +8,7 @@
           "type": "minecraft:alternatives",
           "children": [
             {
-              "type": "minecraft:item",
+              "type": "dye_the_world:optional_item",
               "conditions": [
                 {
                   "condition": "minecraft:match_tool",
@@ -27,7 +27,7 @@
               "name": "dye_depot:amber_stained_glass"
             },
             {
-              "type": "minecraft:item",
+              "type": "dye_the_world:optional_item",
               "functions": [
                 {
                   "add": false,

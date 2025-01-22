@@ -2,7 +2,9 @@
 import com.possible_triangle.gradle.features.publishing.DependencyBuilder
 import net.minecraftforge.gradle.common.util.MinecraftExtension
 import net.minecraftforge.gradle.userdev.jarjar.JarJarProjectExtension
+import org.spongepowered.asm.gradle.plugins.MixinExtension
 
+val mod_id: String by extra
 val mixin_extras_version: String by extra
 val mc_version: String by extra
 val registrate_version: String by extra
@@ -61,13 +63,12 @@ forge {
     includesMod("com.tterrag.registrate:Registrate:${registrate_version}")
 }
 
-/*
 configure<MixinExtension> {
-    config("citadel.mixins.json")
-    config("domesticationinnovation.mixins.json")
-    config("alexscaves.mixins.json")
+    config("${mod_id}.data.mixins.json")
+    //config("citadel.mixins.json")
+    //config("domesticationinnovation.mixins.json")
+    //config("alexscaves.mixins.json")
 }
-*/
 
 // needed because of flywheel accessing the config too early
 configure<MinecraftExtension> {
@@ -143,6 +144,7 @@ tasks.processResources {
 
 tasks.withType<Jar> {
     exclude("**/*.xcf")
+    exclude("resources/${mod_id}.data.mixins.json")
 }
 
 enablePublishing {

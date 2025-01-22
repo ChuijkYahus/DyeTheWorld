@@ -1,7 +1,9 @@
 package com.possible_triangle.dye_the_world.data
 
-import com.possible_triangle.dye_the_world.*
+import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
+import com.possible_triangle.dye_the_world.blockOf
+import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.createVariant
 import com.possible_triangle.dye_the_world.extensions.yRot
