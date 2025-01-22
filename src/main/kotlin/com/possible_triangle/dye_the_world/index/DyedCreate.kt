@@ -1,12 +1,15 @@
 package com.possible_triangle.dye_the_world.index
 
-import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE
+import com.possible_triangle.dye_the_world.DyedRegistrate
+import com.possible_triangle.dye_the_world.Genus
 import com.possible_triangle.dye_the_world.data.*
+import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.extensions.germanLang
 import com.possible_triangle.dye_the_world.extensions.optionalTag
 import com.possible_triangle.dye_the_world.extensions.translation
 import com.possible_triangle.dye_the_world.extensions.withItem
+import com.possible_triangle.dye_the_world.germanTranslation
 import com.simibubi.create.AllBlocks
 import com.simibubi.create.AllTags
 import com.simibubi.create.content.contraptions.actors.seat.SeatBlock
@@ -58,6 +61,7 @@ object DyedCreate {
             .seatBlockstate(dye)
             .withItem {
                 optionalTag(AllTags.AllItemTags.SEATS.tag)
+                seatRecipe(dye)
             }
             .register()
     }

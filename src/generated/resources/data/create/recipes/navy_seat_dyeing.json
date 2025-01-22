@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/navy"
+    },
+    {
+      "tag": "create:seats"
+    }
+  ],
+  "result": {
+    "item": "create:navy_seat"
+  }
+}
