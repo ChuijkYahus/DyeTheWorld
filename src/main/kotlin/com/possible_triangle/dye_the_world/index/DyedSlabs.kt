@@ -1,10 +1,11 @@
 package com.possible_triangle.dye_the_world.index
 
-import com.possible_triangle.dye_the_world.*
+import com.possible_triangle.dye_the_world.DyedRegistrate
 import com.possible_triangle.dye_the_world.extensions.asIngredient
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.optionalTag
 import com.possible_triangle.dye_the_world.extensions.withItem
+import com.possible_triangle.dye_the_world.namespace
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.util.nullness.NonNullSupplier
@@ -33,6 +34,9 @@ fun DyedRegistrate.createSlabs(
         .blockstate { c, p ->
             val texture = dye.namespace.createId("block/${dye}_${name}")
             p.slabBlock(c.get(), dye.namespace.createId("block/${dye}_${name}"), texture)
+        }
+        .loot { c, p ->
+            c.add(p, c.createSlabItemTable(p))
         }
         .withItem {
             tab(CreativeModeTabs.COLORED_BLOCKS)
