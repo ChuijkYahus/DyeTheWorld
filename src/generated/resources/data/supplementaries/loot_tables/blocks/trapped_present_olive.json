@@ -10,7 +10,7 @@
       ],
       "entries": [
         {
-          "type": "dye_the_world:optional_item",
+          "type": "dye_the_world:item",
           "name": "supplementaries:trapped_present_olive"
         }
       ],

@@ -5,8 +5,7 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "comforts:hammock_maroon",
-          "condition": "minecraft:block_state_property",
+          "condition": "dye_the_world:block_state_property",
           "properties": {
             "part": "head"
           }
@@ -14,7 +13,7 @@
       ],
       "entries": [
         {
-          "type": "dye_the_world:optional_item",
+          "type": "dye_the_world:item",
           "name": "comforts:hammock_maroon"
         }
       ],

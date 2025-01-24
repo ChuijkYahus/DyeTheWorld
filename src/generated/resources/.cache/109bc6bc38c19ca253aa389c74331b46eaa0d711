@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-22T14:04:28.1618547	Registrate Provider for chalk [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
+// 1.20.1	2025-01-24T13:34:00.3216689	Registrate Provider for chalk [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
 441e0a77d115d565af1b98fad5f9ad94f5b67a0b assets/chalk/blockstates/amber_chalk_mark.json
 441e0a77d115d565af1b98fad5f9ad94f5b67a0b assets/chalk/blockstates/aqua_chalk_mark.json
 441e0a77d115d565af1b98fad5f9ad94f5b67a0b assets/chalk/blockstates/beige_chalk_mark.json
@@ -66,22 +66,22 @@ f19163e09ae03f5baad53c2240df92604e891ea3 data/chalk/advancements/recipes/misc/sl
 e3c3f4c2658c77ef19d69adeb519498df7b05e12 data/chalk/advancements/recipes/misc/tan_chalk.json
 c42f5dfea5294b5cec7806ac1a42172654812010 data/chalk/advancements/recipes/misc/teal_chalk.json
 4fc55e0efc440c8a0a15f5c138c0ce50190fc201 data/chalk/advancements/recipes/misc/verdant_chalk.json
-4ca1fc334f6f2b55d56d471d4c1e32305b48e85c data/chalk/loot_tables/blocks/amber_chalk_mark.json
-f4aa12928cf21bad5f7d3c3993eca6ed5b6de2bc data/chalk/loot_tables/blocks/aqua_chalk_mark.json
-4cda8d77801f5bef94429359c6b532c20405047a data/chalk/loot_tables/blocks/beige_chalk_mark.json
-38900dcafceef8ec1ea31704551e014878c67e5b data/chalk/loot_tables/blocks/coral_chalk_mark.json
-7d2b6d5c46cc5e1a262fad1325bae09dc69e619e data/chalk/loot_tables/blocks/forest_chalk_mark.json
-844fc1923dfc99a7081ef29f878bddd06780bc76 data/chalk/loot_tables/blocks/ginger_chalk_mark.json
-4fcc31d3cc1d9cc9db897f4cbde4e1613b6637d7 data/chalk/loot_tables/blocks/indigo_chalk_mark.json
-72b2f286ec21028f4f74bf104a809347a9467d4c data/chalk/loot_tables/blocks/maroon_chalk_mark.json
-50f8b0bb5bac66884d63fcad9114009139093c43 data/chalk/loot_tables/blocks/mint_chalk_mark.json
-b49eb77f4a842ecdb167a94b5d5129857343aa80 data/chalk/loot_tables/blocks/navy_chalk_mark.json
-44d4f0a19ccfac0d2f59b18e1aa2998a8062100e data/chalk/loot_tables/blocks/olive_chalk_mark.json
-974ee54fff7d600097a612a5453642dcebb48e7c data/chalk/loot_tables/blocks/rose_chalk_mark.json
-658d9f784f9a4fb08a4b972575e215f5307e2131 data/chalk/loot_tables/blocks/slate_chalk_mark.json
-6d76fed26fd7cab4bdacd32816abb2d920e28a86 data/chalk/loot_tables/blocks/tan_chalk_mark.json
-b10cd89d4cec4d4db3d170bf98bd36dc37ffdc9c data/chalk/loot_tables/blocks/teal_chalk_mark.json
-e5755c667bf7c769cdc82075f7e3e62540dfbbbf data/chalk/loot_tables/blocks/verdant_chalk_mark.json
+738b0f5db03ebaca717f04d3cfd706e503496274 data/chalk/loot_tables/blocks/amber_chalk_mark.json
+e132b16171b77ffa0e068fff69ad2375e3847b76 data/chalk/loot_tables/blocks/aqua_chalk_mark.json
+d601741946985b6e6a0bab39e76ac4da9f836d85 data/chalk/loot_tables/blocks/beige_chalk_mark.json
+0ea07e929bffd06ef5565ea354b4f8fa64d6ef49 data/chalk/loot_tables/blocks/coral_chalk_mark.json
+75ebfc8cef125709676f14d9cfb7e599759b61d2 data/chalk/loot_tables/blocks/forest_chalk_mark.json
+5719c3fd2b4f094b549af23bc7a36099634ae8c9 data/chalk/loot_tables/blocks/ginger_chalk_mark.json
+243a8b9412aa9a91bcd71d7800ea4860ba29e036 data/chalk/loot_tables/blocks/indigo_chalk_mark.json
+a2bd33df6752b7d50efd148dbd76ffbe0b6141cc data/chalk/loot_tables/blocks/maroon_chalk_mark.json
+3d1a460718d7a42bd62908abd6fbf8ad02381b58 data/chalk/loot_tables/blocks/mint_chalk_mark.json
+caeaba6c7f7386061b53996d58ee5e32f979f773 data/chalk/loot_tables/blocks/navy_chalk_mark.json
+0b4108b17bed7350ba810ec37330ff8db08e9962 data/chalk/loot_tables/blocks/olive_chalk_mark.json
+d40164981a94f646a32ef86d04bf7c8b3e702a92 data/chalk/loot_tables/blocks/rose_chalk_mark.json
+380cb55dc64fe5c2345843c37c02ef442a2e383e data/chalk/loot_tables/blocks/slate_chalk_mark.json
+7dad12112ffa24b5ae26f16eb8a7a969723ceaf2 data/chalk/loot_tables/blocks/tan_chalk_mark.json
+8179779e16317a5647a81e136d78353f5458165a data/chalk/loot_tables/blocks/teal_chalk_mark.json
+76645fb4f889922494a2ca933597a5e3a6780fee data/chalk/loot_tables/blocks/verdant_chalk_mark.json
 e9ed1db8cae5f280a7a9943eab166bc45a3e4326 data/chalk/recipes/amber_chalk.json
 d6c415663bd2ebf37de1afc04e4f9a857b68e96d data/chalk/recipes/aqua_chalk.json
 2de188652236c1d3cbd0e488dffa2b7115e3c3c0 data/chalk/recipes/beige_chalk.json

@@ -9,10 +9,10 @@ import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.germanLang
 import com.possible_triangle.dye_the_world.extensions.translation
 import com.possible_triangle.dye_the_world.extensions.withItem
+import com.possible_triangle.dye_the_world.`object`.BlockLessStatePropertyCondition
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
-import net.minecraft.advancements.critereon.StatePropertiesPredicate
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.ShapedRecipeBuilder
 import net.minecraft.world.item.DyeColor
@@ -23,7 +23,6 @@ import net.minecraft.world.level.block.state.properties.BedPart
 import net.minecraft.world.level.storage.loot.LootPool
 import net.minecraft.world.level.storage.loot.LootTable
 import net.minecraft.world.level.storage.loot.entries.LootItem
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue
 
 object DyedComforts {
@@ -64,9 +63,9 @@ object DyedComforts {
 private fun <T : BaseComfortsBlock, P> BlockBuilder<T, P>.clothTransforms() = apply {
     clothBlockState()
     loot { t, b ->
-        val isHead = LootItemBlockStatePropertyCondition.hasBlockStateProperties(b).setProperties(
-            StatePropertiesPredicate.Builder.properties().hasProperty(BedBlock.PART, BedPart.HEAD)
-        )
+        val isHead = BlockLessStatePropertyCondition.of {
+            hasProperty(BedBlock.PART, BedPart.HEAD)
+        }
 
         val pool = t.applyExplosionDecay(b, LootPool.lootPool())
             .add(LootItem.lootTableItem(b))

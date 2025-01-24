@@ -5,14 +5,13 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "dye_the_world:optional_item",
+          "type": "dye_the_world:item",
           "functions": [
             {
               "add": false,
               "conditions": [
                 {
-                  "block": "dye_the_world:verdant_terracotta_slab",
-                  "condition": "minecraft:block_state_property",
+                  "condition": "dye_the_world:block_state_property",
                   "properties": {
                     "type": "double"
                   }

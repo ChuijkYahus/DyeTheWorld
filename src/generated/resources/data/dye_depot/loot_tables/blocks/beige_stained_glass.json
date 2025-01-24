@@ -8,7 +8,7 @@
           "type": "minecraft:alternatives",
           "children": [
             {
-              "type": "dye_the_world:optional_item",
+              "type": "dye_the_world:item",
               "conditions": [
                 {
                   "condition": "minecraft:match_tool",
@@ -27,7 +27,7 @@
               "name": "dye_depot:beige_stained_glass"
             },
             {
-              "type": "dye_the_world:optional_item",
+              "type": "dye_the_world:item",
               "functions": [
                 {
                   "add": false,
