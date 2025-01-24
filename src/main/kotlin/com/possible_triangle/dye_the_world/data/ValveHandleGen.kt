@@ -2,9 +2,10 @@ package com.possible_triangle.dye_the_world.data
 
 import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE
+import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.createVariant
-import com.possible_triangle.dye_the_world.dyeingRecipe
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.extensions.yRot
 import com.simibubi.create.AllTags
 import com.simibubi.create.content.kinetics.crank.ValveHandleBlock
@@ -35,6 +36,6 @@ fun <T : ValveHandleBlock, P> BlockBuilder<T, P>.valveBlockstate(dye: DyeColor) 
     }
 }
 
-fun <T : Item, P> ItemBuilder<T, P>.valveRecipe(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.valveRecipe(dye: DyeColor) = recipe(CREATE) { context, provider ->
     provider.dyeingRecipe(dye, AllTags.AllItemTags.VALVE_HANDLES.tag, context)
 }

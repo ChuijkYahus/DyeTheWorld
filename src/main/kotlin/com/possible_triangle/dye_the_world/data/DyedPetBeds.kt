@@ -1,9 +1,12 @@
 package com.possible_triangle.dye_the_world.data
 
-import com.possible_triangle.dye_the_world.*
+import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.DOMESTICATION_INNOVATION
+import com.possible_triangle.dye_the_world.blockOf
+import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.createVariant
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.extensions.yRot
 import com.possible_triangle.dye_the_world.index.DyedTags
 import com.tterrag.registrate.builders.BlockBuilder
@@ -32,7 +35,7 @@ fun <T : Block, P> BlockBuilder<T, P>.petBedBlockstate() = blockstate { context,
     }
 }
 
-fun <T : Item, P> ItemBuilder<T, P>.petBedRecipe(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.petBedRecipe(dye: DyeColor) = recipe(DOMESTICATION_INNOVATION) { context, provider ->
     val wool = dye.blockOf("wool")
 
     ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, context.get())

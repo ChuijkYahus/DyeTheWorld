@@ -10,7 +10,7 @@
       ],
       "entries": [
         {
-          "type": "minecraft:item",
+          "type": "dye_the_world:item",
           "name": "supplementaries:awning_navy"
         }
       ],

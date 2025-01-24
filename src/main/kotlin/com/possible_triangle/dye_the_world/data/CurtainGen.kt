@@ -1,17 +1,20 @@
 package com.possible_triangle.dye_the_world.data
 
-import com.possible_triangle.dye_the_world.*
+import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
+import com.possible_triangle.dye_the_world.blockOf
+import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.createVariant
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.extensions.yRot
+import com.possible_triangle.dye_the_world.`object`.BlockLessStatePropertyCondition
 import com.starfish_studios.another_furniture.block.CurtainBlock
 import com.starfish_studios.another_furniture.block.properties.HorizontalConnectionType
 import com.starfish_studios.another_furniture.registry.AFBlocks
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
-import net.minecraft.advancements.critereon.StatePropertiesPredicate
 import net.minecraft.core.Direction
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.ShapedRecipeBuilder
@@ -23,11 +26,10 @@ import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.storage.loot.LootPool
 import net.minecraft.world.level.storage.loot.LootTable
 import net.minecraft.world.level.storage.loot.entries.LootItem
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue
 import net.minecraftforge.client.model.generators.ConfiguredModel
 
-fun <T : Item, P> ItemBuilder<T, P>.curtainRecipes(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.curtainRecipes(dye: DyeColor) = recipe(ANOTHER_FURNITURE) { context, provider ->
     val wool = dye.blockOf("wool")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get(), 3)
         .group("curtains")
@@ -105,9 +107,9 @@ fun <T : Item, P> ItemBuilder<T, P>.curtainItemModel(dye: DyeColor) = model { co
 }
 
 fun <T : Block, P> BlockBuilder<T, P>.curtainLoot() = loot { tables, block ->
-    val isTop = LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(
-        StatePropertiesPredicate.Builder.properties().hasProperty(CurtainBlock.VERTICAL_CONNECTION_TYPE, Direction.UP)
-    )
+    val isTop = BlockLessStatePropertyCondition.of {
+        hasProperty(CurtainBlock.VERTICAL_CONNECTION_TYPE, Direction.UP)
+    }
 
     val pool = tables.applyExplosionDecay(block, LootPool.lootPool())
         .add(LootItem.lootTableItem(block))

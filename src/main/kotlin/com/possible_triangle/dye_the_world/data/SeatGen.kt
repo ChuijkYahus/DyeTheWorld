@@ -5,6 +5,7 @@ import com.possible_triangle.dye_the_world.Constants.Mods.CREATE
 import com.possible_triangle.dye_the_world.blockOf
 import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.extensions.requiresUnlocking
 import com.simibubi.create.AllTags
 import com.tterrag.registrate.builders.BlockBuilder
@@ -26,7 +27,7 @@ fun <T : Block, P> BlockBuilder<T, P>.seatBlockstate(dye: DyeColor) = blockstate
     provider.simpleBlock(context.get(), model)
 }
 
-fun <T : Item, P> ItemBuilder<T, P>.seatRecipe(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.seatRecipe(dye: DyeColor) = recipe(CREATE) { context, provider ->
     ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, context.get())
         .requiresUnlocking(dye.blockOf("wool"))
         .requires(ItemTags.WOODEN_SLABS)

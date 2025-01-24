@@ -1,15 +1,13 @@
 package com.possible_triangle.dye_the_world.index
 
 import com.possible_triangle.dye_the_world.DyedRegistrate
-import com.possible_triangle.dye_the_world.extensions.asIngredient
-import com.possible_triangle.dye_the_world.extensions.createId
-import com.possible_triangle.dye_the_world.extensions.optionalTag
-import com.possible_triangle.dye_the_world.extensions.withItem
+import com.possible_triangle.dye_the_world.extensions.*
 import com.possible_triangle.dye_the_world.namespace
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.data.recipes.RecipeCategory.BUILDING_BLOCKS
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.BlockTags
 import net.minecraft.tags.ItemTags
 import net.minecraft.world.item.BlockItem
@@ -22,18 +20,18 @@ import net.minecraft.world.level.block.WallBlock
 
 fun DyedRegistrate.createSlabs(
     from: Map<DyeColor, NonNullSupplier<Block>>,
-    name: String,
+    name: ResourceLocation,
     modifyBlock: BlockBuilder<SlabBlock, DyedRegistrate>.(DyeColor) -> Unit = {},
     modifyItem: ItemBuilder<BlockItem, BlockBuilder<SlabBlock, DyedRegistrate>>.(DyeColor) -> Unit = {},
 ) = from.mapValues { (dye, base) ->
-    `object`("${dye}_${name}_slab")
+    `object`("${dye}_${name.path}_slab")
         .block(::SlabBlock)
         .initialProperties(base)
         .optionalTag(BlockTags.MINEABLE_WITH_PICKAXE)
         .optionalTag(BlockTags.SLABS)
         .blockstate { c, p ->
-            val texture = dye.namespace.createId("block/${dye}_${name}")
-            p.slabBlock(c.get(), dye.namespace.createId("block/${dye}_${name}"), texture)
+            val texture = dye.namespace.createId("block/${dye}_${name.path}")
+            p.slabBlock(c.get(), dye.namespace.createId("block/${dye}_${name.path}"), texture)
         }
         .loot { c, p ->
             c.add(p, c.createSlabItemTable(p))
@@ -42,7 +40,7 @@ fun DyedRegistrate.createSlabs(
             tab(CreativeModeTabs.COLORED_BLOCKS)
             tab(CreativeModeTabs.BUILDING_BLOCKS)
             optionalTag(ItemTags.SLABS)
-            recipe { c, p -> p.slab(base.asIngredient(), BUILDING_BLOCKS, c, null, true) }
+            recipe(name.namespace) { c, p -> p.slab(base.asIngredient(), BUILDING_BLOCKS, c, null, true) }
             modifyItem(dye)
         }
         .apply { modifyBlock(dye) }
@@ -51,24 +49,24 @@ fun DyedRegistrate.createSlabs(
 
 fun DyedRegistrate.createStairs(
     from: Map<DyeColor, NonNullSupplier<Block>>,
-    name: String,
+    name: ResourceLocation,
     modifyBlock: BlockBuilder<StairBlock, DyedRegistrate>.(DyeColor) -> Unit = {},
     modifyItem: ItemBuilder<BlockItem, BlockBuilder<StairBlock, DyedRegistrate>>.(DyeColor) -> Unit = {},
 ) = from.mapValues { (dye, base) ->
-    `object`("${dye}_${name}_stairs")
+    `object`("${dye}_${name.path}_stairs")
         .block { StairBlock({ base.get().defaultBlockState() }, it) }
         .initialProperties(base)
         .optionalTag(BlockTags.MINEABLE_WITH_PICKAXE)
         .optionalTag(BlockTags.STAIRS)
         .blockstate { c, p ->
-            val texture = dye.namespace.createId("block/${dye}_${name}")
+            val texture = dye.namespace.createId("block/${dye}_${name.path}")
             p.stairsBlock(c.get(), texture)
         }
         .withItem {
             tab(CreativeModeTabs.COLORED_BLOCKS)
             tab(CreativeModeTabs.BUILDING_BLOCKS)
             optionalTag(ItemTags.STAIRS)
-            recipe { c, p -> p.stairs(base.asIngredient(), BUILDING_BLOCKS, c, null, true) }
+            recipe(name.namespace) { c, p -> p.stairs(base.asIngredient(), BUILDING_BLOCKS, c, null, true) }
             modifyItem(dye)
         }
         .apply { modifyBlock(dye) }
@@ -77,26 +75,26 @@ fun DyedRegistrate.createStairs(
 
 fun DyedRegistrate.createWalls(
     from: Map<DyeColor, NonNullSupplier<Block>>,
-    name: String,
+    name: ResourceLocation,
     modifyBlock: BlockBuilder<WallBlock, DyedRegistrate>.(DyeColor) -> Unit = {},
     modifyItem: ItemBuilder<BlockItem, BlockBuilder<WallBlock, DyedRegistrate>>.(DyeColor) -> Unit = {},
 ) = from.mapValues { (dye, base) ->
-    `object`("${dye}_${name}_wall")
+    `object`("${dye}_${name.path}_wall")
         .block(::WallBlock)
         .initialProperties(base)
         .optionalTag(BlockTags.MINEABLE_WITH_PICKAXE)
         .optionalTag(BlockTags.WALLS)
         .blockstate { c, p ->
-            val texture = dye.namespace.createId("block/${dye}_${name}")
+            val texture = dye.namespace.createId("block/${dye}_${name.path}")
             p.wallBlock(c.get(), texture)
         }
         .withItem {
             tab(CreativeModeTabs.COLORED_BLOCKS)
             tab(CreativeModeTabs.BUILDING_BLOCKS)
             optionalTag(ItemTags.WALLS)
-            recipe { c, p -> p.wall(base.asIngredient(), BUILDING_BLOCKS, c) }
+            recipe(name.namespace) { c, p -> p.wall(base.asIngredient(), BUILDING_BLOCKS, c) }
             model { c, p ->
-                val texture = dye.namespace.createId("block/${dye}_${name}")
+                val texture = dye.namespace.createId("block/${dye}_${name.path}")
                 p.wallInventory(c.name, texture)
             }
             modifyItem(dye)

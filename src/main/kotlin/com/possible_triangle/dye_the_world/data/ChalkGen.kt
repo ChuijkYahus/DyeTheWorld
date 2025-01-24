@@ -4,6 +4,7 @@ import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.CHALK
 import com.possible_triangle.dye_the_world.DEPOT_DYES
 import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.extensions.requiresUnlocking
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
@@ -20,7 +21,7 @@ fun <T : Block, P> BlockBuilder<T, P>.chalkBlockstate() = blockstate { context, 
     provider.simpleBlock(context.get(), model)
 }
 
-fun <T : Item, P> ItemBuilder<T, P>.chalkRecipe(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.chalkRecipe(dye: DyeColor) = recipe(CHALK) { context, provider ->
     ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, context.get())
         .requiresUnlocking(Blocks.CALCITE)
         .requiresUnlocking(dye.tag)

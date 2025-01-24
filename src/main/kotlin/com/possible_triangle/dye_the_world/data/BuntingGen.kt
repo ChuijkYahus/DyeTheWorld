@@ -3,9 +3,10 @@ package com.possible_triangle.dye_the_world.data
 import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES
 import com.possible_triangle.dye_the_world.blockOf
+import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.defineUnlocking
-import com.possible_triangle.dye_the_world.dyeingRecipe
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.tterrag.registrate.builders.ItemBuilder
 import net.mehvahdjukaar.supplementaries.reg.ModRegistry
 import net.minecraft.data.recipes.RecipeCategory
@@ -30,7 +31,7 @@ fun <T : Item, P> ItemBuilder<T, P>.buntingItemModel() = model { context, provid
 }
 
 // Needs to be modified manually afterward to add nbt to result
-fun <T : Item, P> ItemBuilder<T, P>.dyedBuntingRecipe(dye: DyeColor) = recipe { _, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.dyedBuntingRecipe(dye: DyeColor) = recipe(SUPPLEMENTARIES) { _, provider ->
     val bunting = ModRegistry.BUNTING.get()
 
     ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, bunting, 6)

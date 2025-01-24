@@ -70,7 +70,7 @@
               "name": "minecraft:sherds"
             },
             {
-              "type": "minecraft:item",
+              "type": "dye_the_world:item",
               "functions": [
                 {
                   "function": "minecraft:copy_nbt",

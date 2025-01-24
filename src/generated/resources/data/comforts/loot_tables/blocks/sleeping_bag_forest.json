@@ -5,8 +5,7 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "comforts:sleeping_bag_forest",
-          "condition": "minecraft:block_state_property",
+          "condition": "dye_the_world:block_state_property",
           "properties": {
             "part": "head"
           }
@@ -14,7 +13,7 @@
       ],
       "entries": [
         {
-          "type": "minecraft:item",
+          "type": "dye_the_world:item",
           "name": "comforts:sleeping_bag_forest"
         }
       ],

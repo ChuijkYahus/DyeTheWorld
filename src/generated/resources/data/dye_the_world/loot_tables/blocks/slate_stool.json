@@ -10,7 +10,7 @@
       ],
       "entries": [
         {
-          "type": "minecraft:item",
+          "type": "dye_the_world:item",
           "name": "dye_the_world:slate_stool"
         }
       ],

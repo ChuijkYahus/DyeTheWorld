@@ -2,7 +2,9 @@
 import com.possible_triangle.gradle.features.publishing.DependencyBuilder
 import net.minecraftforge.gradle.common.util.MinecraftExtension
 import net.minecraftforge.gradle.userdev.jarjar.JarJarProjectExtension
+import org.spongepowered.asm.gradle.plugins.MixinExtension
 
+val mod_id: String by extra
 val mixin_extras_version: String by extra
 val mc_version: String by extra
 val registrate_version: String by extra
@@ -61,13 +63,12 @@ forge {
     includesMod("com.tterrag.registrate:Registrate:${registrate_version}")
 }
 
-/*
 configure<MixinExtension> {
-    config("citadel.mixins.json")
-    config("domesticationinnovation.mixins.json")
-    config("alexscaves.mixins.json")
+    config("${mod_id}.data.mixins.json")
+    //config("citadel.mixins.json")
+    //config("domesticationinnovation.mixins.json")
+    //config("alexscaves.mixins.json")
 }
-*/
 
 // needed because of flywheel accessing the config too early
 configure<MinecraftExtension> {
@@ -104,10 +105,10 @@ repositories {
 val jarJar = the<JarJarProjectExtension>()
 
 dependencies {
-    // compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:${mixin_extras_version}")!!)
-    // implementation("jarJar"("io.github.llamalad7:mixinextras-forge:${mixin_extras_version}")) {
-    //     jarJar.ranged(this, "[${mixin_extras_version},)")
-    // }
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:${mixin_extras_version}")!!)
+    implementation("jarJar"("io.github.llamalad7:mixinextras-forge:${mixin_extras_version}")) {
+        jarJar.ranged(this, "[${mixin_extras_version},)")
+    }
 
     modImplementation("com.simibubi.create:create-${mc_version}:${create_version}:slim") { isTransitive = false }
     modImplementation("com.jozufozu.flywheel:flywheel-forge-${mc_version}:${flywheel_version}")
@@ -143,6 +144,7 @@ tasks.processResources {
 
 tasks.withType<Jar> {
     exclude("**/*.xcf")
+    exclude("resources/${mod_id}.data.mixins.json")
 }
 
 enablePublishing {

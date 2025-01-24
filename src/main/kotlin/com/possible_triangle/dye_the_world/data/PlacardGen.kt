@@ -3,8 +3,9 @@ package com.possible_triangle.dye_the_world.data
 import com.github.talrey.createdeco.api.CDTags
 import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE_DECO
-import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.dyeingRecipe
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.extensions.requiresUnlocking
 import com.simibubi.create.AllItems
 import com.simibubi.create.content.decoration.placard.PlacardBlock
@@ -28,7 +29,7 @@ fun <T : PlacardBlock, P> BlockBuilder<T, P>.placardBlockstate(dye: DyeColor) =
         provider.horizontalFaceBlock(context.get(), model)
     }
 
-fun <T : Item, P> ItemBuilder<T, P>.placardRecipe(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.placardRecipe(dye: DyeColor) = recipe(CREATE_DECO) { context, provider ->
     ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, context.get())
         .requiresUnlocking(Items.ITEM_FRAME)
         .requiresUnlocking(AllItems.BRASS_SHEET)
