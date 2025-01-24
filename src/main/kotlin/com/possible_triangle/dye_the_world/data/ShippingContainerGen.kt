@@ -2,10 +2,11 @@ package com.possible_triangle.dye_the_world.data
 
 import com.github.talrey.createdeco.blocks.ShippingContainerBlock
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE_DECO
+import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.createVariant
 import com.possible_triangle.dye_the_world.extensions.defineUnlocking
-import com.possible_triangle.dye_the_world.dyeingRecipe
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.index.DyedTags
 import com.simibubi.create.AllBlocks
 import com.tterrag.registrate.builders.BlockBuilder
@@ -44,7 +45,7 @@ fun <T : ShippingContainerBlock, P> BlockBuilder<T, P>.shippingContainerBlocksta
         }
     }
 
-fun <T : Item, P> ItemBuilder<T, P>.shippingContainerRecipe(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.shippingContainerRecipe(dye: DyeColor) = recipe(CREATE_DECO) { context, provider ->
     ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, context.get())
         .pattern("CS")
         .pattern("SB")

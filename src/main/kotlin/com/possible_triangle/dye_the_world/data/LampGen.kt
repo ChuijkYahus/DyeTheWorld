@@ -1,9 +1,12 @@
 package com.possible_triangle.dye_the_world.data
 
-import com.possible_triangle.dye_the_world.*
+import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.ANOTHER_FURNITURE
+import com.possible_triangle.dye_the_world.blockOf
+import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.createVariant
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.extensions.yRot
 import com.starfish_studios.another_furniture.block.LampBlock
 import com.starfish_studios.another_furniture.registry.AFBlocks
@@ -19,7 +22,7 @@ import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Block
 import net.minecraftforge.client.model.generators.ConfiguredModel
 
-fun <T : Item, P> ItemBuilder<T, P>.lampRecipes(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.lampRecipes(dye: DyeColor) = recipe(ANOTHER_FURNITURE) { context, provider ->
     val wool = dye.blockOf("wool")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get(), 3)
         .group("lamps")

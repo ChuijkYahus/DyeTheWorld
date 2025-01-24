@@ -7,6 +7,7 @@ import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.optionalTag
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.extensions.translation
 import com.simibubi.create.AllItems
 import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe
@@ -41,7 +42,7 @@ object DyedRailways {
                 provider.withExistingParent(context.name, CREATE_RAILWAYS.createId("item/conductor_cap"))
                     .texture("cap", CREATE_RAILWAYS.createId("entity/caps/${dye}_conductor_cap"))
             }
-            .recipe { context, provider ->
+            .recipe(CREATE_RAILWAYS) { context, provider ->
                 SequencedAssemblyRecipeBuilder(context.id)
                     .loops(1)
                     .transitionTo(INCOMPLETE_CONDUCTOR_CAPS[dye]!!)

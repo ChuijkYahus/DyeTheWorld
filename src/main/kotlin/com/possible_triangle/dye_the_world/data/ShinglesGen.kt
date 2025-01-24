@@ -4,6 +4,7 @@ import com.possible_triangle.dye_the_world.Constants.Mods.QUARK
 import com.possible_triangle.dye_the_world.blockOf
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.getOrThrow
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.shapedDyeingRecipe
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
@@ -14,7 +15,7 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
 
-fun <I : Item, P> ItemBuilder<I, P>.shinglesRecipes(dye: DyeColor) = recipe { context, provider ->
+fun <I : Item, P> ItemBuilder<I, P>.shinglesRecipes(dye: DyeColor) = recipe(QUARK) { context, provider ->
     val terracotta = dye.blockOf("terracotta")
     val shingles = BuiltInRegistries.BLOCK.getOrThrow(QUARK.createId("shingles"))
 

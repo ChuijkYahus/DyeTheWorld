@@ -1,10 +1,12 @@
 package com.possible_triangle.dye_the_world.data
 
-import com.possible_triangle.dye_the_world.*
-import com.possible_triangle.dye_the_world.extensions.createId
-import com.possible_triangle.dye_the_world.extensions.createVariant
-import com.possible_triangle.dye_the_world.extensions.namespace
-import com.possible_triangle.dye_the_world.extensions.yRot
+import com.possible_triangle.dye_the_world.Constants
+import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES
+import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES_SQUARED
+import com.possible_triangle.dye_the_world.blockOf
+import com.possible_triangle.dye_the_world.dyeingRecipe
+import com.possible_triangle.dye_the_world.extensions.*
+import com.possible_triangle.dye_the_world.namespace
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
@@ -51,7 +53,7 @@ fun <T : Item, P> ItemBuilder<T, P>.candleHolderItemModel(dye: DyeColor) = model
     )
 }
 
-fun <T : Item, P> ItemBuilder<T, P>.candleHolderRecipe(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.candleHolderRecipe(dye: DyeColor) = recipe(SUPPLEMENTARIES) { context, provider ->
     val candle = dye.blockOf("candle")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get())
         .pattern("NCN")
@@ -65,7 +67,7 @@ fun <T : Item, P> ItemBuilder<T, P>.candleHolderRecipe(dye: DyeColor) = recipe {
     provider.dyeingRecipe(dye, ModRegistry.CANDLE_HOLDERS[null]!!.get(), context)
 }
 
-fun <T : Item, P> ItemBuilder<T, P>.goldCandleHolderRecipe(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.goldCandleHolderRecipe(dye: DyeColor) = recipe(SUPPLEMENTARIES_SQUARED) { context, provider ->
     val candle = dye.blockOf("candle")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get())
         .pattern("C")

@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-24T13:34:00.3216689	Registrate Provider for chalk [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
+// 1.20.1	2025-01-24T16:06:45.6629905	Registrate Provider for chalk [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud), Languages: de_de]
 441e0a77d115d565af1b98fad5f9ad94f5b67a0b assets/chalk/blockstates/amber_chalk_mark.json
 441e0a77d115d565af1b98fad5f9ad94f5b67a0b assets/chalk/blockstates/aqua_chalk_mark.json
 441e0a77d115d565af1b98fad5f9ad94f5b67a0b assets/chalk/blockstates/beige_chalk_mark.json
@@ -82,19 +82,19 @@ d40164981a94f646a32ef86d04bf7c8b3e702a92 data/chalk/loot_tables/blocks/rose_chal
 7dad12112ffa24b5ae26f16eb8a7a969723ceaf2 data/chalk/loot_tables/blocks/tan_chalk_mark.json
 8179779e16317a5647a81e136d78353f5458165a data/chalk/loot_tables/blocks/teal_chalk_mark.json
 76645fb4f889922494a2ca933597a5e3a6780fee data/chalk/loot_tables/blocks/verdant_chalk_mark.json
-e9ed1db8cae5f280a7a9943eab166bc45a3e4326 data/chalk/recipes/amber_chalk.json
-d6c415663bd2ebf37de1afc04e4f9a857b68e96d data/chalk/recipes/aqua_chalk.json
-2de188652236c1d3cbd0e488dffa2b7115e3c3c0 data/chalk/recipes/beige_chalk.json
-6aab02b99bf16011ce35286ef497873d72153a8d data/chalk/recipes/coral_chalk.json
-15dc707c0e02f4d91a4b3f76715d8c8273e81f5b data/chalk/recipes/forest_chalk.json
-85cd9b366e3d2169d1ec95eab4d45372692bce53 data/chalk/recipes/ginger_chalk.json
-41ae7f959f56279cf87c794a35fb716f8f30a076 data/chalk/recipes/indigo_chalk.json
-c67892f86e4d90f99c53588e2c6823237b432abb data/chalk/recipes/maroon_chalk.json
-21c96edeaffbf0cdd5fd462b0073a47815667608 data/chalk/recipes/mint_chalk.json
-7c7e0cb6ce81751de690c8bb8a939a5c32598a9c data/chalk/recipes/navy_chalk.json
-915a375a36908ec79dc61422dd9cca2bc85b5a26 data/chalk/recipes/olive_chalk.json
-2c0092cab43e8b42deb2235b4b51bbaee341a264 data/chalk/recipes/rose_chalk.json
-9eb23af3db534209a815ea1006f023963f260cd7 data/chalk/recipes/slate_chalk.json
-c75ffcc74eb2e012a4578685f00ccbf753565a57 data/chalk/recipes/tan_chalk.json
-10ee99ec7fe8303345b474adb6ba3b63e9c0b219 data/chalk/recipes/teal_chalk.json
-4253758aa81f2376723e3609a2ab878628253b2c data/chalk/recipes/verdant_chalk.json
+4b80ee86a56025f6ce3cbd00fbbb9672e715569e data/chalk/recipes/amber_chalk.json
+e8b122b45e749610b41190424d00c65d04068478 data/chalk/recipes/aqua_chalk.json
+abe7c21759fdf5bf00a4eeb9463286900707e8eb data/chalk/recipes/beige_chalk.json
+1413e7241d344a6adb6f57d040b91546fdf7331d data/chalk/recipes/coral_chalk.json
+3e7862e61a272b9ab3e8c07b8f379efd696d2e04 data/chalk/recipes/forest_chalk.json
+0a26323453ba90bdd7cda282d565d8458f3dc15b data/chalk/recipes/ginger_chalk.json
+8e6345d2f6f73deb808cc554295e79cb0f1db174 data/chalk/recipes/indigo_chalk.json
+9d2b8397b2863e087781036e4e5c1e09e5aff327 data/chalk/recipes/maroon_chalk.json
+8d10c6f52711e4fbd0962edf0fa9ef8438017b9c data/chalk/recipes/mint_chalk.json
+dabf66132920af2084a8cc9cfe5019c53648fd19 data/chalk/recipes/navy_chalk.json
+654233116e89989c66b3c9598e3edd6ee400860e data/chalk/recipes/olive_chalk.json
+4095b40a5fed06c6bd8840c7d7cc4dca0f0cc6eb data/chalk/recipes/rose_chalk.json
+934d52dd037e91af5e35bc4bcb032a43a2f49b32 data/chalk/recipes/slate_chalk.json
+ef98f5f4c8223ddbff90f1292fa1ac33f06bf2b0 data/chalk/recipes/tan_chalk.json
+2d63cade2c7556a13db32dc14edd2ba574541168 data/chalk/recipes/teal_chalk.json
+6ae871e44e381b717a14bccbbc6842b9f088f414 data/chalk/recipes/verdant_chalk.json

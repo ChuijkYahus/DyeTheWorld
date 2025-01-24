@@ -1,8 +1,9 @@
 package com.possible_triangle.dye_the_world.data
 
-import com.possible_triangle.dye_the_world.Constants
+import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES
 import com.possible_triangle.dye_the_world.blockOf
 import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
@@ -16,18 +17,18 @@ import net.minecraft.world.level.block.Block
 fun <T : Block, P> BlockBuilder<T, P>.flagBlockstate() = blockstate { context, provider ->
     provider.simpleBlock(
         context.get(),
-        provider.models().getExistingFile(Constants.Mods.SUPPLEMENTARIES.createId("block/flag"))
+        provider.models().getExistingFile(SUPPLEMENTARIES.createId("block/flag"))
     )
 }
 
 fun <T : Item, P> ItemBuilder<T, P>.flagItemModel() = model { context, provider ->
     provider.withExistingParent(
         "item/${context.name}",
-        Constants.Mods.SUPPLEMENTARIES.createId("item/flag_black")
+        SUPPLEMENTARIES.createId("item/flag_black")
     )
 }
 
-fun <T : Item, P> ItemBuilder<T, P>.flagRecipe(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.flagRecipe(dye: DyeColor) = recipe(SUPPLEMENTARIES) { context, provider ->
     val wool = dye.blockOf("wool")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get())
         .pattern("###")

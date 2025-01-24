@@ -6,6 +6,7 @@ import com.possible_triangle.dye_the_world.blockOf
 import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.createVariant
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.extensions.yRot
 import com.possible_triangle.dye_the_world.`object`.BlockLessStatePropertyCondition
 import com.starfish_studios.another_furniture.block.CurtainBlock
@@ -28,7 +29,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue
 import net.minecraftforge.client.model.generators.ConfiguredModel
 
-fun <T : Item, P> ItemBuilder<T, P>.curtainRecipes(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.curtainRecipes(dye: DyeColor) = recipe(ANOTHER_FURNITURE) { context, provider ->
     val wool = dye.blockOf("wool")
     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get(), 3)
         .group("curtains")

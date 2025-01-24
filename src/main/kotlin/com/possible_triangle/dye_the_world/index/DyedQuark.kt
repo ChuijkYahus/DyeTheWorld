@@ -4,13 +4,9 @@ import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.QUARK
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.*
-import com.possible_triangle.dye_the_world.extensions.asIngredient
-import com.possible_triangle.dye_the_world.extensions.createId
-import com.possible_triangle.dye_the_world.extensions.germanLang
-import com.possible_triangle.dye_the_world.extensions.optionalTag
-import com.possible_triangle.dye_the_world.extensions.translation
-import com.possible_triangle.dye_the_world.extensions.withItem
+import com.possible_triangle.dye_the_world.extensions.*
 import net.minecraft.data.recipes.RecipeCategory.BUILDING_BLOCKS
+import net.minecraft.data.recipes.ShapedRecipeBuilder
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.BlockTags
 import net.minecraft.world.item.CreativeModeTabs
@@ -39,9 +35,13 @@ object DyedQuark {
             .item(::Item)
             .tab(CreativeModeTabs.INGREDIENTS)
             .optionalTag(DyedTags.Items.GLASS_SHARDS)
-            .recipe { context, provider ->
+            .recipe(QUARK) { context, provider ->
                 val glass = dye.blockOf("stained_glass")
-                provider.square(context.asIngredient(), BUILDING_BLOCKS, { glass }, true)
+                ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, glass)
+                    .pattern("XX")
+                    .pattern("XX")
+                    .defineUnlocking('X', context.get())
+                    .save(provider)
             }
             .model { context, provider ->
                 provider.generated(context, Constants.MOD_ID.createId("item/$QUARK/${context.name}"))
@@ -88,7 +88,7 @@ object DyedQuark {
 
     val SHINGLES_SLABS = REGISTRATE.createSlabs(
         SHINGLES,
-        "shingles",
+        QUARK.createId("shingles"),
         modifyBlock = { dye ->
             germanLang("${dye.germanTranslation(Genus.F)} Schindelstufe")
             blockstate { c, p ->
@@ -98,16 +98,18 @@ object DyedQuark {
             }
         },
         modifyItem = { dye ->
-            recipe { context, provider ->
-                provider.slab(SHINGLES[dye]!!.asIngredient(), BUILDING_BLOCKS, context, null, true)
-                provider.stonecutting(TERRACOTTA[dye]!!.asIngredient(), BUILDING_BLOCKS, context, 2)
+            recipe(QUARK) { context, provider ->
+                provider.withNamespace(QUARK) {
+                    provider.slab(SHINGLES[dye]!!.asIngredient(), BUILDING_BLOCKS, context, null, true)
+                    provider.stonecutting(TERRACOTTA[dye]!!.asIngredient(), BUILDING_BLOCKS, context, 2)
+                }
             }
         },
     )
 
     val SHINGLES_STAIRS = REGISTRATE.createStairs(
         SHINGLES,
-        "shingles",
+        QUARK.createId("shingles"),
         modifyBlock = { dye ->
             germanLang("${dye.germanTranslation(Genus.F)} Schindeltreppe")
             blockstate { c, p ->
@@ -116,7 +118,7 @@ object DyedQuark {
             }
         },
         modifyItem = { dye ->
-            recipe { context, provider ->
+            recipe(QUARK) { context, provider ->
                 provider.stairs(SHINGLES[dye]!!.asIngredient(), BUILDING_BLOCKS, context, null, true)
                 provider.stonecutting(TERRACOTTA[dye]!!.asIngredient(), BUILDING_BLOCKS, context)
             }

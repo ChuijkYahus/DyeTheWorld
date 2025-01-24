@@ -105,10 +105,10 @@ repositories {
 val jarJar = the<JarJarProjectExtension>()
 
 dependencies {
-    // compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:${mixin_extras_version}")!!)
-    // implementation("jarJar"("io.github.llamalad7:mixinextras-forge:${mixin_extras_version}")) {
-    //     jarJar.ranged(this, "[${mixin_extras_version},)")
-    // }
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:${mixin_extras_version}")!!)
+    implementation("jarJar"("io.github.llamalad7:mixinextras-forge:${mixin_extras_version}")) {
+        jarJar.ranged(this, "[${mixin_extras_version},)")
+    }
 
     modImplementation("com.simibubi.create:create-${mc_version}:${create_version}:slim") { isTransitive = false }
     modImplementation("com.jozufozu.flywheel:flywheel-forge-${mc_version}:${flywheel_version}")

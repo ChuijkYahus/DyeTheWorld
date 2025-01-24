@@ -2,10 +2,13 @@ package com.possible_triangle.dye_the_world.extensions
 
 import com.possible_triangle.dye_the_world.ForgeEntrypoint
 import com.possible_triangle.dye_the_world.data.CustomRegistrateLangProvider
+import com.possible_triangle.dye_the_world.withNamespace
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.BlockEntityBuilder
 import com.tterrag.registrate.builders.ItemBuilder
+import com.tterrag.registrate.providers.DataGenContext
 import com.tterrag.registrate.providers.ProviderType
+import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.BlockItem
@@ -48,4 +51,13 @@ fun <T : Item, P> ItemBuilder<T, P>.germanLang(translation: String) = setData(DE
 
 fun <T : Block, P> BlockBuilder<T, P>.germanLang(translation: String) = setData(DE_LANG) { context, provider ->
     provider.add(context.get(), translation)
+}
+
+fun <T : Item, P> ItemBuilder<T, P>.recipe(
+    namespace: String,
+    factory: (DataGenContext<Item, T>, RegistrateRecipeProvider) -> Unit
+) = recipe { context, provider ->
+    provider.withNamespace(namespace) {
+        factory(context, provider)
+    }
 }

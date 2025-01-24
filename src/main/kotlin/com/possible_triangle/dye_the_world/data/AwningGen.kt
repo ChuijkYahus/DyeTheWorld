@@ -2,9 +2,10 @@ package com.possible_triangle.dye_the_world.data
 
 import com.possible_triangle.dye_the_world.Constants
 import com.possible_triangle.dye_the_world.Constants.Mods.SUPPLEMENTARIES
+import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.createVariant
-import com.possible_triangle.dye_the_world.dyeingRecipe
+import com.possible_triangle.dye_the_world.extensions.recipe
 import com.possible_triangle.dye_the_world.extensions.yRot
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
@@ -42,6 +43,6 @@ fun <T : Item, P> ItemBuilder<T, P>.awningItemModel(dye: DyeColor) = model { con
     provider.generated(context, Constants.MOD_ID.createId("block/$SUPPLEMENTARIES/awnings/awning_$dye"))
 }
 
-fun <T : Item, P> ItemBuilder<T, P>.awningRecipe(dye: DyeColor) = recipe { context, provider ->
+fun <T : Item, P> ItemBuilder<T, P>.awningRecipe(dye: DyeColor) = recipe(SUPPLEMENTARIES) { context, provider ->
     provider.dyeingRecipe(dye, ModRegistry.AWNINGS[null]!!.get(), context::get)
 }
