@@ -144,7 +144,6 @@ tasks.processResources {
 
 tasks.withType<Jar> {
     exclude("**/*.xcf")
-    exclude("resources/${mod_id}.data.mixins.json")
 }
 
 enablePublishing {
