@@ -1,44 +1,31 @@
 package com.possible_triangle.dye_the_world.mixins;
 
-import com.github.alexthe666.alexsmobs.client.render.layer.LayerElephantOverlays;
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.github.alexthe666.alexsmobs.entity.EntityElephant;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import com.possible_triangle.dye_the_world.Constants;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.resources.ResourceLocation;
+import com.possible_triangle.dye_the_world.compat.AlexsMobsCompat;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
-@Mixin(value = LayerElephantOverlays.class, remap = false)
-public class LayerElephantOverlaysMixin {
+import javax.annotation.Nullable;
 
-    @ModifyExpressionValue(
-            method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILcom/github/alexthe666/alexsmobs/entity/EntityElephant;FFFFFF)V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lcom/github/alexthe666/alexsmobs/entity/EntityElephant;isTrader()Z",
-                    ordinal = 1
-            ),
+@Mixin(value = EntityElephant.class, remap = false)
+public abstract class EntityElephantMixin {
+
+    @Shadow @Nullable public abstract DyeColor getColor();
+
+    @ModifyReturnValue(
+            method = "getCarpetItemBeingWorn()Lnet/minecraft/world/item/Item;",
+            at = @At("RETURN"),
             require = 0
     )
-    public boolean overwriteCarpetLayer(boolean original, @Local DyeColor dye) {
-        return original || dye.getId() > 15;
-    }
-
-    @WrapOperation(
-            method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILcom/github/alexthe666/alexsmobs/entity/EntityElephant;FFFFFF)V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/client/renderer/RenderType;entityCutoutNoCull(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/renderer/RenderType;"
-            ),
-            require = 0
-    )
-    public RenderType overwriteCarpetLayer(ResourceLocation texture, Operation<RenderType> original, @Local DyeColor dye) {
-        if (dye == null || dye.getId() < 16) return original.call(texture);
-        return original.call(new ResourceLocation(Constants.MOD_ID, "textures/entity/alexsmobs/elephant_decor/" + dye + ".png"));
+    public Item overwriteCarpetLayer(Item original) {
+        var dye = getColor();
+        if(dye == null || dye.getId() < 16) return original;
+        return AlexsMobsCompat.INSTANCE.getCarpet(dye);
     }
 
 }
