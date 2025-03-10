@@ -51,8 +51,7 @@ object DyedCaves {
                         .unlockedBy("has_glowstone", RegistrateRecipeProvider.has(Blocks.GLOWSTONE))
                         .save(provider)
 
-                    provider.shapedDyeingRecipe(dye, DyedTags.Items.RADON_LAMPS, context) {
-                    }
+                    provider.shapedDyeingRecipe(dye, DyedTags.Items.RADON_LAMPS, context)
                 }
             }
             .register()

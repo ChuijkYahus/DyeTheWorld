@@ -22,7 +22,9 @@ val zeta_version: String by extra
 val jade_version: String by extra
 val farmers_delight_version: String by extra
 val clayworks_version: String by extra
+val upgrade_aquatic_version: String by extra
 val blueprint_version: String by extra
+val gallery_version: String by extra
 val alexs_caves_version: String by extra
 val domestication_innovation_version: String by extra
 val citadel_version: String by extra
@@ -56,7 +58,8 @@ forge {
             "domesticationinnovation",
             "createdeco",
             "railways",
-            "chalk"
+            "chalk",
+            "upgrade_aquatic"
         )
     )
 
@@ -121,6 +124,7 @@ dependencies {
     modImplementation("maven.modrinth:zeta:${zeta_version}")
     modImplementation("maven.modrinth:farmers-delight:${farmers_delight_version}")
     modImplementation("maven.modrinth:clayworks:${clayworks_version}")
+    modImplementation("maven.modrinth:upgrade-aquatic:${upgrade_aquatic_version}")
     modImplementation("maven.modrinth:blueprint:${blueprint_version}")
     modImplementation("maven.modrinth:chalk-mod:${chalk_version}")
     modImplementation("maven.modrinth:create-deco:${create_deco_version}")
@@ -135,6 +139,7 @@ dependencies {
     modRuntimeOnly("maven.modrinth:create-steam-n-rails:${create_railways_version}")
     modRuntimeOnly("maven.modrinth:curios:${curios_version}")
     modRuntimeOnly("maven.modrinth:ars-nouveau:${ars_nouveau_version}")
+    modRuntimeOnly("maven.modrinth:gallery:${gallery_version}")
     // modRuntimeOnly("maven.modrinth:patchouli:${patchouli_version}")
 }
 
@@ -165,6 +170,7 @@ fun DependencyBuilder.addDependencies() {
     optional("ars-nouveau")
     optional("create-deco")
     optional("create-steam-n-rails")
+    optional("upgrade-aquatic")
 }
 
 uploadToCurseforge {

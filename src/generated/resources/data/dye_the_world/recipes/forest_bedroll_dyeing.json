@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "forge:dyes/forest"
+    },
+    {
+      "tag": "domesticationinnovation:pet_beds"
+    }
+  ],
+  "result": {
+    "item": "dye_the_world:forest_bedroll"
+  }
+}
