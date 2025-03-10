@@ -6,6 +6,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.possible_triangle.dye_the_world.Constants;
+import com.possible_triangle.dye_the_world.compat.AlexsMobsCompat;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
@@ -38,7 +39,7 @@ public class LayerElephantOverlaysMixin {
     )
     public RenderType overwriteCarpetLayer(ResourceLocation texture, Operation<RenderType> original, @Local DyeColor dye) {
         if (dye == null || dye.getId() < 16) return original.call(texture);
-        return original.call(new ResourceLocation(Constants.MOD_ID, "textures/entity/alexsmobs/elephant_decor/" + dye + ".png"));
+        return original.call(AlexsMobsCompat.INSTANCE.getDecorTexture(dye));
     }
 
 }
