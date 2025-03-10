@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pet_beds": {
+    "has_bedrolls": {
       "conditions": {
         "items": [
           {
-            "tag": "domesticationinnovation:pet_beds"
+            "tag": "upgrade_aquatic:bedrolls"
           }
         ]
       },
@@ -20,7 +20,7 @@
   },
   "requirements": [
     [
-      "has_pet_beds",
+      "has_bedrolls",
       "has_the_recipe"
     ]
   ],
