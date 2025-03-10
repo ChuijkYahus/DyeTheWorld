@@ -177,6 +177,8 @@ fun DependencyBuilder.addDependencies() {
     optional("create-deco")
     optional("create-steam-n-rails")
     optional("upgrade-aquatic")
+    optional("more-concrete")
+    optional("waystones")
 }
 
 uploadToCurseforge {
