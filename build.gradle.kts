@@ -33,8 +33,10 @@ val create_deco_version: String by extra
 val create_railways_version: String by extra
 val ars_nouveau_version: String by extra
 val curios_version: String by extra
-val botania_version: String by extra
-val patchouli_version: String by extra
+val more_concrete_version: String by extra
+val alexs_mobs_version: String by extra
+val waystones_version: String by extra
+val balm_version: String by extra
 
 plugins {
     id("com.possible-triangle.gradle") version ("0.2.5")
@@ -59,7 +61,9 @@ forge {
             "createdeco",
             "railways",
             "chalk",
-            "upgrade_aquatic"
+            "upgrade_aquatic",
+            "waystones",
+            "moreconcrete"
         )
     )
 
@@ -128,9 +132,10 @@ dependencies {
     modImplementation("maven.modrinth:blueprint:${blueprint_version}")
     modImplementation("maven.modrinth:chalk-mod:${chalk_version}")
     modImplementation("maven.modrinth:create-deco:${create_deco_version}")
-    // modImplementation("maven.modrinth:botania:${botania_version}")
     modImplementation("maven.modrinth:domestication-innovation:${domestication_innovation_version}")
     modImplementation("maven.modrinth:alexs-caves:${alexs_caves_version}")
+    modImplementation("maven.modrinth:alexs-mobs:${alexs_mobs_version}")
+    modImplementation("maven.modrinth:waystones:${waystones_version}")
 
     modRuntimeOnly("mezz.jei:jei-${mc_version}-forge:${jei_version}")
     modRuntimeOnly("maven.modrinth:jade:${jade_version}")
@@ -140,7 +145,8 @@ dependencies {
     modRuntimeOnly("maven.modrinth:curios:${curios_version}")
     modRuntimeOnly("maven.modrinth:ars-nouveau:${ars_nouveau_version}")
     modRuntimeOnly("maven.modrinth:gallery:${gallery_version}")
-    // modRuntimeOnly("maven.modrinth:patchouli:${patchouli_version}")
+    modRuntimeOnly("maven.modrinth:more-concrete:${more_concrete_version}")
+    modRuntimeOnly("maven.modrinth:balm:${balm_version}")
 }
 
 tasks.processResources {

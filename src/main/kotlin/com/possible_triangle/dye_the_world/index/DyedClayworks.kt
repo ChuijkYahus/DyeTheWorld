@@ -5,6 +5,9 @@ import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.CLAYWORKS
 import com.possible_triangle.dye_the_world.ForgeEntrypoint.REGISTRATE
 import com.possible_triangle.dye_the_world.data.createPotItem
+import com.possible_triangle.dye_the_world.data.createSlabs
+import com.possible_triangle.dye_the_world.data.createStairs
+import com.possible_triangle.dye_the_world.data.createWalls
 import com.possible_triangle.dye_the_world.data.potBlockstate
 import com.possible_triangle.dye_the_world.data.potItemModel
 import com.possible_triangle.dye_the_world.data.potLoot

@@ -99,10 +99,8 @@ object DyedQuark {
         },
         modifyItem = { dye ->
             recipe(QUARK) { context, provider ->
-                provider.withNamespace(QUARK) {
-                    provider.slab(SHINGLES[dye]!!.asIngredient(), BUILDING_BLOCKS, context, null, true)
-                    provider.stonecutting(TERRACOTTA[dye]!!.asIngredient(), BUILDING_BLOCKS, context, 2)
-                }
+                provider.slab(SHINGLES[dye]!!.asIngredient(), BUILDING_BLOCKS, context, null, true)
+                provider.stonecutting(TERRACOTTA[dye]!!.asIngredient(), BUILDING_BLOCKS, context, 2)
             }
         },
     )

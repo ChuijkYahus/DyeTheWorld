@@ -43,7 +43,7 @@ fun <T : BlockEntity, P> BlockEntityBuilder<T, P>.validBlocks(
     return validBlocks(*values.toTypedArray())
 }
 
-private val DE_LANG = CustomRegistrateLangProvider.Companion.providerType("de_de")
+val DE_LANG = CustomRegistrateLangProvider.Companion.providerType("de_de")
 
 fun <T : Item, P> ItemBuilder<T, P>.germanLang(translation: String) = setData(DE_LANG) { context, provider ->
     provider.add(context.get(), translation)

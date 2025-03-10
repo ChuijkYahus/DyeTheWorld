@@ -1,0 +1,6 @@
+{
+  "parent": "moreconcrete:block/lever_model",
+  "textures": {
+    "base": "dye_depot:block/tan_concrete"
+  }
+}

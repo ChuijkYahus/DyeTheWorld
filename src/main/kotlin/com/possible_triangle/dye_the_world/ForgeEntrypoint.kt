@@ -56,6 +56,10 @@ object ForgeEntrypoint {
             DyedAquatic.register()
         }
 
+        ifLoaded(Constants.Mods.MORE_CONCRETE) {
+            DyedConcrete.register()
+        }
+
         if (DatagenModLoader.isRunningDataGen()) {
             REGISTRATE.generateTags()
             generateGlassShardLoot()
@@ -68,6 +72,7 @@ object ForgeEntrypoint {
             DyedCreateDeco.register()
             DyedRailways.register()
             DyedChalk.registerDatagen()
+            DyedWaystones.register()
         }
     }
 

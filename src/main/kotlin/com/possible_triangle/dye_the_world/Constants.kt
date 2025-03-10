@@ -22,9 +22,12 @@ object Constants {
         const val FARMERS_DELIGHT = "farmersdelight"
         const val CLAYWORKS = "clayworks"
         const val ALEXS_CAVES = "alexscaves"
+        const val ALEXS_MOBS = "alexsmobs"
         const val DOMESTICATION_INNOVATION = "domesticationinnovation"
         const val CHALK = "chalk"
         const val UPGRADE_AQUATIC = "upgrade_aquatic"
+        const val MORE_CONCRETE = "moreconcrete"
+        const val WAYSTONES = "waystones"
     }
 
 }
