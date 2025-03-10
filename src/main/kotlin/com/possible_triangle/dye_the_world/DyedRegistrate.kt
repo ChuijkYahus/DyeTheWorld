@@ -1,12 +1,17 @@
 package com.possible_triangle.dye_the_world
 
 import com.possible_triangle.dye_the_world.data.DyedRegistrateRecipeProvider
+import com.possible_triangle.dye_the_world.extensions.createId
+import com.possible_triangle.dye_the_world.extensions.requiresUnlocking
+import com.simibubi.create.content.kinetics.fan.processing.SplashingRecipe
+import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder
 import com.tterrag.registrate.AbstractRegistrate
 import com.tterrag.registrate.providers.DataGenContext
 import com.tterrag.registrate.providers.ProviderType
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import com.tterrag.registrate.providers.RegistrateTagsProvider
 import com.tterrag.registrate.util.nullness.NonNullSupplier
+import net.mehvahdjukaar.supplementaries.reg.ModRegistry
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.ShapedRecipeBuilder
@@ -138,7 +143,31 @@ fun RegistrateRecipeProvider.shapedDyeingRecipe(
 
 fun RegistrateRecipeProvider.withNamespace(namespace: String, block: () -> Unit) {
     val conditional = this as DyedRegistrateRecipeProvider
-    conditional.setNamespace(namespace)
+    conditional.pushNamespace(namespace)
     block()
-    conditional.resetNamespace()
+    conditional.popNamespace()
+}
+
+fun RegistrateRecipeProvider.cleaningRecipe(
+    clean: ItemLike,
+    dyed: TagKey<Item>,
+    washing: Boolean = true,
+    soap: Boolean = true
+) {
+    fun id(type: String) =
+        Constants.MOD_ID.createId("cleaning/$type/${dyed.location.namespace}/${dyed.location.path}")
+
+    if (soap) withNamespace(Constants.Mods.SUPPLEMENTARIES) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, clean)
+            .requiresUnlocking(dyed)
+            .requires(ModRegistry.SOAP.get())
+            .save(this, id("soap"))
+    }
+
+    if (washing) withNamespace(Constants.Mods.CREATE) {
+        ProcessingRecipeBuilder(::SplashingRecipe, id("splashing"))
+            .require(dyed)
+            .output(clean)
+            .build(this)
+    }
 }

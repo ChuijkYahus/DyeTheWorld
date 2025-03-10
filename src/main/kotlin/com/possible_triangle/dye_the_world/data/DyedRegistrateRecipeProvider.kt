@@ -1,11 +1,13 @@
 package com.possible_triangle.dye_the_world.data
 
+import java.util.stream.Stream
+
 interface DyedRegistrateRecipeProvider {
 
-    fun setNamespace(namespace: String)
+    fun pushNamespace(namespace: String)
 
-    fun resetNamespace()
+    fun popNamespace()
 
-    fun getNamespace(): String?
+    fun getNamespaces(): Stream<String>
 
 }

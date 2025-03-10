@@ -24,6 +24,7 @@ object Constants {
         const val ALEXS_CAVES = "alexscaves"
         const val DOMESTICATION_INNOVATION = "domesticationinnovation"
         const val CHALK = "chalk"
+        const val UPGRADE_AQUATIC = "upgrade_aquatic"
     }
 
 }

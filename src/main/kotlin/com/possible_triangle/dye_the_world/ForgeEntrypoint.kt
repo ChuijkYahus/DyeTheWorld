@@ -52,6 +52,10 @@ object ForgeEntrypoint {
             DyedDomestication.register()
         }
 
+        ifLoaded(Constants.Mods.UPGRADE_AQUATIC) {
+            DyedAquatic.register()
+        }
+
         if (DatagenModLoader.isRunningDataGen()) {
             REGISTRATE.generateTags()
             generateGlassShardLoot()

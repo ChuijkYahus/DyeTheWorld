@@ -26,6 +26,8 @@ val DEPOT_DYES = listOf(
     "verdant"
 )
 
+val VANILLA_DYES = DyeColor.entries.subList(0, 15);
+
 //private val DYES = mapOf(
 //    Constants.Mods.ANOTHER_FURNITURE to DEPOT_DYES,
 //)
