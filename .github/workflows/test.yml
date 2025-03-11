@@ -1,4 +1,4 @@
-name: Analyze
+name: Test
 on:
   pull_request:
     types: [opened, synchronize]
@@ -11,8 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Analyze
+  test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
