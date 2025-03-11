@@ -12,7 +12,6 @@ concurrency:
 
 jobs:
   test:
-    name: Analyze
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
