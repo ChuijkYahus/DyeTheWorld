@@ -2,11 +2,9 @@ package com.possible_triangle.dye_the_world.mixins;
 
 import com.google.common.collect.ImmutableMap;
 import com.possible_triangle.dye_the_world.compat.CreateCompat;
-import com.possible_triangle.dye_the_world.index.DyedFurniture;
 import com.simibubi.create.foundation.utility.Couple;
 import com.simibubi.create.foundation.utility.DyeHelper;
 import net.minecraft.world.item.DyeColor;
-import org.checkerframework.checker.units.qual.K;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;

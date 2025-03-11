@@ -40,6 +40,7 @@ val balm_version: String by extra
 
 plugins {
     id("com.possible-triangle.gradle") version ("0.2.5")
+    id("com.diffplug.spotless") version ("7.0.2")
 }
 
 withKotlin()
@@ -198,3 +199,30 @@ uploadToModrinth {
 }
 
 enableSonarQube()
+
+spotless {
+    kotlin {
+        ktlint()
+
+        leadingTabsToSpaces()
+
+        suppressLintsFor {
+            shortCode = "standard:package-name"
+        }
+    }
+
+    java {
+        importOrder()
+        removeUnusedImports()
+
+        leadingTabsToSpaces()
+    }
+
+    kotlinGradle {
+        ktlint()
+
+        suppressLintsFor {
+            shortCode = "standard:property-naming"
+        }
+    }
+}

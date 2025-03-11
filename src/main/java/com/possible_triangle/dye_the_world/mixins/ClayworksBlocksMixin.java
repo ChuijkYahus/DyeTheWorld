@@ -1,8 +1,6 @@
 package com.possible_triangle.dye_the_world.mixins;
 
 import com.possible_triangle.dye_the_world.index.DyedClayworks;
-import com.possible_triangle.dye_the_world.index.DyedFurniture;
-import com.starfish_studios.another_furniture.block.LampConnectorBlock;
 import com.teamabnormals.clayworks.core.registry.ClayworksBlocks;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
