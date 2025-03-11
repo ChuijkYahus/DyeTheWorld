@@ -3,6 +3,9 @@ on:
   push:
     branches: ["[0-9]+.[0-9]+.x"]
 
+env:
+  CI: true
+
 jobs:
   build:
     name: Analyze
@@ -30,12 +33,9 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
-        env:
-          CI: true
 
       - name: Build
-        run: ./gradlew build sonar
+        run: ./gradlew build sonar spotless
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          CI: true

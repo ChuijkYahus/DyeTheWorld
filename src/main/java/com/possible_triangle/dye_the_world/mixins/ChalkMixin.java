@@ -1,7 +1,6 @@
 package com.possible_triangle.dye_the_world.mixins;
 
 import com.possible_triangle.dye_the_world.compat.ChalkCompat;
-import com.possible_triangle.dye_the_world.index.DyedChalk;
 import io.github.mortuusars.chalk.Chalk;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

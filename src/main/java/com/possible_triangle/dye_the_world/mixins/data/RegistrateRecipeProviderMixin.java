@@ -5,20 +5,14 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.possible_triangle.dye_the_world.data.ConditionalFinishedRecipe;
 import com.possible_triangle.dye_the_world.data.DyedRegistrateRecipeProvider;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
-import org.jetbrains.annotations.Nullable;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
-
 import java.util.ArrayDeque;
 import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
 import java.util.Queue;
 import java.util.stream.Stream;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(value = RegistrateRecipeProvider.class, remap = false)
 public abstract class RegistrateRecipeProviderMixin implements DyedRegistrateRecipeProvider {

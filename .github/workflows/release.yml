@@ -3,6 +3,9 @@ on:
   release:
     types: [created]
 
+env:
+  CI: true
+
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -27,8 +30,6 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
-        env:
-          CI: true
 
       - name: Build and upload
         uses: gradle/gradle-build-action@v2
@@ -39,7 +40,6 @@ jobs:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
           CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
           CHANGELOG: ${{ github.event.release.body }}
-          CI: true
 
       - name: Upload to github releases
         if: ${{ github.event_name == 'release' }}
