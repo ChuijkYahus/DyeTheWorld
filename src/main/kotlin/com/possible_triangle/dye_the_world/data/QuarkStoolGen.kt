@@ -7,6 +7,8 @@ import com.possible_triangle.dye_the_world.dyeingRecipe
 import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.createVariant
 import com.possible_triangle.dye_the_world.extensions.recipe
+import com.possible_triangle.dye_the_world.index.DyedQuark
+import com.possible_triangle.dye_the_world.withCondition
 import com.starfish_studios.another_furniture.registry.AFBlocks
 import com.tterrag.registrate.builders.BlockBuilder
 import com.tterrag.registrate.builders.ItemBuilder
@@ -20,18 +22,20 @@ import net.minecraftforge.client.model.generators.ConfiguredModel
 import org.violetmoon.quark.content.building.block.StoolBlock
 
 fun <T : Item, P> ItemBuilder<T, P>.quarkStoolRecipe(dye: DyeColor) = recipe(QUARK) { context, provider ->
-    val wool = dye.blockOf("wool")
-    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get())
-        .group("stools")
-        .pattern("#W#")
-        .pattern("WWW")
-        .define('#', ItemTags.WOODEN_SLABS)
-        .define('W', wool)
-        .unlockedBy("has_wool", RegistrateRecipeProvider.has(wool))
-        .save(provider)
+    provider.withCondition(DyedQuark.flagCondition("stools")) {
+        val wool = dye.blockOf("wool")
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, context.get())
+            .group("stools")
+            .pattern("#W#")
+            .pattern("WWW")
+            .define('#', ItemTags.WOODEN_SLABS)
+            .define('W', wool)
+            .unlockedBy("has_wool", RegistrateRecipeProvider.has(wool))
+            .save(provider)
 
-    provider.dyeingRecipe(dye, AFBlocks.WHITE_STOOL.get(), context) {
-        group("stools")
+        provider.dyeingRecipe(dye, AFBlocks.WHITE_STOOL.get(), context) {
+            group("stools")
+        }
     }
 }
 

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "conditions": [
+    {
+      "type": "quark:flag",
+      "flag": "glass_shard"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "key": {
+    "X": {
+      "item": "dye_the_world:aqua_shard"
+    }
+  },
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "result": {
+    "item": "dye_depot:aqua_stained_glass"
+  },
+  "show_notification": true
+}

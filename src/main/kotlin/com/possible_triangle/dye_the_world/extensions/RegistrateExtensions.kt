@@ -10,8 +10,10 @@ import com.tterrag.registrate.providers.DataGenContext
 import com.tterrag.registrate.providers.ProviderType
 import com.tterrag.registrate.providers.RegistrateRecipeProvider
 import com.tterrag.registrate.util.nullness.NonNullSupplier
+import net.minecraft.resources.ResourceKey
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.BlockItem
+import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
@@ -59,5 +61,13 @@ fun <T : Item, P> ItemBuilder<T, P>.recipe(
 ) = recipe { context, provider ->
     provider.withNamespace(namespace) {
         factory(context, provider)
+    }
+}
+
+fun <T : Item, P> ItemBuilder<T, P>.optionalTab(vararg keys: ResourceKey<CreativeModeTab>, condition: () -> Boolean) = apply {
+    keys.forEach { key ->
+        tab(key) {
+            if (condition()) it.accept(get())
+        }
     }
 }

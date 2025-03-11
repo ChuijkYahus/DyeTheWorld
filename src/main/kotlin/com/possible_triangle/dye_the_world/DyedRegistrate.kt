@@ -22,6 +22,8 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.level.ItemLike
+import net.minecraftforge.common.crafting.conditions.ICondition
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition
 import net.minecraftforge.eventbus.api.IEventBus
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
@@ -141,12 +143,15 @@ fun RegistrateRecipeProvider.shapedDyeingRecipe(
     }
 }
 
-fun RegistrateRecipeProvider.withNamespace(namespace: String, block: () -> Unit) {
+fun RegistrateRecipeProvider.withCondition(condition: ICondition, block: () -> Unit) {
     val conditional = this as DyedRegistrateRecipeProvider
-    conditional.pushNamespace(namespace)
+    conditional.pushCondition(condition)
     block()
-    conditional.popNamespace()
+    conditional.popCondition()
 }
+
+fun RegistrateRecipeProvider.withNamespace(namespace: String, block: () -> Unit) =
+    withCondition(ModLoadedCondition(namespace), block)
 
 fun RegistrateRecipeProvider.cleaningRecipe(
     clean: ItemLike,

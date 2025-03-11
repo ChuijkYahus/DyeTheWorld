@@ -28,6 +28,12 @@
             },
             {
               "type": "dye_the_world:item",
+              "conditions": [
+                {
+                  "condition": "quark:flag",
+                  "flag": "glass_shard"
+                }
+              ],
               "functions": [
                 {
                   "add": false,

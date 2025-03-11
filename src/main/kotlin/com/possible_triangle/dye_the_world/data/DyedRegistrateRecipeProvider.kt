@@ -1,13 +1,14 @@
 package com.possible_triangle.dye_the_world.data
 
+import net.minecraftforge.common.crafting.conditions.ICondition
 import java.util.stream.Stream
 
 interface DyedRegistrateRecipeProvider {
 
-    fun pushNamespace(namespace: String)
+    fun pushCondition(condition: ICondition)
 
-    fun popNamespace()
+    fun popCondition()
 
-    fun getNamespaces(): Stream<String>
+    fun getCondition(): Stream<ICondition>
 
 }

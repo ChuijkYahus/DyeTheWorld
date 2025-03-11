@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.Queue;
 import java.util.stream.Stream;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import net.minecraftforge.common.crafting.conditions.ICondition;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
@@ -18,31 +18,28 @@ import org.spongepowered.asm.mixin.Unique;
 public abstract class RegistrateRecipeProviderMixin implements DyedRegistrateRecipeProvider {
 
     @Unique
-    private final Queue<String> namespaces = Collections.asLifoQueue(new ArrayDeque<>());
+    private final Queue<ICondition> conditions = Collections.asLifoQueue(new ArrayDeque<>());
 
     @Override
-    public void pushNamespace(String namespace) {
-        namespaces.add(namespace);
+    public void pushCondition(ICondition condition) {
+        conditions.add(condition);
     }
 
     @Override
-    public void popNamespace() {
-        namespaces.poll();
+    public void popCondition() {
+        conditions.poll();
     }
 
     @Override
-    public Stream<String> getNamespaces() {
-        return namespaces.stream().distinct();
+    public Stream<ICondition> getCondition() {
+        return conditions.stream().distinct();
     }
 
     @WrapMethod(
             method = "accept(Lnet/minecraft/data/recipes/FinishedRecipe;)V"
     )
     private void injectSave(FinishedRecipe recipe, Operation<Void> original) {
-        var conditions = getNamespaces()
-                .map(ModLoadedCondition::new)
-                .toList();
-
+        var conditions = getCondition().toList();
         original.call(new ConditionalFinishedRecipe(recipe, conditions));
     }
 

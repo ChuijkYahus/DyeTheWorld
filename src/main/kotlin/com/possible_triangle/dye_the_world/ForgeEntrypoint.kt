@@ -2,7 +2,9 @@ package com.possible_triangle.dye_the_world
 
 import com.possible_triangle.dye_the_world.data.generateGlassShardLoot
 import com.possible_triangle.dye_the_world.data.generateTags
+import com.possible_triangle.dye_the_world.extensions.createId
 import com.possible_triangle.dye_the_world.extensions.ifLoaded
+import com.possible_triangle.dye_the_world.extensions.isLoaded
 import com.possible_triangle.dye_the_world.index.*
 import com.possible_triangle.dye_the_world.`object`.BlockLessStatePropertyCondition
 import com.possible_triangle.dye_the_world.`object`.OptionalLootEntry
@@ -32,8 +34,11 @@ object ForgeEntrypoint {
             DyedFurniture.register()
         }
 
-        ifLoaded(Constants.Mods.QUARK) {
+        if (isLoaded(Constants.Mods.QUARK)) {
             DyedQuark.register()
+        } else {
+            stubLootCondition(Constants.Mods.QUARK.createId("flag"))
+            stubRecipeCondition(Constants.Mods.QUARK.createId("flag"))
         }
 
         ifLoaded(Constants.Mods.CLAYWORKS) {

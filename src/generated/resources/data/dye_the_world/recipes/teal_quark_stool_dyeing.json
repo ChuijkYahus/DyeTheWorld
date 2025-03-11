@@ -3,6 +3,10 @@
   "category": "building",
   "conditions": [
     {
+      "type": "quark:flag",
+      "flag": "stools"
+    },
+    {
       "type": "forge:mod_loaded",
       "modid": "quark"
     }
