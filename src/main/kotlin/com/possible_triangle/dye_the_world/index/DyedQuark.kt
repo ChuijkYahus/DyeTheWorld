@@ -36,7 +36,8 @@ object DyedQuark {
     private val TERRACOTTA = dyedBlockMap(QUARK, "terracotta")
 
     val FLAG_MANAGER: ConfigFlagManager by lazy {
-        val quark = ZetaList.INSTANCE.zetas.firstOrNull() ?: throw NullPointerException("Could not find Quark Instance")
+        val quark = ZetaList.INSTANCE.zetas.find { it.modid == QUARK }
+            ?: throw NullPointerException("Could not find Quark Instance")
         quark.configManager.configFlagManager
     }
 
