@@ -9,6 +9,7 @@ val mixin_extras_version: String by extra
 val mc_version: String by extra
 val registrate_version: String by extra
 val create_version: String by extra
+val ponder_version: String by extra
 val flywheel_version: String by extra
 val jei_version: String by extra
 val supplementaries_version: String by extra
@@ -103,9 +104,15 @@ repositories {
     maven {
         url = uri("https://maven.tterrag.com/")
         content {
-            includeGroup("com.simibubi.create")
-            includeGroup("com.jozufozu.flywheel")
             includeGroup("com.tterrag.registrate")
+        }
+    }
+    maven {
+        url = uri("https://maven.createmod.net")
+        content {
+            includeGroup("com.simibubi.create")
+            includeGroup("net.createmod.ponder")
+            includeGroup("dev.engine-room.flywheel")
         }
     }
 }
@@ -118,8 +125,10 @@ dependencies {
         jarJar.ranged(this, "[${mixin_extras_version},)")
     }
 
+    modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
     modImplementation("com.simibubi.create:create-${mc_version}:${create_version}:slim") { isTransitive = false }
-    modImplementation("com.jozufozu.flywheel:flywheel-forge-${mc_version}:${flywheel_version}")
+    modImplementation("net.createmod.ponder:Ponder-Forge-${mc_version}:${ponder_version}")
+    modCompileOnly("dev.engine-room.flywheel:flywheel-forge-api-${mc_version}:${flywheel_version}")
     modImplementation("maven.modrinth:another-furniture:${another_furniture_version}")
     modImplementation("maven.modrinth:comforts:${comforts_version}")
     modImplementation("maven.modrinth:moonlight:${moonlight_lib_version}")
@@ -138,6 +147,7 @@ dependencies {
     modImplementation("maven.modrinth:alexs-mobs:${alexs_mobs_version}")
     modImplementation("maven.modrinth:waystones:${waystones_version}")
 
+    modRuntimeOnly("dev.engine-room.flywheel:flywheel-forge-${mc_version}:${flywheel_version}")
     modRuntimeOnly("mezz.jei:jei-${mc_version}-forge:${jei_version}")
     modRuntimeOnly("maven.modrinth:jade:${jade_version}")
     modRuntimeOnly("maven.modrinth:dye-depot:${dye_depot_version}")
