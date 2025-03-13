@@ -17,6 +17,7 @@ import com.simibubi.create.content.contraptions.actors.seat.SeatBlock
 import com.simibubi.create.content.contraptions.bearing.SailBlock
 import com.simibubi.create.content.equipment.toolbox.ToolboxBlock
 import com.simibubi.create.content.kinetics.crank.ValveHandleBlock
+import com.simibubi.create.content.logistics.packagePort.postbox.PostboxBlock
 import com.simibubi.create.content.logistics.tableCloth.TableClothBlock
 import com.simibubi.create.content.redstone.nixieTube.NixieTubeBlock
 import net.minecraft.tags.BlockTags
@@ -104,6 +105,21 @@ object DyedCreate {
                 optionalTag(AllTags.AllItemTags.DYED_TABLE_CLOTHS.tag)
                 tableClothItemModel(dye)
                 tableClothRecipe(dye)
+            }
+            .register()
+    }
+
+    val POST_BOXES = DYES.associateWith { dye ->
+        REGISTRATE.`object`("${dye}_postbox")
+            .block { PostboxBlock(it, dye) }
+            .lang("${dye.translation} Postbox")
+            .germanLang("${dye.germanTranslation(Genus.M)} Briefkasten")
+            .optionalTag(AllTags.AllBlockTags.POSTBOXES.tag)
+            .postboxBlockstate(dye)
+            .withItem {
+                optionalTag(AllTags.AllItemTags.POSTBOXES.tag)
+                postboxItemModel(dye)
+                postboxRecipe(dye)
             }
             .register()
     }
