@@ -41,7 +41,7 @@ private class SimpleBlockBuilder<P : AbstractRegistrate<*>>(
     BlockBuilder<Block, P>(owner, owner, name, callback, ::Block, BlockBehaviour.Properties::of)
 
 fun generateGlassShardLoot() {
-    val registrate = DyedRegistrate(Constants.Mods.DYE_DEPOT)
+    val registrate = DyedRegistrate.create(Constants.Mods.DYE_DEPOT)
 
     GLASS_SHARDS.forEach { (dye, shard) ->
         registrate.`object`("${dye}_stained_glass")

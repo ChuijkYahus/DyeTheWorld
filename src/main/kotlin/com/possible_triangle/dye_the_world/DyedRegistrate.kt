@@ -17,6 +17,7 @@ import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.ShapedRecipeBuilder
 import net.minecraft.data.recipes.ShapelessRecipeBuilder
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.sounds.SoundEvent
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
@@ -27,10 +28,21 @@ import net.minecraftforge.common.crafting.conditions.ModLoadedCondition
 import net.minecraftforge.eventbus.api.IEventBus
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
-class DyedRegistrate(modid: String) : AbstractRegistrate<DyedRegistrate>(modid) {
+class DyedRegistrate @Deprecated("use create instead") constructor(modid: String) :
+    AbstractRegistrate<DyedRegistrate>(modid) {
+
+    companion object {
+        private val REGISTRATES = hashMapOf<String, DyedRegistrate>()
+
+        fun create(modid: String) = REGISTRATES.getOrPut(modid) { DyedRegistrate(modid) }
+    }
+
+    private var isRegistered = false
 
     fun register() {
+        if (isRegistered) return
         registerEventListeners(modEventBus)
+        isRegistered = true
     }
 
     override fun getModEventBus(): IEventBus {
@@ -55,6 +67,12 @@ class DyedRegistrate(modid: String) : AbstractRegistrate<DyedRegistrate>(modid) 
     fun <T : Any> TagKey<T>.addOptional(tag: TagKey<T>) {
         addDataGenerator(provider()) {
             it.addTag(this).addOptionalTag(tag)
+        }
+    }
+
+    fun sound() = currentName().let { it ->
+        generic(Registries.SOUND_EVENT) {
+            SoundEvent.createVariableRangeEvent(ResourceLocation(modid, it))
         }
     }
 

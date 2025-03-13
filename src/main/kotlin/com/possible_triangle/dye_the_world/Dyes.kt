@@ -5,6 +5,7 @@ import com.possible_triangle.dye_the_world.extensions.getOrThrow
 import com.tterrag.registrate.util.nullness.NonNullSupplier
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.world.item.DyeColor
+import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 
 val DEPOT_DYES = listOf(
@@ -43,6 +44,11 @@ val DyeColor.namespace: String
         return if (DEPOT_DYES.contains(serializedName)) "dye_depot"
         else "minecraft"
     }
+
+fun DyeColor.itemOf(type: String): Item {
+    val id = namespace.createId("${this}_$type")
+    return BuiltInRegistries.ITEM.getOrThrow(id)
+}
 
 fun DyeColor.blockOf(type: String): Block {
     val id = namespace.createId("${this}_$type")
