@@ -29,6 +29,7 @@ object ForgeEntrypoint {
 
     init {
         REGISTRATE.register()
+        DyedBaskets.register()
 
         ifLoaded(Constants.Mods.ANOTHER_FURNITURE) {
             DyedFurniture.register()
