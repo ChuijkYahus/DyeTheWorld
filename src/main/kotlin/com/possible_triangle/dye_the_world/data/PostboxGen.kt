@@ -47,6 +47,7 @@ fun <T : Item, P> ItemBuilder<T, P>.postboxRecipe(dye: DyeColor) = recipe(CREATE
         .define('A', AllItems.ANDESITE_ALLOY.get())
         .defineUnlocking('B', Items.BARREL)
         .define('D', dye.tag)
+        .save(provider)
 
     provider.dyeingRecipe(dye, AllTags.AllItemTags.POSTBOXES.tag, context)
 }

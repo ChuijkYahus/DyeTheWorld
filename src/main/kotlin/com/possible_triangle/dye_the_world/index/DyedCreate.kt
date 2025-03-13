@@ -99,6 +99,7 @@ object DyedCreate {
             .lang("${dye.translation} Table Cloth")
             .germanLang("${dye.germanTranslation(Genus.F)} Tischdecke")
             .optionalTag(AllTags.AllBlockTags.TABLE_CLOTHS.tag)
+            .optionalTag(BlockTags.COMBINATION_STEP_SOUND_BLOCKS)
             .tableClothBlockstate(dye)
             .withItem {
                 optionalTag(AllTags.AllItemTags.TABLE_CLOTHS.tag)
@@ -115,6 +116,7 @@ object DyedCreate {
             .lang("${dye.translation} Postbox")
             .germanLang("${dye.germanTranslation(Genus.M)} Briefkasten")
             .optionalTag(AllTags.AllBlockTags.POSTBOXES.tag)
+            .optionalTag(BlockTags.MINEABLE_WITH_AXE)
             .postboxBlockstate(dye)
             .withItem {
                 optionalTag(AllTags.AllItemTags.POSTBOXES.tag)
@@ -126,7 +128,6 @@ object DyedCreate {
 
     fun register() {
         REGISTRATE.register()
-        CreateCompat.registerDyes()
     }
 
 }

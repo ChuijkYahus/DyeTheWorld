@@ -1,5 +1,6 @@
 package com.possible_triangle.dye_the_world
 
+import com.possible_triangle.dye_the_world.compat.CreateCompat
 import com.possible_triangle.dye_the_world.data.generateGlassShardLoot
 import com.possible_triangle.dye_the_world.data.generateTags
 import com.possible_triangle.dye_the_world.extensions.createId
@@ -63,6 +64,10 @@ object ForgeEntrypoint {
 
         ifLoaded(Constants.Mods.MORE_CONCRETE) {
             DyedConcrete.register()
+        }
+
+        ifLoaded(Constants.Mods.CREATE) {
+            CreateCompat.registerDyes()
         }
 
         if (DatagenModLoader.isRunningDataGen()) {
