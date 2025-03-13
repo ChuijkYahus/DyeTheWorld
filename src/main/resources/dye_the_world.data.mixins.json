@@ -6,7 +6,7 @@
   "target": "@env(DEFAULT)",
   "refmap": "${mod_id}.refmap.json",
   "mixins": [
-    "LootItemMixin", "LootItemBlockStatePropertyConditionMixin", "RegistrateRecipeProviderMixin"
+    "LootItemMixin", "LootItemBlockStatePropertyConditionMixin", "RegistrateRecipeProviderMixin", "QuarkMixin"
   ],
   "plugin": "com.possible_triangle.dye_the_world.DyedDataMixinPlugin",
   "injectors": {
