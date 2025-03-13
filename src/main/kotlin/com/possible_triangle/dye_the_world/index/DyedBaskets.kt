@@ -1,40 +1,57 @@
 package com.possible_triangle.dye_the_world.index
 
-import com.possible_triangle.dye_the_world.Constants
+import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.DYE_DEPOT
-import com.possible_triangle.dye_the_world.DEPOT_DYES
-import com.possible_triangle.dye_the_world.DyedRegistrate
-import com.possible_triangle.dye_the_world.VANILLA_DYES
-import com.possible_triangle.dye_the_world.extensions.asIngredient
 import com.possible_triangle.dye_the_world.extensions.createId
-import com.possible_triangle.dye_the_world.extensions.createVariant
+import com.possible_triangle.dye_the_world.extensions.germanLang
+import com.possible_triangle.dye_the_world.extensions.translation
 import com.possible_triangle.dye_the_world.extensions.withItem
-import net.minecraft.world.level.block.Block
-import net.minecraftforge.client.model.generators.ConfiguredModel
+import com.possible_triangle.dye_the_world.`object`.block.DyeBasketBlock
+import com.tterrag.registrate.providers.ProviderType
+import net.minecraft.data.recipes.RecipeCategory
+import net.minecraft.tags.BlockTags
+import net.minecraft.world.item.CreativeModeTabs
+import net.minecraft.world.level.block.SoundType
 
 object DyedBaskets {
 
-    private val DYES = VANILLA_DYES + DEPOT_DYES
+    private val DYES = VANILLA_DYES + dyesFor(DYE_DEPOT)
 
-    private val REGISTRATE = DyedRegistrate(DYE_DEPOT)
+    private val REGISTRATE = DyedRegistrate.create(DYE_DEPOT)
 
-    val BASKETS = DYES.map { dye ->
+    val POOF_SOUND = REGISTRATE.`object`("block.dye_basket.poof")
+        .sound()
+        .addMiscData(ProviderType.LANG) { it.add("subtitles.block.dye_depot.dye_basket.poof", "Dye poofs") }
+        .register()
+
+    val BASKETS = DYES.associateWith { dye ->
         REGISTRATE.`object`("${dye}_dye_basket")
-            .block(::Block)
-            .blockstate {context, provider ->
-                fun texture(suffix: String = "") =
-                    Constants.MOD_ID.createId("block/basket/$dye$suffix")
+            .block { DyeBasketBlock(it, dye) }
+            .lang("${dye.translation} Dye Basket")
+            .germanLang("${dye.germanTranslation(Genus.M)} Farbkorb")
+            .tag(BlockTags.MINEABLE_WITH_HOE)
+            .properties { it.strength(0.8F) }
+            .properties { it.sound(SoundType.WOOL) }
+            .properties { it.ignitedByLava() }
+            .properties { it.mapColor(dye) }
+            .blockstate { context, provider ->
+                fun texture(suffix: String) =
+                    Constants.MOD_ID.createId("block/basket/${dye}_$suffix")
 
-                provider.horizontalBlock(
-                    context.get(),
-                    texture(),
-                    texture("_front"),
-                    texture("_top"),
-                )
+                val model = provider.models().orientableWithBottom(
+                    context.name,
+                    texture("side"),
+                    texture("front"),
+                    texture("bottom"),
+                    texture("top"),
+                ).texture("particle", texture("top"))
+
+                provider.horizontalBlock(context.get(), model)
             }
             .withItem {
-                recipe {context, provider ->
-                    provider.storage(context.asIngredient())
+                tab(CreativeModeTabs.COLORED_BLOCKS)
+                recipe { context, provider ->
+                    provider.storage({ dye.itemOf("dye") }, RecipeCategory.DECORATIONS, context)
                 }
             }
             .register()

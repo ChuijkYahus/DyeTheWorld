@@ -1,0 +1,12 @@
+{
+  "block.dye_basket.poof": {
+    "sounds": [
+      "dye_depot:poof1",
+      "dye_depot:poof2",
+      "dye_depot:poof3",
+      "dye_depot:poof4",
+      "dye_depot:poof5"
+    ],
+    "subtitle": "subtitles.block.dye_depot.dye_basket.poof"
+  }
+}

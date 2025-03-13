@@ -31,7 +31,7 @@ class ConditionalFinishedRecipe(
                     add(CraftingHelper.serialize(it))
                 }
             })
-        } else {
+        } else if(id.namespace != Constants.Mods.DYE_DEPOT) {
             throw IllegalArgumentException("Recipe '$id' is missing a condition")
         }
     }
