@@ -3,6 +3,7 @@ package com.possible_triangle.dye_the_world.index
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE
 import com.possible_triangle.dye_the_world.DyedRegistrate
 import com.possible_triangle.dye_the_world.Genus
+import com.possible_triangle.dye_the_world.compat.CreateCompat
 import com.possible_triangle.dye_the_world.data.*
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.extensions.germanLang
@@ -16,6 +17,8 @@ import com.simibubi.create.content.contraptions.actors.seat.SeatBlock
 import com.simibubi.create.content.contraptions.bearing.SailBlock
 import com.simibubi.create.content.equipment.toolbox.ToolboxBlock
 import com.simibubi.create.content.kinetics.crank.ValveHandleBlock
+import com.simibubi.create.content.logistics.packagePort.postbox.PostboxBlock
+import com.simibubi.create.content.logistics.tableCloth.TableClothBlock
 import com.simibubi.create.content.redstone.nixieTube.NixieTubeBlock
 import net.minecraft.tags.BlockTags
 
@@ -86,6 +89,39 @@ object DyedCreate {
             .withItem {
                 optionalTag(AllTags.AllItemTags.VALVE_HANDLES.tag)
                 valveRecipe(dye)
+            }
+            .register()
+    }
+
+    val TABLE_CLOTHS = DYES.associateWith { dye ->
+        REGISTRATE.`object`("${dye}_table_cloth")
+            .block { TableClothBlock(it, dye) }
+            .lang("${dye.translation} Table Cloth")
+            .germanLang("${dye.germanTranslation(Genus.F)} Tischdecke")
+            .optionalTag(AllTags.AllBlockTags.TABLE_CLOTHS.tag)
+            .optionalTag(BlockTags.COMBINATION_STEP_SOUND_BLOCKS)
+            .tableClothBlockstate(dye)
+            .withItem {
+                optionalTag(AllTags.AllItemTags.TABLE_CLOTHS.tag)
+                optionalTag(AllTags.AllItemTags.DYED_TABLE_CLOTHS.tag)
+                tableClothItemModel(dye)
+                tableClothRecipe(dye)
+            }
+            .register()
+    }
+
+    val POST_BOXES = DYES.associateWith { dye ->
+        REGISTRATE.`object`("${dye}_postbox")
+            .block { PostboxBlock(it, dye) }
+            .lang("${dye.translation} Postbox")
+            .germanLang("${dye.germanTranslation(Genus.M)} Briefkasten")
+            .optionalTag(AllTags.AllBlockTags.POSTBOXES.tag)
+            .optionalTag(BlockTags.MINEABLE_WITH_AXE)
+            .postboxBlockstate(dye)
+            .withItem {
+                optionalTag(AllTags.AllItemTags.POSTBOXES.tag)
+                postboxItemModel(dye)
+                postboxRecipe(dye)
             }
             .register()
     }

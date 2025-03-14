@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "dye_the_world:item",
+          "name": "create:navy_table_cloth"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "create:blocks/navy_table_cloth"
+}

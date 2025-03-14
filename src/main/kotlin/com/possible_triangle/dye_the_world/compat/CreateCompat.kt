@@ -1,14 +1,20 @@
 package com.possible_triangle.dye_the_world.compat
 
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE
+import com.possible_triangle.dye_the_world.dyedBlockMap
 import com.possible_triangle.dye_the_world.dyesFor
-import com.simibubi.create.foundation.utility.Couple
-import net.minecraft.world.item.DyeColor
+import com.simibubi.create.foundation.utility.DyeHelper
 
 object CreateCompat {
 
-    val ADDITIONAL_DYE_COLORS: Map<DyeColor, Couple<Int>> = dyesFor(CREATE).associateWith {
-        Couple.create(it.textColor, it.textColor)
+    private val WOOL = dyedBlockMap(CREATE, "wool")
+
+    fun registerDyes() {
+        dyesFor(CREATE).forEach { dye ->
+            DyeHelper.addDye(dye, dye.textColor, dye.textColor) {
+                WOOL[dye]!!.get()
+            }
+        }
     }
 
 }
