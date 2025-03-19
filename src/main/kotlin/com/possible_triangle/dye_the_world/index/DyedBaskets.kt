@@ -2,10 +2,7 @@ package com.possible_triangle.dye_the_world.index
 
 import com.possible_triangle.dye_the_world.*
 import com.possible_triangle.dye_the_world.Constants.Mods.DYE_DEPOT
-import com.possible_triangle.dye_the_world.extensions.createId
-import com.possible_triangle.dye_the_world.extensions.germanLang
-import com.possible_triangle.dye_the_world.extensions.translation
-import com.possible_triangle.dye_the_world.extensions.withItem
+import com.possible_triangle.dye_the_world.extensions.*
 import com.possible_triangle.dye_the_world.`object`.block.DyeBasketBlock
 import com.tterrag.registrate.providers.ProviderType
 import net.minecraft.data.recipes.RecipeCategory
@@ -29,7 +26,8 @@ object DyedBaskets {
             .block { DyeBasketBlock(it, dye) }
             .lang("${dye.translation} Dye Basket")
             .germanLang("${dye.germanTranslation(Genus.M)} Farbkorb")
-            .tag(BlockTags.MINEABLE_WITH_HOE)
+            .optionalTag(BlockTags.MINEABLE_WITH_HOE)
+            .optionalTag(DyedTags.Blocks.NON_CLEANABLE)
             .properties { it.strength(0.8F) }
             .properties { it.sound(SoundType.WOOL) }
             .properties { it.ignitedByLava() }
@@ -50,6 +48,7 @@ object DyedBaskets {
             }
             .withItem {
                 tab(CreativeModeTabs.COLORED_BLOCKS)
+                optionalTag(DyedTags.Items.NON_CLEANABLE)
                 recipe { context, provider ->
                     provider.storage({ dye.itemOf("dye") }, RecipeCategory.DECORATIONS, context)
                 }

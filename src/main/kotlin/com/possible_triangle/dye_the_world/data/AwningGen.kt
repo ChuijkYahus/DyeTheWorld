@@ -40,7 +40,9 @@ fun <T : AwningBlock, P> BlockBuilder<T, P>.awningBlockstate(dye: DyeColor) = bl
 }
 
 fun <T : Item, P> ItemBuilder<T, P>.awningItemModel(dye: DyeColor) = model { context, provider ->
-    provider.generated(context, Constants.MOD_ID.createId("block/$SUPPLEMENTARIES/awnings/awning_$dye"))
+    provider.withExistingParent(context.name, SUPPLEMENTARIES.createId("item/awning"))
+        .texture("1", Constants.MOD_ID.createId("block/$SUPPLEMENTARIES/awnings/awning_$dye"))
+        .texture("up", Constants.MOD_ID.createId("block/$SUPPLEMENTARIES/awnings/awning_${dye}_side"))
 }
 
 fun <T : Item, P> ItemBuilder<T, P>.awningRecipe(dye: DyeColor) = recipe(SUPPLEMENTARIES) { context, provider ->

@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "supplementaries:item/awning",
   "textures": {
-    "layer0": "dye_the_world:block/supplementaries/awnings/awning_tan"
+    "1": "dye_the_world:block/supplementaries/awnings/awning_tan",
+    "up": "dye_the_world:block/supplementaries/awnings/awning_tan_side"
   }
 }
