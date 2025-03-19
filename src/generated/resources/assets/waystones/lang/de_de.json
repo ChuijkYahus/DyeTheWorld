@@ -1,6 +1,6 @@
 {
   "block.waystones.amber_sharestone": "Bernsteiner Teilstein",
-  "block.waystones.aqua_sharestone": "Türkiser Teilstein",
+  "block.waystones.aqua_sharestone": "Aquamariner Teilstein",
   "block.waystones.beige_sharestone": "Beiger Teilstein",
   "block.waystones.coral_sharestone": "Koraller Teilstein",
   "block.waystones.forest_sharestone": "Blattgrüner Teilstein",
@@ -16,7 +16,7 @@
   "block.waystones.teal_sharestone": "Dunkeltürkiser Teilstein",
   "block.waystones.verdant_sharestone": "Dunkelgrüner Teilstein",
   "tooltip.waystones.amber_sharestone": "Teleportiere zu jedem anderen Bernsteiner Teilstein",
-  "tooltip.waystones.aqua_sharestone": "Teleportiere zu jedem anderen Türkiser Teilstein",
+  "tooltip.waystones.aqua_sharestone": "Teleportiere zu jedem anderen Aquamariner Teilstein",
   "tooltip.waystones.beige_sharestone": "Teleportiere zu jedem anderen Beiger Teilstein",
   "tooltip.waystones.coral_sharestone": "Teleportiere zu jedem anderen Koraller Teilstein",
   "tooltip.waystones.forest_sharestone": "Teleportiere zu jedem anderen Blattgrüner Teilstein",

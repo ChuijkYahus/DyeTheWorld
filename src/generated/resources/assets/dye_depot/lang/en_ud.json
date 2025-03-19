@@ -2,6 +2,7 @@
   "block.dye_depot.amber_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ɹǝqɯⱯ",
   "block.dye_depot.aqua_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ɐnbⱯ",
   "block.dye_depot.beige_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ǝbıǝᗺ",
+  "block.dye_depot.black_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ʞɔɐןᗺ",
   "block.dye_depot.blue_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ǝnןᗺ",
   "block.dye_depot.brown_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ uʍoɹᗺ",
   "block.dye_depot.coral_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ןɐɹoƆ",
@@ -11,8 +12,8 @@
   "block.dye_depot.gray_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ʎɐɹ⅁",
   "block.dye_depot.green_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ uǝǝɹ⅁",
   "block.dye_depot.indigo_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ obıpuI",
-  "block.dye_depot.light_blue_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ǝnןq‾ʇɥbıꞀ",
-  "block.dye_depot.light_gray_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ʎɐɹb‾ʇɥbıꞀ",
+  "block.dye_depot.light_blue_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ǝnןᗺ ʇɥbıꞀ",
+  "block.dye_depot.light_gray_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ʎɐɹ⅁ ʇɥbıꞀ",
   "block.dye_depot.lime_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ǝɯıꞀ",
   "block.dye_depot.magenta_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ɐʇuǝbɐW",
   "block.dye_depot.maroon_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ uooɹɐW",
@@ -29,5 +30,6 @@
   "block.dye_depot.teal_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ןɐǝ⟘",
   "block.dye_depot.verdant_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ʇuɐpɹǝΛ",
   "block.dye_depot.white_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ǝʇıɥM",
-  "block.dye_depot.yellow_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ʍoןןǝʎ"
+  "block.dye_depot.yellow_dye_basket": "ʇǝʞsɐᗺ ǝʎᗡ ʍoןןǝʎ",
+  "subtitles.block.dye_depot.dye_basket.poof": "sɟood ǝʎᗡ"
 }

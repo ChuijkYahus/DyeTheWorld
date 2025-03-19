@@ -2,6 +2,7 @@
   "block.dye_depot.amber_dye_basket": "Amber Dye Basket",
   "block.dye_depot.aqua_dye_basket": "Aqua Dye Basket",
   "block.dye_depot.beige_dye_basket": "Beige Dye Basket",
+  "block.dye_depot.black_dye_basket": "Black Dye Basket",
   "block.dye_depot.blue_dye_basket": "Blue Dye Basket",
   "block.dye_depot.brown_dye_basket": "Brown Dye Basket",
   "block.dye_depot.coral_dye_basket": "Coral Dye Basket",
@@ -11,8 +12,8 @@
   "block.dye_depot.gray_dye_basket": "Gray Dye Basket",
   "block.dye_depot.green_dye_basket": "Green Dye Basket",
   "block.dye_depot.indigo_dye_basket": "Indigo Dye Basket",
-  "block.dye_depot.light_blue_dye_basket": "Light_blue Dye Basket",
-  "block.dye_depot.light_gray_dye_basket": "Light_gray Dye Basket",
+  "block.dye_depot.light_blue_dye_basket": "Light Blue Dye Basket",
+  "block.dye_depot.light_gray_dye_basket": "Light Gray Dye Basket",
   "block.dye_depot.lime_dye_basket": "Lime Dye Basket",
   "block.dye_depot.magenta_dye_basket": "Magenta Dye Basket",
   "block.dye_depot.maroon_dye_basket": "Maroon Dye Basket",
@@ -29,5 +30,6 @@
   "block.dye_depot.teal_dye_basket": "Teal Dye Basket",
   "block.dye_depot.verdant_dye_basket": "Verdant Dye Basket",
   "block.dye_depot.white_dye_basket": "White Dye Basket",
-  "block.dye_depot.yellow_dye_basket": "Yellow Dye Basket"
+  "block.dye_depot.yellow_dye_basket": "Yellow Dye Basket",
+  "subtitles.block.dye_depot.dye_basket.poof": "Dye poofs"
 }
