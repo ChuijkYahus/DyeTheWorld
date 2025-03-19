@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "forge:dyes/rose"
+    },
+    {
+      "tag": "interiors:chairs"
+    }
+  ],
+  "result": {
+    "item": "interiors:rose_floor_chair"
+  }
+}

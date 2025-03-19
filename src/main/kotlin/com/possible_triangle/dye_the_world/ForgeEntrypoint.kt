@@ -80,6 +80,7 @@ object ForgeEntrypoint {
             DyedSupplementaries.register()
             DyedComforts.register()
             DyedCreate.register()
+            DyedCreateInterior.register()
             // DyedCreateDeco.register()
             // DyedRailways.register()
             DyedChalk.registerDatagen()

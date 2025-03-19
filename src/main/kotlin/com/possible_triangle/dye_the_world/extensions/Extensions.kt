@@ -47,7 +47,9 @@ fun <T : Any> Registry<T>.getOrThrow(id: ResourceLocation): T {
 
 fun String.createId(path: String) = ResourceLocation(this, path)
 
-val DyeColor.translation get() = serializedName.replaceFirstChar { it.uppercase(Locale.ROOT) }
+val DyeColor.translation get() = serializedName.split("_").joinToString(" ") {
+    it.replaceFirstChar { it.uppercase(Locale.ROOT) }
+}
 
 val <R, T : R, P, S : Builder<R, T, P, S>> Builder<R, T, P, S>.namespace
     get(): String {

@@ -10,8 +10,24 @@ object Genus {
 
 fun DyeColor.germanTranslation(suffix: String) : String {
     return when(serializedName) {
+        "white" -> "Weiß$suffix"
+        "orange" -> "Orang$suffix"
+        "magenta" -> "Magenta"
+        "light_blue" -> "Hellblau$suffix"
+        "yellow" -> "Gelb$suffix"
+        "lime" -> "Hellgrün$suffix"
+        "pink" -> "Rosa"
+        "gray" -> "Grau$suffix"
+        "light_gray" -> "Hellgrau$suffix"
+        "cyan" -> "Türkis$suffix"
+        "purple" -> "Violett$suffix"
+        "blue" -> "Blau$suffix"
+        "brown" -> "Braun$suffix"
+        "green" -> "Grün$suffix"
+        "red" -> "Rot$suffix"
+        "black" -> "Schwarz$suffix"
         "amber" -> "Bernstein$suffix"
-        "aqua" -> "Türkis$suffix"
+        "aqua" -> "Aquamarin$suffix"
         "beige" -> "Beig$suffix"
         "coral" -> "Korall$suffix"
         "forest" -> "Blattgrün$suffix"
@@ -26,6 +42,6 @@ fun DyeColor.germanTranslation(suffix: String) : String {
         "tan" -> "Lohfarben$suffix"
         "teal" -> "Dunkeltürkis$suffix"
         "verdant" -> "Dunkelgrün$suffix"
-        else -> "???"
+        else -> throw IllegalArgumentException("No known german translations for '$serializedName'")
     }
 }

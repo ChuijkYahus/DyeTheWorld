@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "dye_the_world:block/basket/black_bottom",
+    "front": "dye_the_world:block/basket/black_front",
+    "particle": "dye_the_world:block/basket/black_top",
+    "side": "dye_the_world:block/basket/black_side",
+    "top": "dye_the_world:block/basket/black_top"
+  }
+}

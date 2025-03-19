@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "minecraft:wooden_slabs"
+    },
+    {
+      "tag": "minecraft:planks"
+    },
+    {
+      "item": "dye_depot:verdant_wool"
+    }
+  ],
+  "result": {
+    "item": "interiors:verdant_chair"
+  }
+}

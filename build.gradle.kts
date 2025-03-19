@@ -32,6 +32,7 @@ val citadel_version: String by extra
 val chalk_version: String by extra
 val create_deco_version: String by extra
 val create_railways_version: String by extra
+val create_interiors_version: String by extra
 val ars_nouveau_version: String by extra
 val curios_version: String by extra
 val more_concrete_version: String by extra
@@ -65,7 +66,8 @@ forge {
             "chalk",
             "upgrade_aquatic",
             "waystones",
-            "moreconcrete"
+            "moreconcrete",
+            "interiors"
         )
     )
 
@@ -153,6 +155,7 @@ dependencies {
     modRuntimeOnly("maven.modrinth:dye-depot:${dye_depot_version}")
     modRuntimeOnly("maven.modrinth:citadel:${citadel_version}")
     // modRuntimeOnly("maven.modrinth:create-steam-n-rails:${create_railways_version}")
+    modRuntimeOnly("maven.modrinth:interiors:${create_interiors_version}")
     modRuntimeOnly("maven.modrinth:curios:${curios_version}")
     modRuntimeOnly("maven.modrinth:ars-nouveau:${ars_nouveau_version}")
     modRuntimeOnly("maven.modrinth:gallery:${gallery_version}")
@@ -190,6 +193,7 @@ fun DependencyBuilder.addDependencies() {
     optional("upgrade-aquatic")
     optional("more-concrete")
     optional("waystones")
+    optional("interiors")
 }
 
 uploadToCurseforge {

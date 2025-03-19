@@ -3,7 +3,6 @@ package com.possible_triangle.dye_the_world.index
 import com.possible_triangle.dye_the_world.Constants.Mods.CREATE
 import com.possible_triangle.dye_the_world.DyedRegistrate
 import com.possible_triangle.dye_the_world.Genus
-import com.possible_triangle.dye_the_world.compat.CreateCompat
 import com.possible_triangle.dye_the_world.data.*
 import com.possible_triangle.dye_the_world.dyesFor
 import com.possible_triangle.dye_the_world.extensions.germanLang
